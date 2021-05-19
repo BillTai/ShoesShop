@@ -19,6 +19,15 @@ namespace demo
             InitializeComponent();
         }
         // Load danh sách sản phẩm + combobox
+        //------------------------Khai Báo Biến------------------------//
+        Connect ConnectSQL = new Connect();
+        DataTable Product = new DataTable();
+        DataTable ProductType = new DataTable();
+        DataTable Customer = new DataTable();
+        DataTable ProductDetail = new DataTable();
+        DataTable Color = new DataTable();
+        DataTable Size = new DataTable();
+
         private void fEditProduct_Load(object sender, EventArgs e)
         {
             foreach (DataGridViewColumn column in dgvProduct.Columns)
@@ -29,7 +38,18 @@ namespace demo
             TypeName = ConnectSQL.ExcuteQuery("Select ProductTypeName from ProductType");
             Customer = ConnectSQL.ExcuteQuery("Select * from Customer where CustomerType = 0");
             ProductDetail = ConnectSQL.ExcuteQuery("Select IDProductDetail from ProductDetail");
+            Color = ConnectSQL.ExcuteQuery("Select * from Color");
+            Size = ConnectSQL.ExcuteQuery("Select * from Size");
+
             ShowProduct();
+            for (int i = 0; i < Size.Rows.Count; i++)
+            {
+                cbSize.Items.Add(Size.Rows[i][0]);
+            }
+            for (int i = 0; i < Color.Rows.Count; i++)
+            {
+                cbColor.Items.Add(Color.Rows[i][1]);
+            }
             for (int i = 0; i < TypeName.Rows.Count; i++)
             {
                 cbProductType.Items.Add(TypeName.Rows[i][0]);
@@ -57,12 +77,6 @@ namespace demo
                 btnUpdateProduct.Enabled = false;
             }
         }
-        //------------------------Khai Báo Biến------------------------//
-        Connect ConnectSQL = new Connect();
-        DataTable Product = new DataTable();
-        DataTable ProductType = new DataTable();
-        DataTable Customer = new DataTable();
-        DataTable ProductDetail = new DataTable();
         //------------------------Hàm------------------------//
         //Kết nối query và dgv với sql
         void ConnectSql(string query, DataGridView dgv)
@@ -73,7 +87,7 @@ namespace demo
         // Danh sách sản phẩm
         void ShowProduct()
         {
-            String query = "select * from product";
+            String query = "select Product.IDProduct, ProductName, IDProductType, IDCustomer, Status, IDProductDetail, Size, Color, image, PriceIn, PriceOut, Number from Product, ProductDetail where Product.IDProduct = ProductDetail.IDProduct";
             ConnectSql(query, dgvProduct);
 
         }
@@ -209,44 +223,49 @@ namespace demo
         //Hiển thị vào textbox
         void ShowInTextBox(int vt)
         {
-            DataTable TypeName1 = new DataTable();
+            DataTable TypeName = new DataTable();
+            DataTable ProviderName = new DataTable();
+            DataTable ColorName = new DataTable();
+
             txtIDProduct.Text = Product.Rows[vt][0].ToString();
             txtProductName.Text = Product.Rows[vt][1].ToString();
-            cbProductType.Text = Product.Rows[vt][2].ToString();
-            TypeName1 = ConnectSQL.ExcuteQuery("Select ProductTypeName from ProductType where IDProductType LIKE N'"+Product.Rows[vt][3].ToString()+"'");
-            cbProvider.Text = TypeName1.Rows[0][0].ToString();
+            TypeName = ConnectSQL.ExcuteQuery("Select ProductTypeName from ProductType where IDProductType LIKE N'"+Product.Rows[vt][2].ToString()+"'");
+            cbProductType.SelectedItem = TypeName.Rows[0][0].ToString();
+            ProviderName = ConnectSQL.ExcuteQuery("Select CustomerName from Customer where PhoneNum = '" + Product.Rows[vt][3].ToString() + "'");
+            
+            cbProvider.SelectedItem = ProviderName.Rows[0][0].ToString();
             if (Convert.ToInt32(Product.Rows[vt][4]) == 1)
                 cbStatus.SelectedIndex = 1;
             else
                 cbStatus.SelectedIndex = 0;
-           
+            txtIDProductDetail.Text = Product.Rows[vt][5].ToString();
+            cbSize.Text = Product.Rows[vt][6].ToString();
+            ColorName = ConnectSQL.ExcuteQuery("Select ColorName from Color where IDColor = '" + Product.Rows[vt][7].ToString() + "'");
+
+            cbColor.Text = ColorName.Rows[0][0].ToString();
+
+            txtImageName.Text = Product.Rows[vt][8].ToString();
+            //string filename = Path.GetFullPath(@"image") + @"\";
+            string filename = @".\image" + @"\";
+            filename += txtImageName.Text;
+            Bitmap i = new Bitmap(filename);
+            pProduct.Image = i;
+            txtPriceIn.Text = Product.Rows[vt][9].ToString();
+            txtPriceOut.Text = Product.Rows[vt][10].ToString();
+            nudNumber.Value = Convert.ToInt32(Product.Rows[vt][11]);
+
+
 
         }
         //------------------------Sự Kiện------------------------//
         // Chỉ nhập số
-        private void txtPriceIn_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false )
-                e.Handled = true;
-        }
+       
         // Chỉ nhập số
-        private void txtPriceOut_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
-                e.Handled = true;
-        }
+        
         // Chỉ nhập số
-        private void txtFrom_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
-                e.Handled = true;
-        }
+      
         // Chỉ nhập số
-        private void txtTo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
-                e.Handled = true;
-        }
+       
         // Lấy vị trí click trên dgv
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -348,6 +367,83 @@ namespace demo
         {
             if (char.IsLetterOrDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false && char.IsWhiteSpace(e.KeyChar) == false)
                 e.Handled = true;
+        }
+
+        private void btnOpenFolder_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog Image = new OpenFileDialog();
+            Image.InitialDirectory = Path.GetDirectoryName(@"C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\bin\Debug\image");
+            if (Image.ShowDialog() == DialogResult.Cancel)
+            {
+                Image.ShowDialog();
+            }
+            Bitmap i = new Bitmap(Image.FileName);
+            pProduct.Image = i;
+            pProduct.SizeMode = PictureBoxSizeMode.StretchImage;
+            string[] Name;
+            Name = Image.FileName.Split('\\');
+            txtImageName.Text = Name[Name.Count() - 1];
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtPriceIn_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPriceIn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbSearch.SelectedIndex > 1 && cbSearch.SelectedIndex < 5)
+            {
+                txtID.Text = "";
+                txtID.Enabled = false;
+
+            }
+            else
+            {
+                txtID.Text = "";
+                txtID.Enabled = true;
+
+            }
+
+            txtID.Focus();
+        }
+
+        private void txtIDProduct_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txtIDProduct.Text == "")
+            {
+                btnDeleteProduct.Enabled = false;
+                btnAddProduct.Enabled = false;
+                btnUpdateProduct.Enabled = false;
+            }
+            else
+            {
+                errorProduct.Clear();
+                btnDeleteProduct.Enabled = true;
+                btnAddProduct.Enabled = true;
+                btnUpdateProduct.Enabled = true;
+            }
+        }
+
+        private void txtIDProduct_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
+        }
+
+        private void txtIDProduct_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtIDProductDetail.Text = "CT_" + txtIDProduct.Text;
         }
     }
 }

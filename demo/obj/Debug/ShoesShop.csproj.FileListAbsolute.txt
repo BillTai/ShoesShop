@@ -66,3 +66,5 @@ C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\ShoesShop.csproj.Gener
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\ShoesShop.csproj.CoreCompileInputs.cache
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.exe
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.pdb
+C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\bin\Debug\Guna.UI2.dll
+C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\ShoesShop.csproj.CopyComplete

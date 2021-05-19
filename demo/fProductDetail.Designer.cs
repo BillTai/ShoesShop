@@ -36,9 +36,13 @@ namespace demo
             this.txtImageName = new System.Windows.Forms.TextBox();
             this.txtPriceOut = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pProduct = new System.Windows.Forms.PictureBox();
             this.txtPriceIn = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -47,6 +51,14 @@ namespace demo
             this.label1 = new System.Windows.Forms.Label();
             this.errorProduct = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.IDProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pButton = new System.Windows.Forms.Panel();
             this.pValues = new System.Windows.Forms.Panel();
             this.txtTo = new System.Windows.Forms.TextBox();
@@ -63,18 +75,6 @@ namespace demo
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.IDProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pProduct)).BeginInit();
@@ -150,6 +150,22 @@ namespace demo
             this.panel1.Size = new System.Drawing.Size(744, 175);
             this.panel1.TabIndex = 10;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(394, 123);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(84, 21);
+            this.comboBox2.TabIndex = 30;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(128, 127);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(136, 21);
+            this.comboBox1.TabIndex = 30;
+            // 
             // pProduct
             // 
             this.pProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -167,6 +183,14 @@ namespace demo
             this.txtPriceIn.Size = new System.Drawing.Size(84, 20);
             this.txtPriceIn.TabIndex = 3;
             // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(286, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 23);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Kích Thước:";
+            // 
             // txtProductName
             // 
             this.txtProductName.Location = new System.Drawing.Point(129, 51);
@@ -174,6 +198,14 @@ namespace demo
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(135, 20);
             this.txtProductName.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(20, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 23);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Màu:";
             // 
             // label6
             // 
@@ -249,6 +281,62 @@ namespace demo
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduct.Size = new System.Drawing.Size(1111, 296);
             this.dgvProduct.TabIndex = 0;
+            // 
+            // IDProductDetail
+            // 
+            this.IDProductDetail.DataPropertyName = "IDProductDetail";
+            this.IDProductDetail.HeaderText = "Mã Chi Tiết Sản Phẩm";
+            this.IDProductDetail.Name = "IDProductDetail";
+            this.IDProductDetail.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDProduct";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Sản Phẩm";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Number";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Số Lượng";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PriceIn";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Giá Nhập";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // PriceOut
+            // 
+            this.PriceOut.DataPropertyName = "PriceOut";
+            this.PriceOut.HeaderText = "Giá Xuất";
+            this.PriceOut.Name = "PriceOut";
+            this.PriceOut.ReadOnly = true;
+            // 
+            // Picture
+            // 
+            this.Picture.DataPropertyName = "Image";
+            this.Picture.HeaderText = "Hình Ảnh";
+            this.Picture.Name = "Picture";
+            this.Picture.ReadOnly = true;
+            // 
+            // Mau
+            // 
+            this.Mau.DataPropertyName = "Color";
+            this.Mau.HeaderText = "Màu";
+            this.Mau.Name = "Mau";
+            this.Mau.ReadOnly = true;
+            // 
+            // Size
+            // 
+            this.Size.DataPropertyName = "Size";
+            this.Size.HeaderText = "Kích Thước";
+            this.Size.Name = "Size";
+            this.Size.ReadOnly = true;
             // 
             // pButton
             // 
@@ -400,94 +488,6 @@ namespace demo
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách sản phẩm";
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(20, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 23);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Màu:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(128, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(136, 21);
-            this.comboBox1.TabIndex = 30;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(286, 122);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 23);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Kích Thước:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(394, 123);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(84, 21);
-            this.comboBox2.TabIndex = 30;
-            // 
-            // IDProductDetail
-            // 
-            this.IDProductDetail.DataPropertyName = "IDProductDetail";
-            this.IDProductDetail.HeaderText = "Mã Chi Tiết Sản Phẩm";
-            this.IDProductDetail.Name = "IDProductDetail";
-            this.IDProductDetail.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDProduct";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Sản Phẩm";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Number";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Số Lượng";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "PriceIn";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Giá Nhập";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // PriceOut
-            // 
-            this.PriceOut.DataPropertyName = "PriceOut";
-            this.PriceOut.HeaderText = "Giá Xuất";
-            this.PriceOut.Name = "PriceOut";
-            this.PriceOut.ReadOnly = true;
-            // 
-            // Picture
-            // 
-            this.Picture.DataPropertyName = "Image";
-            this.Picture.HeaderText = "Hình Ảnh";
-            this.Picture.Name = "Picture";
-            this.Picture.ReadOnly = true;
-            // 
-            // Mau
-            // 
-            this.Mau.DataPropertyName = "Color";
-            this.Mau.HeaderText = "Màu";
-            this.Mau.Name = "Mau";
-            this.Mau.ReadOnly = true;
-            // 
-            // Size
-            // 
-            this.Size.DataPropertyName = "Size";
-            this.Size.HeaderText = "Kích Thước";
-            this.Size.Name = "Size";
-            this.Size.ReadOnly = true;
             // 
             // fProductDetail
             // 

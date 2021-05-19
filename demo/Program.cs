@@ -55,6 +55,8 @@ namespace demo
             //    Application.Run(new fLogin());
 
             Application.Run(new fProduct());
+            //Application.Run(new fCustomer());
+            //Application.Run(new fColor());
             //Application.Run(new fStaff());
             //Application.Run(new fProvider());
             //Application.Run(new fEditProductType());

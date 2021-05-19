@@ -38,7 +38,6 @@ namespace demo
             this.btnExit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
             this.pValues = new System.Windows.Forms.Panel();
             this.txtTo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -50,9 +49,10 @@ namespace demo
             this.txtSize = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvProductDetail = new System.Windows.Forms.DataGridView();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -68,7 +68,7 @@ namespace demo
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Location = new System.Drawing.Point(-12, -16);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(344, 487);
             this.panel1.TabIndex = 4;
@@ -142,7 +142,7 @@ namespace demo
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.cbSearch);
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pValues);
             this.panel3.Controls.Add(this.txtSearch);
             this.panel3.Controls.Add(this.btnSearch);
@@ -150,15 +150,6 @@ namespace demo
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(334, 165);
             this.panel3.TabIndex = 4;
-            // 
-            // cbSearch
-            // 
-            this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(16, 25);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(118, 21);
-            this.cbSearch.TabIndex = 37;
             // 
             // pValues
             // 
@@ -208,7 +199,7 @@ namespace demo
             // 
             this.txtSearch.Location = new System.Drawing.Point(161, 25);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(157, 20);
+            this.txtSearch.Size = new System.Drawing.Size(144, 20);
             this.txtSearch.TabIndex = 1;
             // 
             // btnSearch
@@ -238,7 +229,7 @@ namespace demo
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(13, 55);
+            this.label2.Location = new System.Drawing.Point(19, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 23);
             this.label2.TabIndex = 0;
@@ -255,26 +246,8 @@ namespace demo
             this.dgvProductDetail.Name = "dgvProductDetail";
             this.dgvProductDetail.ReadOnly = true;
             this.dgvProductDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductDetail.Size = new System.Drawing.Size(195, 458);
+            this.dgvProductDetail.Size = new System.Drawing.Size(198, 458);
             this.dgvProductDetail.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvProductDetail);
-            this.groupBox1.Location = new System.Drawing.Point(4, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(210, 484);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh Chi Tiết Sản Phẩm";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Location = new System.Drawing.Point(338, -21);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 479);
-            this.panel2.TabIndex = 5;
             // 
             // Size
             // 
@@ -284,15 +257,43 @@ namespace demo
             this.Size.ReadOnly = true;
             this.Size.Width = 140;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvProductDetail);
+            this.groupBox1.Location = new System.Drawing.Point(4, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(210, 484);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh Sách Kích Thước";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Location = new System.Drawing.Point(362, 7);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(220, 479);
+            this.panel2.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Kích Thước:";
+            // 
             // fSize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 461);
+            this.ClientSize = new System.Drawing.Size(601, 506);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "fSize";
             this.Text = "fSize";
+            this.Load += new System.EventHandler(this.fSize_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -319,7 +320,6 @@ namespace demo
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox cbSearch;
         private System.Windows.Forms.Panel pValues;
         private System.Windows.Forms.TextBox txtTo;
         private System.Windows.Forms.Label label11;
@@ -334,5 +334,6 @@ namespace demo
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Size;
+        private System.Windows.Forms.Label label1;
     }
 }

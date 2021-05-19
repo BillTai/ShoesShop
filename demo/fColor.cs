@@ -16,5 +16,24 @@ namespace demo
         {
             InitializeComponent();
         }
+
+        private void fColor_Load(object sender, EventArgs e)
+        {
+
+        }
+        Connect ConnectSQL = new Connect();
+        DataTable Colors = new DataTable();
+        //------------------------Hàm------------------------//
+        //Kết Nối SQL
+        void ConnectSql(string query, DataGridView dgv)
+        {
+            Colors = ConnectSQL.ExcuteQuery(query);
+            dgv.DataSource = Colors;
+        }
+        void ShowColor()
+        {
+            string query = "Select * from Color";
+            ConnectSql(query, dgvColor);
+        }
     }
 }

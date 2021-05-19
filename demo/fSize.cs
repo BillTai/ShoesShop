@@ -16,5 +16,10 @@ namespace demo
         {
             InitializeComponent();
         }
+
+        private void fSize_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

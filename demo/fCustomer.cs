@@ -27,7 +27,10 @@ namespace demo
             ShowCustomer();
             cbStatus.Items.Add("Khách Hàng Thân Thiết");
             cbStatus.Items.Add("Khách Hàng Mới");
-            for(int i = 0; i < dgvCustomer.Columns.Count; i++)
+            cbcustomertype.Items.Add("Nhà Cung Cấp");
+            cbcustomertype.Items.Add("Khách Hàng");
+
+            for (int i = 0; i < dgvCustomer.Columns.Count; i++)
             {
                 cbSearch.Items.Add(dgvCustomer.Columns[i].HeaderText);
             }
@@ -77,6 +80,10 @@ namespace demo
                 cbStatus.SelectedIndex = 1;
             else
                 cbStatus.SelectedIndex = 0;
+            if (Convert.ToInt32(ds.Rows[vt][6]) == 1)
+                cbcustomertype.SelectedIndex = 1;
+            else
+                cbcustomertype.SelectedIndex = 0;
         }
         //Kiểm Tra ID Có Tồn Tại Không
         bool CheckID()
@@ -183,7 +190,7 @@ namespace demo
         void AddCustomer()
         {
             int SIZE = Customer.Rows.Count;
-            string query = "INSERT INTO Customer (PhoneNum , CustomerName, IDCard, Email, Address, Status) VALUES('" + txtPhoneNum.Text + "', N'" + txtCustomerName.Text + "', '" + txtIDCard.Text + "', '" + txtEmail.Text + "', N'" + txtAddress.Text + "', '" + cbStatus.SelectedIndex + "')";
+            string query = "INSERT INTO Customer (PhoneNum , CustomerName, IDCard, Email, Address, Status, CustomerType) VALUES('" + txtPhoneNum.Text + "', N'" + txtCustomerName.Text + "', '" + txtIDCard.Text + "', '" + txtEmail.Text + "', N'" + txtAddress.Text + "', '" + cbStatus.SelectedIndex + "', '" + cbcustomertype.SelectedIndex + "')";
             if (CheckAdd()==1)
             {
                 MessageBox.Show("SĐT Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -275,7 +282,7 @@ namespace demo
             }
             else
             {
-                string query = "update Customer set [PhoneNum] = '" + txtPhoneNum.Text + "', [CustomerName] = N'" + txtCustomerName.Text + "', [IDCard] = '" + txtIDCard.Text + "', [Email]= '" + txtEmail.Text + "',[Address]= N'" + txtAddress.Text + "', [Status]= '" + cbStatus.SelectedIndex + "' where [PhoneNum] = '" + txtPhoneNum.Text + "'";
+                string query = "update Customer set [PhoneNum] = '" + txtPhoneNum.Text + "', [CustomerName] = N'" + txtCustomerName.Text + "', [IDCard] = '" + txtIDCard.Text + "', [Email]= '" + txtEmail.Text + "',[Address]= N'" + txtAddress.Text + "', [Status]= '" + cbStatus.SelectedIndex + "', [CustomerType]= '" + cbcustomertype.SelectedIndex + "' where [PhoneNum] = '" + txtPhoneNum.Text + "'";
                 DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Khách Hàng", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Question == DialogResult.Yes)
                 {
@@ -461,6 +468,9 @@ namespace demo
 
         }
 
-      
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

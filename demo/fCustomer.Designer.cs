@@ -31,8 +31,15 @@ namespace demo
         {
             this.components = new System.ComponentModel.Container();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
+            this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerdetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbcustomertype = new System.Windows.Forms.ComboBox();
             this.txtPhoneNum = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -47,24 +54,17 @@ namespace demo
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pButton = new System.Windows.Forms.Panel();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.cbSearch = new System.Windows.Forms.ComboBox();
             this.btnReload = new System.Windows.Forms.Button();
             this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnRefreshText = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorCustomer = new System.Windows.Forms.ErrorProvider(this.components);
-            this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerdetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.panel1.SuspendLayout();
             this.pButton.SuspendLayout();
@@ -89,13 +89,68 @@ namespace demo
             this.dgvCustomer.ReadOnly = true;
             this.dgvCustomer.RowHeadersWidth = 40;
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomer.Size = new System.Drawing.Size(908, 242);
+            this.dgvCustomer.Size = new System.Drawing.Size(916, 242);
             this.dgvCustomer.TabIndex = 13;
             this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellClick);
             // 
+            // PhoneNum
+            // 
+            this.PhoneNum.DataPropertyName = "PhoneNum";
+            this.PhoneNum.HeaderText = "Số Điện Thoại";
+            this.PhoneNum.Name = "PhoneNum";
+            this.PhoneNum.ReadOnly = true;
+            this.PhoneNum.Width = 120;
+            // 
+            // customerdetail
+            // 
+            this.customerdetail.DataPropertyName = "CustomerType";
+            this.customerdetail.HeaderText = "Loại Khách Hàng";
+            this.customerdetail.Name = "customerdetail";
+            this.customerdetail.ReadOnly = true;
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.DataPropertyName = "CustomerName";
+            this.CustomerName.HeaderText = "Tên Khách Hàng";
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
+            this.CustomerName.Width = 150;
+            // 
+            // IDCard
+            // 
+            this.IDCard.DataPropertyName = "IDCard";
+            this.IDCard.HeaderText = "Mã Thẻ";
+            this.IDCard.Name = "IDCard";
+            this.IDCard.ReadOnly = true;
+            this.IDCard.Width = 150;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 160;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Địa Chỉ";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 120;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Trạng Thái";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 85;
+            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbcustomertype);
             this.panel1.Controls.Add(this.txtPhoneNum);
             this.panel1.Controls.Add(this.txtAddress);
             this.panel1.Controls.Add(this.txtEmail);
@@ -114,13 +169,13 @@ namespace demo
             this.panel1.Size = new System.Drawing.Size(562, 205);
             this.panel1.TabIndex = 12;
             // 
-            // comboBox1
+            // cbcustomertype
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(132, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 21);
-            this.comboBox1.TabIndex = 48;
+            this.cbcustomertype.FormattingEnabled = true;
+            this.cbcustomertype.Location = new System.Drawing.Point(132, 15);
+            this.cbcustomertype.Name = "cbcustomertype";
+            this.cbcustomertype.Size = new System.Drawing.Size(138, 21);
+            this.cbcustomertype.TabIndex = 48;
             // 
             // txtPhoneNum
             // 
@@ -236,11 +291,11 @@ namespace demo
             // 
             // pButton
             // 
+            this.pButton.Controls.Add(this.btnExit);
             this.pButton.Controls.Add(this.cbSearch);
             this.pButton.Controls.Add(this.btnReload);
             this.pButton.Controls.Add(this.btnSearchCustomer);
             this.pButton.Controls.Add(this.btnUpdateCustomer);
-            this.pButton.Controls.Add(this.btnExit);
             this.pButton.Controls.Add(this.btnRefreshText);
             this.pButton.Controls.Add(this.btnAddCustomer);
             this.pButton.Controls.Add(this.btnDeleteCustomer);
@@ -249,6 +304,24 @@ namespace demo
             this.pButton.Name = "pButton";
             this.pButton.Size = new System.Drawing.Size(323, 176);
             this.pButton.TabIndex = 11;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BorderRadius = 15;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(201, 42);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(102, 31);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // cbSearch
             // 
@@ -289,17 +362,6 @@ namespace demo
             this.btnUpdateCustomer.Text = "Cập Nhập";
             this.btnUpdateCustomer.UseVisualStyleBackColor = true;
             this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.ForeColor = System.Drawing.Color.Red;
-            this.btnExit.Location = new System.Drawing.Point(201, 50);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnRefreshText
             // 
@@ -353,61 +415,6 @@ namespace demo
             // 
             this.errorCustomer.ContainerControl = this;
             // 
-            // PhoneNum
-            // 
-            this.PhoneNum.DataPropertyName = "PhoneNum";
-            this.PhoneNum.HeaderText = "Số Điện Thoại";
-            this.PhoneNum.Name = "PhoneNum";
-            this.PhoneNum.ReadOnly = true;
-            this.PhoneNum.Width = 120;
-            // 
-            // customerdetail
-            // 
-            this.customerdetail.DataPropertyName = "CustomerType";
-            this.customerdetail.HeaderText = "Loại Khách Hàng";
-            this.customerdetail.Name = "customerdetail";
-            this.customerdetail.ReadOnly = true;
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.DataPropertyName = "CustomerName";
-            this.CustomerName.HeaderText = "Tên Khách Hàng";
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.ReadOnly = true;
-            this.CustomerName.Width = 150;
-            // 
-            // IDCard
-            // 
-            this.IDCard.DataPropertyName = "IDCard";
-            this.IDCard.HeaderText = "Mã Thẻ";
-            this.IDCard.Name = "IDCard";
-            this.IDCard.ReadOnly = true;
-            this.IDCard.Width = 150;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 160;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Địa Chỉ";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 200;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Trạng Thái";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Width = 85;
-            // 
             // fCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,7 +451,6 @@ namespace demo
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnSearchCustomer;
         private System.Windows.Forms.Button btnUpdateCustomer;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnRefreshText;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnDeleteCustomer;
@@ -460,7 +466,7 @@ namespace demo
         private System.Windows.Forms.ComboBox cbSearch;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ErrorProvider errorCustomer;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbcustomertype;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerdetail;
@@ -469,5 +475,6 @@ namespace demo
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }
