@@ -31,18 +31,14 @@ namespace demo
         {
             this.components = new System.ComponentModel.Container();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
-            this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtPhoneNum = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIDCard = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,6 +58,13 @@ namespace demo
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorCustomer = new System.Windows.Forms.ErrorProvider(this.components);
+            this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerdetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.panel1.SuspendLayout();
             this.pButton.SuspendLayout();
@@ -75,6 +78,7 @@ namespace demo
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PhoneNum,
+            this.customerdetail,
             this.CustomerName,
             this.IDCard,
             this.Email,
@@ -89,61 +93,15 @@ namespace demo
             this.dgvCustomer.TabIndex = 13;
             this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellClick);
             // 
-            // PhoneNum
-            // 
-            this.PhoneNum.DataPropertyName = "PhoneNum";
-            this.PhoneNum.HeaderText = "Số Điện Thoại";
-            this.PhoneNum.Name = "PhoneNum";
-            this.PhoneNum.ReadOnly = true;
-            this.PhoneNum.Width = 120;
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.DataPropertyName = "CustomerName";
-            this.CustomerName.HeaderText = "Tên Khách Hàng";
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.ReadOnly = true;
-            this.CustomerName.Width = 150;
-            // 
-            // IDCard
-            // 
-            this.IDCard.DataPropertyName = "IDCard";
-            this.IDCard.HeaderText = "Mã Thẻ";
-            this.IDCard.Name = "IDCard";
-            this.IDCard.ReadOnly = true;
-            this.IDCard.Width = 150;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 160;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Địa Chỉ";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 200;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Trạng Thái";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Width = 85;
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.txtPhoneNum);
             this.panel1.Controls.Add(this.txtAddress);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtIDCard);
             this.panel1.Controls.Add(this.label1);
@@ -153,12 +111,20 @@ namespace demo
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 176);
+            this.panel1.Size = new System.Drawing.Size(562, 205);
             this.panel1.TabIndex = 12;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(132, 15);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(138, 21);
+            this.comboBox1.TabIndex = 48;
             // 
             // txtPhoneNum
             // 
-            this.txtPhoneNum.Location = new System.Drawing.Point(124, 17);
+            this.txtPhoneNum.Location = new System.Drawing.Point(133, 70);
             this.txtPhoneNum.MaxLength = 10;
             this.txtPhoneNum.Name = "txtPhoneNum";
             this.txtPhoneNum.Size = new System.Drawing.Size(138, 20);
@@ -200,9 +166,17 @@ namespace demo
             this.label5.TabIndex = 47;
             this.label5.Text = "Địa Chỉ";
             // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(27, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 23);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Loại Khách Hàng:";
+            // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(17, 17);
+            this.label2.Location = new System.Drawing.Point(26, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 46;
@@ -210,7 +184,7 @@ namespace demo
             // 
             // txtIDCard
             // 
-            this.txtIDCard.Location = new System.Drawing.Point(123, 115);
+            this.txtIDCard.Location = new System.Drawing.Point(132, 168);
             this.txtIDCard.MaxLength = 12;
             this.txtIDCard.Name = "txtIDCard";
             this.txtIDCard.Size = new System.Drawing.Size(138, 20);
@@ -220,7 +194,7 @@ namespace demo
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(18, 115);
+            this.label1.Location = new System.Drawing.Point(27, 168);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 43;
@@ -237,7 +211,7 @@ namespace demo
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(123, 67);
+            this.txtCustomerName.Location = new System.Drawing.Point(132, 120);
             this.txtCustomerName.MaxLength = 20;
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(138, 20);
@@ -254,7 +228,7 @@ namespace demo
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(18, 67);
+            this.label9.Location = new System.Drawing.Point(27, 120);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 23);
             this.label9.TabIndex = 19;
@@ -368,9 +342,9 @@ namespace demo
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvCustomer);
-            this.groupBox1.Location = new System.Drawing.Point(12, 194);
+            this.groupBox1.Location = new System.Drawing.Point(12, 223);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(935, 266);
+            this.groupBox1.Size = new System.Drawing.Size(935, 237);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Khách Hàng";
@@ -378,6 +352,61 @@ namespace demo
             // errorCustomer
             // 
             this.errorCustomer.ContainerControl = this;
+            // 
+            // PhoneNum
+            // 
+            this.PhoneNum.DataPropertyName = "PhoneNum";
+            this.PhoneNum.HeaderText = "Số Điện Thoại";
+            this.PhoneNum.Name = "PhoneNum";
+            this.PhoneNum.ReadOnly = true;
+            this.PhoneNum.Width = 120;
+            // 
+            // customerdetail
+            // 
+            this.customerdetail.DataPropertyName = "CustomerType";
+            this.customerdetail.HeaderText = "Loại Khách Hàng";
+            this.customerdetail.Name = "customerdetail";
+            this.customerdetail.ReadOnly = true;
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.DataPropertyName = "CustomerName";
+            this.CustomerName.HeaderText = "Tên Khách Hàng";
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
+            this.CustomerName.Width = 150;
+            // 
+            // IDCard
+            // 
+            this.IDCard.DataPropertyName = "IDCard";
+            this.IDCard.HeaderText = "Mã Thẻ";
+            this.IDCard.Name = "IDCard";
+            this.IDCard.ReadOnly = true;
+            this.IDCard.Width = 150;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 160;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Địa Chỉ";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 200;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Trạng Thái";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 85;
             // 
             // fCustomer
             // 
@@ -431,7 +460,10 @@ namespace demo
         private System.Windows.Forms.ComboBox cbSearch;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ErrorProvider errorCustomer;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerdetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDCard;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;

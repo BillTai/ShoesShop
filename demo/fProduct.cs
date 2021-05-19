@@ -25,36 +25,30 @@ namespace demo
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            ProductType = ConnectSQL.ExcuteQuery("Select * from ProductType");
-            Provider = ConnectSQL.ExcuteQuery("Select * from Provider");
+            DataTable TypeName = new DataTable();
+            TypeName = ConnectSQL.ExcuteQuery("Select ProductTypeName from ProductType");
+            Customer = ConnectSQL.ExcuteQuery("Select * from Customer where CustomerType = 0");
             ProductDetail = ConnectSQL.ExcuteQuery("Select IDProductDetail from ProductDetail");
             ShowProduct();
-            for (int i = 0; i < ProductType.Rows.Count; i++)
+            for (int i = 0; i < TypeName.Rows.Count; i++)
             {
-                cbProductType.Items.Add(ProductType.Rows[i][0]);
+                cbProductType.Items.Add(TypeName.Rows[i][0]);
             }
-
-            string ProviderName = "Select DISTINCT ProviderName from Provider";
-            DataTable Name = new DataTable();
-            Name = ConnectSQL.ExcuteQuery(ProviderName);
-            for (int i = 1; i < Name.Rows.Count; i++)
+            for (int i = 0; i < Customer.Rows.Count; i++)
             {
-                cbProvider.Items.Add(Name.Rows[i][0]);
+                cbProvider.Items.Add(Customer.Rows[i][1]);
             }
             for (int i = 0; i < Product.Columns.Count; i++)
             {
                 cbSearch.Items.Add(dgvProduct.Columns[i].HeaderText);
             }
-            for (int i = 0; i < ProductDetail.Rows.Count; i++)
-            {
-                cbIDProductDetail.Items.Add(ProductDetail.Rows[i][0]);
-            }
+            
             cbSearch.SelectedIndex = 0;
             cbStatus.Items.Add("Còn hàng");
             cbStatus.Items.Add("Hết hàng");
             if (Product.Rows.Count >= 1)
             {
-                ShowInTextBox(0, Product);
+                ShowInTextBox(0);
             }
             if (txtIDProduct.Text == "")
             {
@@ -67,7 +61,7 @@ namespace demo
         Connect ConnectSQL = new Connect();
         DataTable Product = new DataTable();
         DataTable ProductType = new DataTable();
-        DataTable Provider = new DataTable();
+        DataTable Customer = new DataTable();
         DataTable ProductDetail = new DataTable();
         //------------------------Hàm------------------------//
         //Kết nối query và dgv với sql
@@ -99,30 +93,7 @@ namespace demo
             return false;
         }
         //Kiểm tra không nhập dữ liệu
-        int CheckNull()
-        {
-            if(string.IsNullOrEmpty(txtProductName.Text))
-            {
-                errorProduct.SetError(txtProductName, "Nhập giá trị");
-                return 0;
-            }    
-            else if(string.IsNullOrEmpty(nudNumber.Text))
-            {
-                errorProduct.SetError(nudNumber, "Nhập giá trị");
-                return 1;
-            }    
-            else if (string.IsNullOrEmpty(txtPriceIn.Text))
-            {
-                errorProduct.SetError(txtPriceIn, "Nhập giá trị");
-                return 2;
-            }
-            else if (string.IsNullOrEmpty(txtPriceOut.Text))
-            {
-                errorProduct.SetError(txtPriceOut, "Nhập giá trị");
-                return 3;
-            }
-            return -1;
-        }
+      
         //Tìm kiếm sản phẩm
         void SearchProduct()
         {
@@ -137,31 +108,8 @@ namespace demo
                 {
                     query = "select * from Product where ProductName LIKE N'%" + txtID.Text + "%'";
                 }
-                else if (cbSearch.SelectedIndex == 2)
-                {
-                    query = "select * from Product where Number between '" + txtFrom.Text + "' and '" + txtTo.Text + "'";
-                }
-                else if (cbSearch.SelectedIndex == 3)
-                {
-                    query = "select * from Product where PriceIn between '" + txtFrom.Text + "' and '" + txtTo.Text + "'";
-                }
-                else if (cbSearch.SelectedIndex == 4)
-                {
-                    query = "select * from Product where PriceOut between '" + txtFrom.Text + "' and '" + txtTo.Text + "'";
-                }
-                else if (cbSearch.SelectedIndex == 5)
-                {
-                    query = "select * from Product where IDProductType LIKE '%" + txtID.Text + "%'";
-                }
-                else if (cbSearch.SelectedIndex == 6)
-                {
-                    query = "select * from Product where IDProvider LIKE '%" + txtID.Text + "%'";
-                }
-                else if (cbSearch.SelectedIndex == 7)
-                    query = "select * from Product where Status LIKE '%" + txtID.Text + "%'";
-                else
-                    query = "select * from Product where IDProductDetail LIKE '%" + txtID.Text + "%'";
                 
+               
             }
             ConnectSql(query, dgvProduct);
         }
@@ -169,29 +117,8 @@ namespace demo
         void AddProduct()
         {
             int SIZE = Product.Rows.Count;
-
-            //string ProviderName = "Select DISTINCT ProviderName from Provider";
-            //DataTable Name = new DataTable();
-            //Name = ConnectSQL.ExcuteQuery(ProviderName);
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            string IDProvider = Provider.Rows[0][0].ToString();
-            string query = "INSERT INTO Product (IDProduct, ProductName, Number, PriceIN, PriceOut, IDProductType, IDProvider, Status, IDProductDetail) VALUES('" + txtIDProduct.Text + "', '" + txtProductName.Text + "', '" + nudNumber.Value + "', '" + txtPriceIn.Text + "', '" + txtPriceOut.Text + "', '" + cbProductType.Text + "', '" + IDProvider + "', '" + cbStatus.SelectedIndex + "', '" + cbIDProductDetail.Text + "')";
+            
+            string query = "INSERT INTO Product (IDProduct, ProductName, Number, PriceIN, PriceOut, IDProductType, IDProvider, Status, IDProductDetail) VALUES('" + txtIDProduct.Text + "', '" + txtProductName.Text + "', '" + cbProductType.Text + "', '" + IDProvider + "', '" + cbStatus.SelectedIndex + "')";
             if (CheckID())
             {
                 MessageBox.Show("ID Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -258,7 +185,7 @@ namespace demo
             }
             else
             {
-                string query = "update Product set [ProductName] = '" + txtProductName.Text + "', [Number] = " + nudNumber.Value + ", [PriceIN] = " + txtPriceIn.Text + ", [PriceOut]= " + txtPriceOut.Text + ",[IDProductType]= '" + cbProductType.Text + "',[IDProvider]= '" + cbProvider.Text + "',[Status]= " + cbStatus.SelectedIndex + ",[IDProductDetail]= '" + cbIDProductDetail.Text + "' where[IDProduct] = '" + txtIDProduct.Text + "'";
+                string query = "update Product set [ProductName] = '" + txtProductName.Text + "',[IDProductType]= '" + cbProductType.Text + "',[IDProvider]= '" + cbProvider.Text + "',[Status]= " + cbStatus.SelectedIndex + ", where[IDProduct] = '" + txtIDProduct.Text + "'";
                 DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Sản Phẩm", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Question == DialogResult.Yes)
                 {
@@ -280,30 +207,20 @@ namespace demo
 
         }
         //Hiển thị vào textbox
-        void ShowInTextBox(int vt, DataTable ds)
+        void ShowInTextBox(int vt)
         {
-
-            txtIDProduct.Text = ds.Rows[vt][0].ToString();
-            txtProductName.Text = ds.Rows[vt][1].ToString();
-            nudNumber.Text = ds.Rows[vt][2].ToString();
-            txtPriceIn.Text = ds.Rows[vt][3].ToString();
-            txtPriceOut.Text = ds.Rows[vt][4].ToString();
-            cbProductType.Text = ds.Rows[vt][5].ToString();            
-            cbProvider.Text = ds.Rows[vt][6].ToString();
-            cbIDProductDetail.Text = ds.Rows[vt][8].ToString();
-            if ((ds.Rows[vt][7]).ToString() == "0")
-            {
-                cbStatus.SelectedIndex = 0;
-            }
-            else
+            DataTable TypeName1 = new DataTable();
+            txtIDProduct.Text = Product.Rows[vt][0].ToString();
+            txtProductName.Text = Product.Rows[vt][1].ToString();
+            cbProductType.Text = Product.Rows[vt][2].ToString();
+            TypeName1 = ConnectSQL.ExcuteQuery("Select ProductTypeName from ProductType where IDProductType LIKE N'"+Product.Rows[vt][3].ToString()+"'");
+            cbProvider.Text = TypeName1.Rows[0][0].ToString();
+            if (Convert.ToInt32(Product.Rows[vt][4]) == 1)
                 cbStatus.SelectedIndex = 1;
-            txtImageName.Text = ds.Rows[vt][9].ToString();
-            string filename = Path.GetFullPath("image") + @"\";
-            filename += txtImageName.Text;
-            Bitmap i = new Bitmap(filename);
-            pProduct.Image = i;
-            
-          
+            else
+                cbStatus.SelectedIndex = 0;
+           
+
         }
         //------------------------Sự Kiện------------------------//
         // Chỉ nhập số
@@ -336,7 +253,7 @@ namespace demo
             int vt = e.RowIndex;
             int SIZE = Product.Rows.Count;
             if (vt >= 0 && vt != SIZE)
-                ShowInTextBox(vt, Product);
+                ShowInTextBox(vt);
         }
         //Ẩn hiện panel search from to
         private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
@@ -345,17 +262,15 @@ namespace demo
             {
                 txtID.Text = "";
                 txtID.Enabled = false;
-                pValues.Visible = true;
-                txtFrom.Focus();
+                
             }
             else
             {
                 txtID.Text = "";
                 txtID.Enabled = true;
-                pValues.Visible = false;
+               
             }
-            txtFrom.Text = "";
-            txtTo.Text = "";
+        
             txtID.Focus();
         }
         //Ẩn Hiện Nút Thêm Xoá Sửa Khi Không Nhập ID
@@ -389,19 +304,7 @@ namespace demo
         //Nút nhập lại
         private void btnRefreshText_Click(object sender, EventArgs e)
         {
-            txtIDProduct.Text = "";
-            txtProductName.Text = "";
-            nudNumber.Value = 0;
-            txtPriceIn.Text = "";
-            txtPriceOut.Text = "";
-            cbIDProductDetail.Text = "";
-            cbProductType.Text = "";
-            cbProvider.Text = "";
-            cbStatus.Text = "";
-            txtID.Text = "";
-            txtTo.Text = "";
-            txtFrom.Text = "";
-            txtIDProduct.Focus();
+            
         }
         //Nút tìm sản phẩm
         private void btnSearchProduct_Click(object sender, EventArgs e)
@@ -417,37 +320,12 @@ namespace demo
         //Nút chỉnh sửa sản phẩm
         private void btnUpdateProduct_Click(object sender, EventArgs e)
         {
-            errorProduct.Clear();
-            if (CheckNull() == 0)
-                txtProductName.Focus();
-            else if (CheckNull() == 1)
-                nudNumber.Select();
-            else if (CheckNull() == 2)
-                txtPriceIn.Focus();
-            else if (CheckNull() == 3)
-                txtPriceOut.Focus();
-            else
-            {               
-                UpdateProduct();
-            }
+           
         }
         //Nút thêm sản phẩm
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            errorProduct.Clear();
-            if (CheckNull() == 0)
-                txtProductName.Focus();
-            else if (CheckNull() == 1)
-                nudNumber.Select();
-            else if (CheckNull() == 2)
-                txtPriceIn.Focus();
-            else if (CheckNull() == 3)
-                txtPriceOut.Focus();
-            else
-            {              
-                AddProduct();
-
-            }
+            
 
         }
         //Nút load lại sanh sách sản phẩm
@@ -466,21 +344,12 @@ namespace demo
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cbProductType_KeyPress(object sender, KeyPressEventArgs e)
         {
-            OpenFileDialog Image = new OpenFileDialog();
-            Image.InitialDirectory = Path.GetDirectoryName("Image");
-            if (Image.ShowDialog() == DialogResult.Cancel)
-            {
-                Image.ShowDialog();
-            }
-            Bitmap i = new Bitmap(Image.FileName);
-            pProduct.Image = i;
-            pProduct.SizeMode = PictureBoxSizeMode.StretchImage;
-            string[] Name;
-            Name = Image.FileName.Split('\\');
-            txtImageName.Text = Name[Name.Count() - 1];
+            if (char.IsLetterOrDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false && char.IsWhiteSpace(e.KeyChar) == false)
+                e.Handled = true;
         }
     }
 }
 
+    

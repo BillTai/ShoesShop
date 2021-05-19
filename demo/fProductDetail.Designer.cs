@@ -29,73 +29,243 @@ namespace demo
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cbIDProductDetail = new System.Windows.Forms.ComboBox();
+            this.nudNumber = new System.Windows.Forms.NumericUpDown();
+            this.txtImageName = new System.Windows.Forms.TextBox();
+            this.txtPriceOut = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pProduct = new System.Windows.Forms.PictureBox();
+            this.txtPriceIn = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.errorProduct = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.pButton = new System.Windows.Forms.Panel();
             this.pValues = new System.Windows.Forms.Panel();
             this.txtTo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtFrom = new System.Windows.Forms.TextBox();
             this.From = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvProductDetail = new System.Windows.Forms.DataGridView();
-            this.IDProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtIDProductDetail = new System.Windows.Forms.TextBox();
-            this.txtSize = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtColor = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.cbSearch = new System.Windows.Forms.ComboBox();
             this.btnReload = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnSearchProduct = new System.Windows.Forms.Button();
+            this.btnUpdateProduct = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3.SuspendLayout();
-            this.pValues.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductDetail)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.btnRefreshText = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.btnDeleteProduct = new System.Windows.Forms.Button();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.IDProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            this.pButton.SuspendLayout();
+            this.pValues.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtSearch
+            // button1
             // 
-            this.txtSearch.Location = new System.Drawing.Point(161, 25);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(157, 20);
-            this.txtSearch.TabIndex = 1;
+            this.button1.Location = new System.Drawing.Point(681, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 23);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "...";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // panel3
+            // cbIDProductDetail
             // 
-            this.panel3.Controls.Add(this.cbSearch);
-            this.panel3.Controls.Add(this.pValues);
-            this.panel3.Controls.Add(this.txtSearch);
-            this.panel3.Controls.Add(this.btnSearch);
-            this.panel3.Location = new System.Drawing.Point(7, 309);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(334, 165);
-            this.panel3.TabIndex = 4;
+            this.cbIDProductDetail.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIDProductDetail.FormattingEnabled = true;
+            this.cbIDProductDetail.Location = new System.Drawing.Point(128, 15);
+            this.cbIDProductDetail.Name = "cbIDProductDetail";
+            this.cbIDProductDetail.Size = new System.Drawing.Size(135, 21);
+            this.cbIDProductDetail.TabIndex = 8;
             // 
-            // cbSearch
+            // nudNumber
             // 
-            this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(16, 25);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(118, 21);
-            this.cbSearch.TabIndex = 37;
-            this.cbSearch.SelectedIndexChanged += new System.EventHandler(this.cbSearch_SelectedIndexChanged);
+            this.nudNumber.Location = new System.Drawing.Point(394, 83);
+            this.nudNumber.Name = "nudNumber";
+            this.nudNumber.Size = new System.Drawing.Size(84, 20);
+            this.nudNumber.TabIndex = 2;
+            // 
+            // txtImageName
+            // 
+            this.txtImageName.Location = new System.Drawing.Point(128, 88);
+            this.txtImageName.Name = "txtImageName";
+            this.txtImageName.Size = new System.Drawing.Size(136, 20);
+            this.txtImageName.TabIndex = 4;
+            // 
+            // txtPriceOut
+            // 
+            this.txtPriceOut.Location = new System.Drawing.Point(394, 51);
+            this.txtPriceOut.Name = "txtPriceOut";
+            this.txtPriceOut.Size = new System.Drawing.Size(84, 20);
+            this.txtPriceOut.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.pProduct);
+            this.panel1.Controls.Add(this.cbIDProductDetail);
+            this.panel1.Controls.Add(this.nudNumber);
+            this.panel1.Controls.Add(this.txtImageName);
+            this.panel1.Controls.Add(this.txtPriceOut);
+            this.panel1.Controls.Add(this.txtPriceIn);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.txtProductName);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(744, 175);
+            this.panel1.TabIndex = 10;
+            // 
+            // pProduct
+            // 
+            this.pProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pProduct.Location = new System.Drawing.Point(535, 12);
+            this.pProduct.Name = "pProduct";
+            this.pProduct.Size = new System.Drawing.Size(140, 147);
+            this.pProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pProduct.TabIndex = 28;
+            this.pProduct.TabStop = false;
+            // 
+            // txtPriceIn
+            // 
+            this.txtPriceIn.Location = new System.Drawing.Point(394, 19);
+            this.txtPriceIn.Name = "txtPriceIn";
+            this.txtPriceIn.Size = new System.Drawing.Size(84, 20);
+            this.txtPriceIn.TabIndex = 3;
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(129, 51);
+            this.txtProductName.MaxLength = 20;
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(135, 20);
+            this.txtProductName.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(20, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 23);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Mã Chi Tiết  Sản Phẩm:";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(289, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Giá Nhập:";
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(20, 91);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 23);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Tên Hình";
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(21, 51);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 23);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Tên Sản Phẩm:";
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(288, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 23);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Giá Xuất:";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(289, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Số Lượng:";
+            // 
+            // errorProduct
+            // 
+            this.errorProduct.ContainerControl = this;
+            // 
+            // dgvProduct
+            // 
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDProductDetail,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn3,
+            this.PriceOut,
+            this.Picture,
+            this.Mau,
+            this.Size});
+            this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvProduct.Location = new System.Drawing.Point(3, 16);
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
+            this.dgvProduct.RowHeadersVisible = false;
+            this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProduct.Size = new System.Drawing.Size(1111, 296);
+            this.dgvProduct.TabIndex = 0;
+            // 
+            // pButton
+            // 
+            this.pButton.Controls.Add(this.pValues);
+            this.pButton.Controls.Add(this.cbSearch);
+            this.pButton.Controls.Add(this.btnReload);
+            this.pButton.Controls.Add(this.btnSearchProduct);
+            this.pButton.Controls.Add(this.btnUpdateProduct);
+            this.pButton.Controls.Add(this.btnExit);
+            this.pButton.Controls.Add(this.btnRefreshText);
+            this.pButton.Controls.Add(this.btnAddProduct);
+            this.pButton.Controls.Add(this.btnDeleteProduct);
+            this.pButton.Controls.Add(this.txtID);
+            this.pButton.Location = new System.Drawing.Point(762, 12);
+            this.pButton.Name = "pButton";
+            this.pButton.Size = new System.Drawing.Size(322, 179);
+            this.pButton.TabIndex = 8;
             // 
             // pValues
             // 
@@ -103,10 +273,10 @@ namespace demo
             this.pValues.Controls.Add(this.label11);
             this.pValues.Controls.Add(this.txtFrom);
             this.pValues.Controls.Add(this.From);
-            this.pValues.Location = new System.Drawing.Point(16, 72);
+            this.pValues.Location = new System.Drawing.Point(21, 107);
             this.pValues.Name = "pValues";
-            this.pValues.Size = new System.Drawing.Size(302, 30);
-            this.pValues.TabIndex = 36;
+            this.pValues.Size = new System.Drawing.Size(291, 30);
+            this.pValues.TabIndex = 35;
             this.pValues.Visible = false;
             // 
             // txtTo
@@ -141,49 +311,127 @@ namespace demo
             this.From.TabIndex = 0;
             this.From.Text = "Từ:";
             // 
-            // btnSearch
+            // cbSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(73, 126);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(176, 23);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearch.FormattingEnabled = true;
+            this.cbSearch.Location = new System.Drawing.Point(21, 79);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.Size = new System.Drawing.Size(117, 21);
+            this.cbSearch.TabIndex = 6;
             // 
-            // panel2
+            // btnReload
             // 
-            this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Location = new System.Drawing.Point(355, 7);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(474, 492);
-            this.panel2.TabIndex = 3;
+            this.btnReload.Location = new System.Drawing.Point(127, 41);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(82, 23);
+            this.btnReload.TabIndex = 4;
+            this.btnReload.Text = "Tải Lại";
+            this.btnReload.UseVisualStyleBackColor = true;
+            // 
+            // btnSearchProduct
+            // 
+            this.btnSearchProduct.Location = new System.Drawing.Point(39, 143);
+            this.btnSearchProduct.Name = "btnSearchProduct";
+            this.btnSearchProduct.Size = new System.Drawing.Size(263, 23);
+            this.btnSearchProduct.TabIndex = 8;
+            this.btnSearchProduct.Text = "Tìm Kiếm";
+            this.btnSearchProduct.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateProduct
+            // 
+            this.btnUpdateProduct.Location = new System.Drawing.Point(220, 12);
+            this.btnUpdateProduct.Name = "btnUpdateProduct";
+            this.btnUpdateProduct.Size = new System.Drawing.Size(82, 23);
+            this.btnUpdateProduct.TabIndex = 3;
+            this.btnUpdateProduct.Text = "Cập Nhật";
+            this.btnUpdateProduct.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.ForeColor = System.Drawing.Color.Red;
+            this.btnExit.Location = new System.Drawing.Point(220, 41);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(82, 23);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            // 
+            // btnRefreshText
+            // 
+            this.btnRefreshText.Location = new System.Drawing.Point(37, 40);
+            this.btnRefreshText.Name = "btnRefreshText";
+            this.btnRefreshText.Size = new System.Drawing.Size(82, 23);
+            this.btnRefreshText.TabIndex = 1;
+            this.btnRefreshText.Text = "Nhập Lại";
+            this.btnRefreshText.UseVisualStyleBackColor = true;
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(37, 12);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(82, 23);
+            this.btnAddProduct.TabIndex = 0;
+            this.btnAddProduct.Text = "Thêm";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.Location = new System.Drawing.Point(127, 12);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(82, 23);
+            this.btnDeleteProduct.TabIndex = 2;
+            this.btnDeleteProduct.Text = "Xoá";
+            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(176, 79);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(136, 20);
+            this.txtID.TabIndex = 7;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvProductDetail);
-            this.groupBox1.Location = new System.Drawing.Point(4, 5);
+            this.groupBox1.Controls.Add(this.dgvProduct);
+            this.groupBox1.Location = new System.Drawing.Point(9, 193);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(459, 484);
-            this.groupBox1.TabIndex = 5;
+            this.groupBox1.Size = new System.Drawing.Size(1120, 315);
+            this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh Chi Tiết Sản Phẩm";
+            this.groupBox1.Text = "Danh sách sản phẩm";
             // 
-            // dgvProductDetail
+            // label4
             // 
-            this.dgvProductDetail.BackgroundColor = System.Drawing.Color.White;
-            this.dgvProductDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDProductDetail,
-            this.Size,
-            this.Color});
-            this.dgvProductDetail.GridColor = System.Drawing.Color.White;
-            this.dgvProductDetail.Location = new System.Drawing.Point(6, 16);
-            this.dgvProductDetail.Name = "dgvProductDetail";
-            this.dgvProductDetail.ReadOnly = true;
-            this.dgvProductDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductDetail.Size = new System.Drawing.Size(447, 458);
-            this.dgvProductDetail.TabIndex = 0;
-            this.dgvProductDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductDetail_CellClick);
+            this.label4.Location = new System.Drawing.Point(20, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 23);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Màu:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(128, 127);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(136, 21);
+            this.comboBox1.TabIndex = 30;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(286, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 23);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Kích Thước:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(394, 123);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(84, 21);
+            this.comboBox2.TabIndex = 30;
             // 
             // IDProductDetail
             // 
@@ -191,7 +439,48 @@ namespace demo
             this.IDProductDetail.HeaderText = "Mã Chi Tiết Sản Phẩm";
             this.IDProductDetail.Name = "IDProductDetail";
             this.IDProductDetail.ReadOnly = true;
-            this.IDProductDetail.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDProduct";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Sản Phẩm";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Number";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Số Lượng";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PriceIn";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Giá Nhập";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // PriceOut
+            // 
+            this.PriceOut.DataPropertyName = "PriceOut";
+            this.PriceOut.HeaderText = "Giá Xuất";
+            this.PriceOut.Name = "PriceOut";
+            this.PriceOut.ReadOnly = true;
+            // 
+            // Picture
+            // 
+            this.Picture.DataPropertyName = "Image";
+            this.Picture.HeaderText = "Hình Ảnh";
+            this.Picture.Name = "Picture";
+            this.Picture.ReadOnly = true;
+            // 
+            // Mau
+            // 
+            this.Mau.DataPropertyName = "Color";
+            this.Mau.HeaderText = "Màu";
+            this.Mau.Name = "Mau";
+            this.Mau.ReadOnly = true;
             // 
             // Size
             // 
@@ -199,207 +488,80 @@ namespace demo
             this.Size.HeaderText = "Kích Thước";
             this.Size.Name = "Size";
             this.Size.ReadOnly = true;
-            this.Size.Width = 140;
-            // 
-            // Color
-            // 
-            this.Color.DataPropertyName = "Color";
-            this.Color.HeaderText = "Màu Sắc";
-            this.Color.Name = "Color";
-            this.Color.ReadOnly = true;
-            // 
-            // txtIDProductDetail
-            // 
-            this.txtIDProductDetail.Location = new System.Drawing.Point(161, 13);
-            this.txtIDProductDetail.Name = "txtIDProductDetail";
-            this.txtIDProductDetail.Size = new System.Drawing.Size(144, 20);
-            this.txtIDProductDetail.TabIndex = 1;
-            // 
-            // txtSize
-            // 
-            this.txtSize.Location = new System.Drawing.Point(161, 53);
-            this.txtSize.Name = "txtSize";
-            this.txtSize.Size = new System.Drawing.Size(144, 20);
-            this.txtSize.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(13, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Kích Thước:";
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(14, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 23);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Mã Chi Tiết Sản Phẩm:";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.txtIDProductDetail);
-            this.panel5.Controls.Add(this.txtColor);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.txtSize);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(7, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(334, 132);
-            this.panel5.TabIndex = 1;
-            // 
-            // txtColor
-            // 
-            this.txtColor.Location = new System.Drawing.Point(162, 90);
-            this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(144, 20);
-            this.txtColor.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(14, 92);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 23);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Màu Sắc:";
-            // 
-            // btnReload
-            // 
-            this.btnReload.Location = new System.Drawing.Point(46, 120);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(118, 23);
-            this.btnReload.TabIndex = 4;
-            this.btnReload.Text = "Reload";
-            this.btnReload.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(180, 22);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(114, 23);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(46, 22);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(118, 23);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(180, 71);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(114, 23);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(180, 120);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(114, 23);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(46, 71);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(118, 23);
-            this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Updete";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btnReload);
-            this.panel6.Controls.Add(this.btnDelete);
-            this.panel6.Controls.Add(this.btnAdd);
-            this.panel6.Controls.Add(this.btnRefresh);
-            this.panel6.Controls.Add(this.btnExit);
-            this.panel6.Controls.Add(this.btnUpdate);
-            this.panel6.Location = new System.Drawing.Point(7, 141);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(334, 162);
-            this.panel6.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Location = new System.Drawing.Point(5, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 487);
-            this.panel1.TabIndex = 2;
             // 
             // fProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 511);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1221, 587);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pButton);
+            this.Controls.Add(this.groupBox1);
             this.Name = "fProductDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "fProductDetail";
             this.Load += new System.EventHandler(this.fProductDetail_Load);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            this.pButton.ResumeLayout(false);
+            this.pButton.PerformLayout();
             this.pValues.ResumeLayout(false);
             this.pValues.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductDetail)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtIDProductDetail;
-        private System.Windows.Forms.TextBox txtSize;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnReload;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbIDProductDetail;
+        private System.Windows.Forms.NumericUpDown nudNumber;
+        private System.Windows.Forms.TextBox txtImageName;
+        private System.Windows.Forms.TextBox txtPriceOut;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtColor;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvProductDetail;
-        private System.Windows.Forms.ComboBox cbSearch;
+        private System.Windows.Forms.PictureBox pProduct;
+        private System.Windows.Forms.TextBox txtPriceIn;
+        private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProduct;
+        private System.Windows.Forms.Panel pButton;
         private System.Windows.Forms.Panel pValues;
         private System.Windows.Forms.TextBox txtTo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtFrom;
         private System.Windows.Forms.Label From;
+        private System.Windows.Forms.ComboBox cbSearch;
+        private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.Button btnSearchProduct;
+        private System.Windows.Forms.Button btnUpdateProduct;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnRefreshText;
+        private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.Button btnDeleteProduct;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvProduct;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDProductDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Picture;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mau;
         private System.Windows.Forms.DataGridViewTextBoxColumn Size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
     }
 }

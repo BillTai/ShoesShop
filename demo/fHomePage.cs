@@ -19,7 +19,6 @@ namespace demo
             ShowProduct();
             ShowProductType();
             ShowProductDetail();
-            ShowProvider();
             ShowCustomer();
             ShowBill();
             ShowBillDetail();
@@ -68,11 +67,7 @@ namespace demo
             InputQuery(query, dgvProductDetail);
         }
         //Danh sách nhà cung cấp
-        void ShowProvider()
-        {
-            string query = "select * from Provider";
-            InputQuery(query, dgvProvider);
-        }
+      
         //Danh sách khách hàng
         void ShowCustomer()
         {
@@ -140,11 +135,7 @@ namespace demo
             this.Close();
         }
         //Nút quản lý nhà cung cấp
-        private void mtsProvider_Click(object sender, EventArgs e)
-        {
-            fProvider fProvi = new fProvider();
-            fProvi.ShowDialog();
-        }
+        
         //Nút thoát
         private void mstExit_Click_1(object sender, EventArgs e)
         {
