@@ -41,9 +41,7 @@ namespace demo
             this.gostoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mtsAddCustomer = new System.Windows.Forms.ToolStripMenuItem();
-            this.mtsProvider = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mtsAddProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.mtsEditProductType = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mtsEditStaff = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,64 +59,64 @@ namespace demo
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StaffName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StaffName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dgvBillDetail = new System.Windows.Forms.DataGridView();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dgvBill = new System.Windows.Forms.DataGridView();
-            this.TT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypeBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tStatistical = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgvProductDetail = new System.Windows.Forms.DataGridView();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tTypeProduct = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvProductType = new System.Windows.Forms.DataGridView();
-            this.ProductTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDProductType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tProduct = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDTypeProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDTypeProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tHome = new System.Windows.Forms.TabControl();
             this.menuStrip.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -212,8 +210,7 @@ namespace demo
             // quảnLýKháchHàngToolStripMenuItem
             // 
             this.quảnLýKháchHàngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mtsAddCustomer,
-            this.mtsProvider});
+            this.mtsAddCustomer});
             this.quảnLýKháchHàngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýKháchHàngToolStripMenuItem.Image")));
             this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
             this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(141, 20);
@@ -226,28 +223,14 @@ namespace demo
             this.mtsAddCustomer.Text = "Thêm mới và quản lý khách hàng";
             this.mtsAddCustomer.Click += new System.EventHandler(this.mtsAddCustomer_Click);
             // 
-            // mtsProvider
-            // 
-            this.mtsProvider.Name = "mtsProvider";
-            this.mtsProvider.Size = new System.Drawing.Size(250, 22);
-            this.mtsProvider.Text = "Thêm mới và quản lý NCC";
-            // 
             // quảnLýHàngToolStripMenuItem
             // 
             this.quảnLýHàngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mtsAddProduct,
             this.mtsEditProductType});
             this.quảnLýHàngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýHàngToolStripMenuItem.Image")));
             this.quảnLýHàngToolStripMenuItem.Name = "quảnLýHàngToolStripMenuItem";
             this.quảnLýHàngToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
             this.quảnLýHàngToolStripMenuItem.Text = "Quản lý hàng";
-            // 
-            // mtsAddProduct
-            // 
-            this.mtsAddProduct.Name = "mtsAddProduct";
-            this.mtsAddProduct.Size = new System.Drawing.Size(225, 22);
-            this.mtsAddProduct.Text = "Thêm và sửa đổi hàng";
-            this.mtsAddProduct.Click += new System.EventHandler(this.mstAddProduct_Click_1);
             // 
             // mtsEditProductType
             // 
@@ -400,40 +383,12 @@ namespace demo
             this.dgvStaff.Size = new System.Drawing.Size(1024, 526);
             this.dgvStaff.TabIndex = 14;
             // 
-            // dataGridViewTextBoxColumn9
+            // IDStaff
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Chức Vụ";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Address";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Địa Chỉ";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "PhoneNum";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Số Điện Thoại";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // Salary
-            // 
-            this.Salary.DataPropertyName = "Salary";
-            this.Salary.HeaderText = "Lương";
-            this.Salary.Name = "Salary";
-            this.Salary.ReadOnly = true;
+            this.IDStaff.DataPropertyName = "IDStaff";
+            this.IDStaff.HeaderText = "Mã Nhân Viên";
+            this.IDStaff.Name = "IDStaff";
+            this.IDStaff.ReadOnly = true;
             // 
             // StaffName
             // 
@@ -442,12 +397,40 @@ namespace demo
             this.StaffName.Name = "StaffName";
             this.StaffName.ReadOnly = true;
             // 
-            // IDStaff
+            // Salary
             // 
-            this.IDStaff.DataPropertyName = "IDStaff";
-            this.IDStaff.HeaderText = "Mã Nhân Viên";
-            this.IDStaff.Name = "IDStaff";
-            this.IDStaff.ReadOnly = true;
+            this.Salary.DataPropertyName = "Salary";
+            this.Salary.HeaderText = "Lương";
+            this.Salary.Name = "Salary";
+            this.Salary.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "PhoneNum";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Số Điện Thoại";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Address";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Địa Chỉ";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Chức Vụ";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // tabPage3
             // 
@@ -490,26 +473,12 @@ namespace demo
             this.dgvBillDetail.Size = new System.Drawing.Size(1024, 526);
             this.dgvBillDetail.TabIndex = 3;
             // 
-            // Discount
+            // IDB
             // 
-            this.Discount.DataPropertyName = "Discount";
-            this.Discount.HeaderText = "Giảm Giá";
-            this.Discount.Name = "Discount";
-            this.Discount.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Giá Bán";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            // 
-            // Number
-            // 
-            this.Number.DataPropertyName = "Number";
-            this.Number.HeaderText = "Số Lượng";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
+            this.IDB.DataPropertyName = "IDBill";
+            this.IDB.HeaderText = "Mã Hoá Đơn";
+            this.IDB.Name = "IDB";
+            this.IDB.ReadOnly = true;
             // 
             // IDPro
             // 
@@ -518,12 +487,26 @@ namespace demo
             this.IDPro.Name = "IDPro";
             this.IDPro.ReadOnly = true;
             // 
-            // IDB
+            // Number
             // 
-            this.IDB.DataPropertyName = "IDBill";
-            this.IDB.HeaderText = "Mã Hoá Đơn";
-            this.IDB.Name = "IDB";
-            this.IDB.ReadOnly = true;
+            this.Number.DataPropertyName = "Number";
+            this.Number.HeaderText = "Số Lượng";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Giá Bán";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // Discount
+            // 
+            this.Discount.DataPropertyName = "Discount";
+            this.Discount.HeaderText = "Giảm Giá";
+            this.Discount.Name = "Discount";
+            this.Discount.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -568,40 +551,12 @@ namespace demo
             this.dgvBill.Size = new System.Drawing.Size(1024, 526);
             this.dgvBill.TabIndex = 3;
             // 
-            // TT
+            // IDBill
             // 
-            this.TT.DataPropertyName = "Status";
-            this.TT.HeaderText = "Trạng Thái";
-            this.TT.Name = "TT";
-            this.TT.ReadOnly = true;
-            // 
-            // TypeBill
-            // 
-            this.TypeBill.DataPropertyName = "TypeBill";
-            this.TypeBill.HeaderText = "Loại Hoá Đơn";
-            this.TypeBill.Name = "TypeBill";
-            this.TypeBill.ReadOnly = true;
-            // 
-            // IDNV
-            // 
-            this.IDNV.DataPropertyName = "IDStaff";
-            this.IDNV.HeaderText = "Mã Nhân Viên";
-            this.IDNV.Name = "IDNV";
-            this.IDNV.ReadOnly = true;
-            // 
-            // IDCustomer
-            // 
-            this.IDCustomer.DataPropertyName = "IDCustomer";
-            this.IDCustomer.HeaderText = "Mã Khách Hàng";
-            this.IDCustomer.Name = "IDCustomer";
-            this.IDCustomer.ReadOnly = true;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Ngày Bán";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
+            this.IDBill.DataPropertyName = "IDBill";
+            this.IDBill.HeaderText = "Mã Hoá Đơn";
+            this.IDBill.Name = "IDBill";
+            this.IDBill.ReadOnly = true;
             // 
             // IDNCC
             // 
@@ -610,12 +565,40 @@ namespace demo
             this.IDNCC.Name = "IDNCC";
             this.IDNCC.ReadOnly = true;
             // 
-            // IDBill
+            // Date
             // 
-            this.IDBill.DataPropertyName = "IDBill";
-            this.IDBill.HeaderText = "Mã Hoá Đơn";
-            this.IDBill.Name = "IDBill";
-            this.IDBill.ReadOnly = true;
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Ngày Bán";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // IDCustomer
+            // 
+            this.IDCustomer.DataPropertyName = "IDCustomer";
+            this.IDCustomer.HeaderText = "Mã Khách Hàng";
+            this.IDCustomer.Name = "IDCustomer";
+            this.IDCustomer.ReadOnly = true;
+            // 
+            // IDNV
+            // 
+            this.IDNV.DataPropertyName = "IDStaff";
+            this.IDNV.HeaderText = "Mã Nhân Viên";
+            this.IDNV.Name = "IDNV";
+            this.IDNV.ReadOnly = true;
+            // 
+            // TypeBill
+            // 
+            this.TypeBill.DataPropertyName = "TypeBill";
+            this.TypeBill.HeaderText = "Loại Hoá Đơn";
+            this.TypeBill.Name = "TypeBill";
+            this.TypeBill.ReadOnly = true;
+            // 
+            // TT
+            // 
+            this.TT.DataPropertyName = "Status";
+            this.TT.HeaderText = "Trạng Thái";
+            this.TT.Name = "TT";
+            this.TT.ReadOnly = true;
             // 
             // tabPage1
             // 
@@ -662,33 +645,12 @@ namespace demo
             this.dgvCustomer.Size = new System.Drawing.Size(1024, 526);
             this.dgvCustomer.TabIndex = 14;
             // 
-            // Status
+            // PhoneNum
             // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Trạng Thái";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Địa Chỉ";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // IDCard
-            // 
-            this.IDCard.DataPropertyName = "IDCard";
-            this.IDCard.HeaderText = "Mã Thẻ";
-            this.IDCard.Name = "IDCard";
-            this.IDCard.ReadOnly = true;
+            this.PhoneNum.DataPropertyName = "PhoneNum";
+            this.PhoneNum.HeaderText = "Số Điện Thoại";
+            this.PhoneNum.Name = "PhoneNum";
+            this.PhoneNum.ReadOnly = true;
             // 
             // CustomerName
             // 
@@ -697,12 +659,33 @@ namespace demo
             this.CustomerName.Name = "CustomerName";
             this.CustomerName.ReadOnly = true;
             // 
-            // PhoneNum
+            // IDCard
             // 
-            this.PhoneNum.DataPropertyName = "PhoneNum";
-            this.PhoneNum.HeaderText = "Số Điện Thoại";
-            this.PhoneNum.Name = "PhoneNum";
-            this.PhoneNum.ReadOnly = true;
+            this.IDCard.DataPropertyName = "IDCard";
+            this.IDCard.HeaderText = "Mã Thẻ";
+            this.IDCard.Name = "IDCard";
+            this.IDCard.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Địa Chỉ";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Trạng Thái";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // tStatistical
             // 
@@ -749,47 +732,12 @@ namespace demo
             this.dgvProductDetail.Size = new System.Drawing.Size(1021, 526);
             this.dgvProductDetail.TabIndex = 1;
             // 
-            // Size
+            // IDProductDetail
             // 
-            this.Size.DataPropertyName = "Size";
-            this.Size.HeaderText = "Kích Thước";
-            this.Size.Name = "Size";
-            this.Size.ReadOnly = true;
-            // 
-            // Mau
-            // 
-            this.Mau.DataPropertyName = "Color";
-            this.Mau.HeaderText = "Màu";
-            this.Mau.Name = "Mau";
-            this.Mau.ReadOnly = true;
-            // 
-            // Picture
-            // 
-            this.Picture.DataPropertyName = "Image";
-            this.Picture.HeaderText = "Hình Ảnh";
-            this.Picture.Name = "Picture";
-            this.Picture.ReadOnly = true;
-            // 
-            // PriceOut
-            // 
-            this.PriceOut.DataPropertyName = "PriceOut";
-            this.PriceOut.HeaderText = "Giá Xuất";
-            this.PriceOut.Name = "PriceOut";
-            this.PriceOut.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "PriceIn";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Giá Nhập";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Number";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Số Lượng";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.IDProductDetail.DataPropertyName = "IDProductDetail";
+            this.IDProductDetail.HeaderText = "Mã Chi Tiết Sản Phẩm";
+            this.IDProductDetail.Name = "IDProductDetail";
+            this.IDProductDetail.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -798,12 +746,47 @@ namespace demo
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // IDProductDetail
+            // dataGridViewTextBoxColumn6
             // 
-            this.IDProductDetail.DataPropertyName = "IDProductDetail";
-            this.IDProductDetail.HeaderText = "Mã Chi Tiết Sản Phẩm";
-            this.IDProductDetail.Name = "IDProductDetail";
-            this.IDProductDetail.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Number";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Số Lượng";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "PriceIn";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Giá Nhập";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // PriceOut
+            // 
+            this.PriceOut.DataPropertyName = "PriceOut";
+            this.PriceOut.HeaderText = "Giá Xuất";
+            this.PriceOut.Name = "PriceOut";
+            this.PriceOut.ReadOnly = true;
+            // 
+            // Picture
+            // 
+            this.Picture.DataPropertyName = "Image";
+            this.Picture.HeaderText = "Hình Ảnh";
+            this.Picture.Name = "Picture";
+            this.Picture.ReadOnly = true;
+            // 
+            // Mau
+            // 
+            this.Mau.DataPropertyName = "Color";
+            this.Mau.HeaderText = "Màu";
+            this.Mau.Name = "Mau";
+            this.Mau.ReadOnly = true;
+            // 
+            // Size
+            // 
+            this.Size.DataPropertyName = "Size";
+            this.Size.HeaderText = "Kích Thước";
+            this.Size.Name = "Size";
+            this.Size.ReadOnly = true;
             // 
             // tTypeProduct
             // 
@@ -843,19 +826,19 @@ namespace demo
             this.dgvProductType.Size = new System.Drawing.Size(1024, 526);
             this.dgvProductType.TabIndex = 2;
             // 
-            // ProductTypeName
-            // 
-            this.ProductTypeName.DataPropertyName = "ProductTypeName";
-            this.ProductTypeName.HeaderText = "Tên Loại Sản Phẩm";
-            this.ProductTypeName.Name = "ProductTypeName";
-            this.ProductTypeName.ReadOnly = true;
-            // 
             // IDProductType
             // 
             this.IDProductType.DataPropertyName = "IDProductType";
             this.IDProductType.HeaderText = "Mã Loại Sản Phẩm";
             this.IDProductType.Name = "IDProductType";
             this.IDProductType.ReadOnly = true;
+            // 
+            // ProductTypeName
+            // 
+            this.ProductTypeName.DataPropertyName = "ProductTypeName";
+            this.ProductTypeName.HeaderText = "Tên Loại Sản Phẩm";
+            this.ProductTypeName.Name = "ProductTypeName";
+            this.ProductTypeName.ReadOnly = true;
             // 
             // tProduct
             // 
@@ -899,26 +882,12 @@ namespace demo
             this.dgvProduct.Size = new System.Drawing.Size(1024, 526);
             this.dgvProduct.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn7
+            // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Trang Thái";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // IDProvider
-            // 
-            this.IDProvider.DataPropertyName = "IDProvider";
-            this.IDProvider.HeaderText = "Mã Nhà Cung Cấp";
-            this.IDProvider.Name = "IDProvider";
-            this.IDProvider.ReadOnly = true;
-            // 
-            // IDTypeProduct
-            // 
-            this.IDTypeProduct.DataPropertyName = "IDProductType";
-            this.IDTypeProduct.HeaderText = "Mã Loại Sản Phẩm";
-            this.IDTypeProduct.Name = "IDTypeProduct";
-            this.IDTypeProduct.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDProduct";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Sản Phẩm";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -927,12 +896,26 @@ namespace demo
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // IDTypeProduct
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDProduct";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Sản Phẩm";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.IDTypeProduct.DataPropertyName = "IDProductType";
+            this.IDTypeProduct.HeaderText = "Mã Loại Sản Phẩm";
+            this.IDTypeProduct.Name = "IDTypeProduct";
+            this.IDTypeProduct.ReadOnly = true;
+            // 
+            // IDProvider
+            // 
+            this.IDProvider.DataPropertyName = "IDProvider";
+            this.IDProvider.HeaderText = "Mã Nhà Cung Cấp";
+            this.IDProvider.Name = "IDProvider";
+            this.IDProvider.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Trang Thái";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // tHome
             // 
@@ -1007,7 +990,6 @@ namespace demo
         private System.Windows.Forms.ToolStripMenuItem quảnLýKháchHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mtsAddCustomer;
         private System.Windows.Forms.ToolStripMenuItem quảnLýHàngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mtsAddProduct;
         private System.Windows.Forms.ToolStripMenuItem mtsEditProductType;
         private System.Windows.Forms.ToolStripMenuItem quảnLýTàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hàngTrongKhoToolStripMenuItem;
@@ -1020,7 +1002,6 @@ namespace demo
         private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mtsEditStaff;
         private System.Windows.Forms.ToolStripMenuItem mstExit;
-        private ToolStripMenuItem mtsProvider;
         private ToolStripMenuItem mtsLogOut;
         private ToolStripMenuItem thốngKêXuấtKhoToolStripMenuItem1;
         private TabPage tabPage4;
