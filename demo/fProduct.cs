@@ -32,12 +32,9 @@ namespace demo
 
         // Danh sách sản phẩm
         void ShowProduct()
-        {
-            
+        {            
             Product = ConnectSQL.ExcuteQuery("select * from Product");
-            dgvProduct.DataSource = Product;
-            
-
+            dgvProduct.DataSource = Product;         
         }
         void ShowProductDetail(int vt)
         {
@@ -48,6 +45,10 @@ namespace demo
         {
             pValues.Visible = false;
             foreach (DataGridViewColumn column in dgvProduct.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            foreach (DataGridViewColumn column in dgvProductDetail.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
@@ -68,22 +69,17 @@ namespace demo
                 cSize.Width = 38;
                 cSize.Height = 17;
                 flp1.Controls.Add(cSize);
-
             }
             for (int i = 0; i < ColorNum; i++)
             {
                 CheckBox cColor = new CheckBox();
                 cColor.Text = Color.Rows[i][1].ToString();
                 cColor.Name = "ckb" + cColor.Text;
-                cColor.Width = 60;
+                cColor.Width = 80;
                 cColor.Height = 17;
                 flp2.Controls.Add(cColor);
-
             }
-            ShowProduct();
-            
-
-           
+            ShowProduct();                   
             for (int i = 0; i < TypeName.Rows.Count; i++)
             {
                 cbProductType.Items.Add(TypeName.Rows[i][0]);
@@ -104,12 +100,8 @@ namespace demo
                 ShowInTextBox(0);
                 ShowProductDetail(0);
                 ShowDetailInTextBox(0);
-            }
-            
-
-        }
-     
-        
+            }           
+        }          
         void ShowInTextBox(int vt)
         {          
             DataTable TypeName = new DataTable();
@@ -127,47 +119,205 @@ namespace demo
         }
         void ShowDetailInTextBox(int vt)
         {
-            DataTable ColorName = new DataTable();
-            
-            txtIDProductDetail.Text = ProductDetail.Rows[vt][0].ToString();
-            ColorName = ConnectSQL.ExcuteQuery("Select ColorName from Color where IDColor = '" + ProductDetail.Rows[vt][2].ToString() + "'");
-            int SizeNum = Size.Rows.Count;
-            for (int i = 0; i < SizeNum; i++)
+            if (ProductDetail.Rows.Count > 0)
             {
-                CheckBox n = (CheckBox)flp1.Controls[i];
-               
-                if (n.Text != ProductDetail.Rows[vt][1].ToString())
+                DataTable ColorName = new DataTable();
+                txtIDProductDetail.Text = ProductDetail.Rows[vt][0].ToString();
+                ColorName = ConnectSQL.ExcuteQuery("Select ColorName from Color where IDColor = '" + ProductDetail.Rows[vt][2].ToString() + "'");
+                int SizeNum = Size.Rows.Count;
+                for (int i = 0; i < SizeNum; i++)
                 {
-                    n.Checked = false;
+                    CheckBox n = (CheckBox)flp1.Controls[i];
+
+                    if (n.Text != ProductDetail.Rows[vt][1].ToString())
+                    {
+                        n.Checked = false;
+                    }
+                    else
+                        n.Checked = true;
+
                 }
-                else 
-                    n.Checked = true;
-                
-            }
-            int ColorNum = Color.Rows.Count;
+                int ColorNum = Color.Rows.Count;
 
-            for (int i = 0; i < ColorNum; i++)
-            {
-                CheckBox n = (CheckBox)flp2.Controls[i];
-
-                if (n.Text != ColorName.Rows[0][0].ToString())
+                for (int i = 0; i < ColorNum; i++)
                 {
-                    n.Checked = false;
+                    CheckBox n = (CheckBox)flp2.Controls[i];
+
+                    if (n.Text != ColorName.Rows[0][0].ToString())
+                    {
+                        n.Checked = false;
+                    }
+                    else
+                        n.Checked = true;
+
+                }
+                txtImageName.Text = ProductDetail.Rows[vt][3].ToString();
+                string filename = @".\image" + @"\";
+                filename += txtImageName.Text;
+                Bitmap img = new Bitmap(filename);
+                pProduct.Image = img;
+                txtPriceIn.Text = ProductDetail.Rows[vt][4].ToString();
+                txtPriceOut.Text = ProductDetail.Rows[vt][5].ToString();
+                nudNumber.Value = Convert.ToInt32(ProductDetail.Rows[vt][6]);
+            }
+        }
+        bool CheckID()
+        {
+            int SIZE = Product.Rows.Count;
+            for (int i = 0; i < SIZE; i++)
+            {
+                if (txtIDProduct.Text == Product.Rows[i][0].ToString())
+                {
+                    return true;
+                    break;
+                }
+            }
+            return false;
+        }
+        int CheckNullProduct()
+        {
+            if (string.IsNullOrEmpty(txtIDProduct.Text))
+            {
+                errorProduct.SetError(txtIDProduct, "Nhập giá trị");
+                return 0;
+            }
+            else if (string.IsNullOrEmpty(txtProductName.Text))
+            {
+                errorProduct.SetError(txtProductName, "Nhập giá trị");
+                return 1;
+            }
+            return -1;
+        }
+        void Add()
+        {
+            try
+            {
+                DataTable IDType = new DataTable();
+                DataTable IDProvider = new DataTable();
+                IDType = ConnectSQL.ExcuteQuery("Select IDProductType from ProductType Where ProductTypeName = N'" + cbProductType.SelectedItem + "'");
+                string ProductType = IDType.Rows[0][0].ToString();
+                IDProvider = ConnectSQL.ExcuteQuery("Select PhoneNum from Customer Where CustomerName = N'" + cbProvider.SelectedItem + "'");
+                string ProductProvider = IDProvider.Rows[0][0].ToString();
+                int SIZE = Product.Rows.Count;
+                string query = "insert into Product([IDProduct],[ProductName],[IDProductType],[IDCustomer],[Status]) values('"+txtIDProduct.Text+ "', '" + txtProductName.Text + "', '"+ProductType+ "', '" + ProductProvider + "', '0')";
+                if (CheckNullProduct() == -1 && !CheckID())
+                {
+                    DialogResult Question = MessageBox.Show("Bạn Có Muốn Thêm Sản Phẩm", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Question == DialogResult.Yes)
+                    {
+                        ConnectSQL.ExcuteQuery(query);
+                    }
+                    ShowProduct();
+                    int SIZE2 = Product.Rows.Count;
+                    if (SIZE != SIZE2)
+                    {
+                        MessageBox.Show("Thêm Sản Phẩm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm Sản Phẩm Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    errorProduct.Clear();
+                }
+                else if (CheckNullProduct() == 0)
+                    txtIDProduct.Focus();
+                else if (CheckNullProduct() == 1)
+                    txtProductName.Focus();
+                else if (CheckID())
+                {
+                    MessageBox.Show("Sản phẩm đã tồn tại!", "Thông Báo");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại!", "Thông Báo");
+            }
+        }
+        void Delete()
+        {
+            try
+            {
+                if (!CheckID())
+                {
+                    MessageBox.Show("Kiểm tra lại mã sản phẩm", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtIDProduct.Focus();
+                    errorProduct.SetError(txtIDProduct, "Nhập lại giá trị");
                 }
                 else
-                    n.Checked = true;
+                {
+                    int SIZE = Product.Rows.Count;
+                    string query = "delete from ProductDetail where IDProduct = '" + txtIDProduct.Text + "'";
+                    string query1 = "delete from Product where IDProduct = '" + txtIDProduct.Text + "'";
+                    DialogResult Question = MessageBox.Show("Bạn Có Muốn Xoá Sản Phẩm", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Question == DialogResult.Yes)
+                    {
+                        ConnectSQL.ExcuteQuery(query);
+                        ConnectSQL.ExcuteQuery(query1);
+                        ShowProduct();
+                        int SIZE2 = Product.Rows.Count;
+                        if(SIZE2>0)
+                        {
+                            ShowProductDetail(0);
+                        }    
+                        if (SIZE != SIZE2)
 
+                            MessageBox.Show("Xoá Sản Phẩm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                            MessageBox.Show("Xoá Sản Phẩm Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        errorProduct.Clear();
+                    }
+                }
             }
-            txtImageName.Text = ProductDetail.Rows[vt][3].ToString();
-            string filename = @".\image" + @"\";
-            filename += txtImageName.Text;
-            Bitmap img = new Bitmap(filename);
-            pProduct.Image = img;
-            txtPriceIn.Text = ProductDetail.Rows[vt][4].ToString();
-            txtPriceOut.Text = ProductDetail.Rows[vt][5].ToString();
-            nudNumber.Value = Convert.ToInt32(ProductDetail.Rows[vt][6]);
+            catch
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại!", "Thông Báo");
+            }
         }
-       
+        void Update()
+        {
+            try
+            {
+                DataTable IDType = new DataTable();
+                DataTable IDProvider = new DataTable();
+                IDType = ConnectSQL.ExcuteQuery("Select IDProductType from ProductType Where ProductTypeName = N'" + cbProductType.SelectedItem + "'");
+                string ProductType = IDType.Rows[0][0].ToString();
+                IDProvider = ConnectSQL.ExcuteQuery("Select PhoneNum from Customer Where CustomerName = N'" + cbProvider.SelectedItem + "'");
+                string ProductProvider = IDProvider.Rows[0][0].ToString();
+                string query = "UPDATE Product SET ProductName = N'" + txtProductName.Text + "', IDProductType = '"+ProductType+ "',  IDCustomer = '" + ProductProvider + "',Status = '"+cbStatus.SelectedIndex+"'  WHERE IDProduct = '" + txtIDProduct.Text + "'";
+                if (CheckID() && CheckNullProduct() == -1 )
+                {
+                    DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Sản Phẩm", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Question == DialogResult.Yes)
+                    {
+                        ConnectSQL.ExcuteQuery(query);
+                        if (ConnectSQL.ExcuteNonQuery(query) > 0)
+                        {
+                            MessageBox.Show("Cập Nhật Sản Phẩm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cập Nhật Sản Phẩm Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        errorProduct.Clear();
+                    }
+                    ShowProduct();
+                }
+                else if (CheckNullProduct() == 0)
+                    txtIDProduct.Focus();
+                else if (CheckNullProduct() == 1)
+                    txtProductName.Focus();             
+                else if (!CheckID())
+                {
+                    MessageBox.Show("Kiểm tra lại mã sản phẩm", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtIDProduct.Focus();
+                    errorProduct.SetError(txtIDProduct, "Nhập lại giá trị");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
+            }
+        }
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int vt = e.RowIndex;
@@ -192,30 +342,27 @@ namespace demo
         {
             if (cbSearch.SelectedIndex > 1 && cbSearch.SelectedIndex < 5)
             {
-                txtID.Text = "";
-                txtID.Enabled = false;
+                txtSearch.Text = "";
+                txtSearch.Enabled = false;
                 
             }
             else
             {
-                txtID.Text = "";
-                txtID.Enabled = true;
+                txtSearch.Text = "";
+                txtSearch.Enabled = true;
                
             }
         
-            txtID.Focus();
+            txtSearch.Focus();
         }
-        //Ẩn Hiện Nút Thêm Xoá Sửa Khi Không Nhập ID
         private void txtIDProduct_TextChanged(object sender, EventArgs e)
         {
             
         }
-        //Tắt báo lỗi
         private void txtProductName_TextChanged(object sender, EventArgs e)
         {
             errorProduct.Clear();
         }
-        //Viết Hoa
         private void txtIDProduct_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
@@ -223,27 +370,6 @@ namespace demo
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void cbProductType_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetterOrDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false && char.IsWhiteSpace(e.KeyChar) == false)
-                e.Handled = true;
-        }
-
-        private void btnOpenFolder_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog Image = new OpenFileDialog();
-            Image.InitialDirectory = Path.GetDirectoryName(@"C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\bin\Debug\image");
-            if (Image.ShowDialog() == DialogResult.Cancel)
-            {
-                Image.ShowDialog();
-            }
-            Bitmap i = new Bitmap(Image.FileName);
-            pProduct.Image = i;
-            pProduct.SizeMode = PictureBoxSizeMode.StretchImage;
-            string[] Name;
-            Name = Image.FileName.Split('\\');
-            txtImageName.Text = Name[Name.Count() - 1];
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
@@ -255,40 +381,31 @@ namespace demo
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
                 e.Handled = true;
         }
-
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtFrom.Text = "";
             txtTo.Text = "";
-            txtID.Text = "";
+            txtSearch.Text = "";
             if (cbSearch.SelectedIndex == 6  || cbSearch.SelectedIndex == 9 || cbSearch.SelectedIndex == 10 || cbSearch.SelectedIndex == 11)
             {
                 pValues.Visible = true;
                 txtFrom.Focus();
-
             }
             else
             {
                 pValues.Visible = false;
-                txtID.Focus();
-                
-            }
-
-            
+                txtSearch.Focus();                
+            }          
         }
-
         private void txtIDProduct_TextChanged_1(object sender, EventArgs e)
         {
             
             
         }
-
         private void txtIDProduct_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
         }
-
-
         private void txtID_KeyUp(object sender, KeyEventArgs e)
         {
             //string query = "";
@@ -306,15 +423,55 @@ namespace demo
             //}
             //ConnectSql(query, dgvProduct);
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void pButton_Paint(object sender, PaintEventArgs e)
+        private void btnSize_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            fSize fSize = new fSize();
+            fSize.ShowDialog();
+            this.Close();
+        }
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fColor fColor = new fColor();
+            fColor.ShowDialog();
+            this.Close();
+        }
 
+        private void btnUpdateProduct_Click(object sender, EventArgs e)
+        {
+            errorProduct.Clear();
+            Update();
+        }
+
+        private void btnOpenFolder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog Image = new OpenFileDialog();
+                Image.InitialDirectory = Path.GetDirectoryName(@"C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\bin\Debug\image\");
+                if (Image.ShowDialog() == DialogResult.Yes)
+                {
+                    Image.ShowDialog();
+                }
+                if (Image.FileName != "")
+                {
+                    Bitmap i = new Bitmap(Image.FileName);
+                    pProduct.Image = i;
+                    pProduct.SizeMode = PictureBoxSizeMode.StretchImage;
+                    string[] Name;
+                    Name = Image.FileName.Split('\\');
+                    txtImageName.Text = Name[Name.Count() - 1];
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng chọn lại ảnh!", "Thông Báo");
+            }
         }
     }
 }

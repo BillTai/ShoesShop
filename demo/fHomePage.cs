@@ -142,5 +142,9 @@ namespace demo
             this.Close();
         }
 
+        private void càiĐặtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

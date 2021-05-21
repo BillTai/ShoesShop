@@ -287,17 +287,17 @@ namespace demo
                 if (Question == DialogResult.Yes)
                 {
                     ConnectSQL.ExcuteQuery(query);
+                    if (ConnectSQL.ExcuteNonQuery(query) > 0)
+                    {
+                        MessageBox.Show("Cập Nhật Khách Hàng Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập Nhật Khách Hàng Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 ShowCustomer();
 
-                if (ConnectSQL.ExcuteNonQuery(query) > 0)
-                {
-                    MessageBox.Show("Cập Nhật Khách Hàng Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Cập Nhật Khách Hàng Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
                 errorCustomer.Clear();
             }
 
@@ -399,7 +399,14 @@ namespace demo
         //Nút Tiềm Kiếm
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
-            SearchCustomer();
+            try
+            {
+                SearchCustomer();
+            }
+            catch
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
+            }
         }
         //Nút Thoát
         private void btnExit_Click(object sender, EventArgs e)
@@ -422,49 +429,73 @@ namespace demo
         //Nút Thêm
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            errorCustomer.Clear();
-            errorCustomer.Clear();
-            if (CheckNull() == 0)
-                txtPhoneNum.Focus();
-            else if (CheckNull() == 1)
-                txtCustomerName.Focus();
-            else if (CheckNull() == 2)
-                txtIDCard.Focus();
-            else if (CheckNull() == 3)
-                txtEmail.Focus();
-            else if (CheckNull() == 4)
-                txtAddress.Focus();
-            else
+            try
             {
-                 AddCustomer();                                 
-            }    
+
+                errorCustomer.Clear();
+                errorCustomer.Clear();
+                if (CheckNull() == 0)
+                    txtPhoneNum.Focus();
+                else if (CheckNull() == 1)
+                    txtCustomerName.Focus();
+                else if (CheckNull() == 2)
+                    txtIDCard.Focus();
+                else if (CheckNull() == 3)
+                    txtEmail.Focus();
+                else if (CheckNull() == 4)
+                    txtAddress.Focus();
+                else
+                {
+                    AddCustomer();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
+            }
         }
         //Nút Xoá
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
-            errorCustomer.Clear();            
-            DeleteCustomer();
+            try
+            {
+
+                errorCustomer.Clear();
+                DeleteCustomer();
+            }
+            catch
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
+            }
 
         }
         //Nút Cập Nhật
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
-            errorCustomer.Clear();
-            if (CheckNull() == 0)
-                txtPhoneNum.Focus();
-            else if (CheckNull() == 1)
-                txtCustomerName.Focus();
-            else if (CheckNull() == 2)
-                txtIDCard.Focus();
-            else if (CheckNull() == 3)
-                txtEmail.Focus();
-            else if (CheckNull() == 4)
-                txtAddress.Focus();
-            else
-            {               
-                UpdateCustomer();
-            }    
-               
+            try
+            {
+
+                errorCustomer.Clear();
+                if (CheckNull() == 0)
+                    txtPhoneNum.Focus();
+                else if (CheckNull() == 1)
+                    txtCustomerName.Focus();
+                else if (CheckNull() == 2)
+                    txtIDCard.Focus();
+                else if (CheckNull() == 3)
+                    txtEmail.Focus();
+                else if (CheckNull() == 4)
+                    txtAddress.Focus();
+                else
+                {
+                    UpdateCustomer();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
+            }
+
 
         }
 

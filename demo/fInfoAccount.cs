@@ -45,28 +45,36 @@ namespace demo
         //Nút cập nhật
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (CheckPassword() == 0)
+            try
             {
-                DialogResult Question = MessageBox.Show("Bạn Có Muốn Thêm Khách Hàng", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Question == DialogResult.Yes)
+
+                if (CheckPassword() == 0)
                 {
-                    SQLAccount.ExcuteQuery(" update Account set [Password] = '" + txtNewPassword.Text + "' where [IDStaff] = '" + txtIDAccount.Text + "'");
-                    MessageBox.Show("Cập nhật mật khẩu thành công!", "Thông báo");
+                    DialogResult Question = MessageBox.Show("Bạn Có Muốn Thêm Khách Hàng", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (Question == DialogResult.Yes)
+                    {
+                        SQLAccount.ExcuteQuery(" update Account set [Password] = '" + txtNewPassword.Text + "' where [IDStaff] = '" + txtIDAccount.Text + "'");
+                        MessageBox.Show("Cập nhật mật khẩu thành công!", "Thông báo");
+                    }
+                }
+                else if (CheckPassword() == 1)
+                {
+                    MessageBox.Show("Mật Khẩu Cũ Không Đúng!", "Thông báo");
+                    errorInfoAccount.SetError(txtPassword, "Kiểm tra lại");
+                    txtPassword.Focus();
+                }
+
+                else if (CheckPassword() == 2)
+                {
+                    MessageBox.Show("Kiểm Tra Lại Mật Khẩu Mới", "Thông báo");
+                    errorInfoAccount.SetError(txtReNewPassword, "Kiểm tra lại");
+                    txtReNewPassword.Focus();
                 }
             }
-            else if (CheckPassword() == 1)
+            catch
             {
-                MessageBox.Show("Mật Khẩu Cũ Không Đúng!", "Thông báo");
-                errorInfoAccount.SetError(txtPassword, "Kiểm tra lại");
-                txtPassword.Focus();
-            }    
-
-            else if (CheckPassword() == 2)
-            {
-                MessageBox.Show("Kiểm Tra Lại Mật Khẩu Mới", "Thông báo");
-                errorInfoAccount.SetError(txtReNewPassword, "Kiểm tra lại");
-                txtReNewPassword.Focus();
-            }    
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
+            }
         }
         //------------------------Sự kiện------------------------//
         //Lỗi khi nhập xác nhận mật khẩu không giống

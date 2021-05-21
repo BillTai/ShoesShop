@@ -47,8 +47,6 @@ C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\ShoesShop.csprojAssemb
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\Interop.WMPLib.dll
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\ShoesShop.csproj.ResolveComReference.cache
-C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fBill.resources
-C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fBillDetail.resources
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fColor.resources
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fCustomer.resources
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fProduct.resources
@@ -57,7 +55,6 @@ C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fHomePage.resourc
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fInfoAccount.resources
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fLoading.resources
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fLogin.resources
-C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fProductDetail.resources
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fRegister.resources
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fSize.resources
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fStaff.resources

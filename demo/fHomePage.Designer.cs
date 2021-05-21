@@ -322,11 +322,12 @@ namespace demo
             this.càiĐặtToolStripMenuItem.Name = "càiĐặtToolStripMenuItem";
             this.càiĐặtToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.càiĐặtToolStripMenuItem.Text = "Cài đặt";
+            this.càiĐặtToolStripMenuItem.Click += new System.EventHandler(this.càiĐặtToolStripMenuItem_Click);
             // 
             // mtsLogOut
             // 
             this.mtsLogOut.Name = "mtsLogOut";
-            this.mtsLogOut.Size = new System.Drawing.Size(129, 22);
+            this.mtsLogOut.Size = new System.Drawing.Size(180, 22);
             this.mtsLogOut.Text = "Đăng Xuất";
             this.mtsLogOut.Click += new System.EventHandler(this.mtsLogOut_Click);
             // 

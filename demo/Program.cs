@@ -56,10 +56,11 @@ namespace demo
 
             Application.Run(new fProduct());
             //Application.Run(new fCustomer());
+            //Application.Run(new fSize());
             //Application.Run(new fColor());
             //Application.Run(new fStaff());
             //Application.Run(new fProvider());
-            //Application.Run(new fEditProductType());
+            //Application.Run(new fProductType());
             //Application.Run(new fProductDetail());
         }
 

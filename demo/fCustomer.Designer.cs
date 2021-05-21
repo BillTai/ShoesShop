@@ -30,6 +30,7 @@ namespace demo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCustomer));
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerdetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +55,7 @@ namespace demo
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pButton = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.cbSearch = new System.Windows.Forms.ComboBox();
             this.btnReload = new System.Windows.Forms.Button();
@@ -87,9 +89,10 @@ namespace demo
             this.dgvCustomer.Location = new System.Drawing.Point(13, 24);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.ReadOnly = true;
+            this.dgvCustomer.RowHeadersVisible = false;
             this.dgvCustomer.RowHeadersWidth = 40;
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomer.Size = new System.Drawing.Size(916, 242);
+            this.dgvCustomer.Size = new System.Drawing.Size(905, 242);
             this.dgvCustomer.TabIndex = 13;
             this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellClick);
             // 
@@ -166,7 +169,7 @@ namespace demo
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 205);
+            this.panel1.Size = new System.Drawing.Size(564, 205);
             this.panel1.TabIndex = 12;
             // 
             // cbcustomertype
@@ -291,6 +294,7 @@ namespace demo
             // 
             // pButton
             // 
+            this.pButton.Controls.Add(this.guna2Button1);
             this.pButton.Controls.Add(this.btnExit);
             this.pButton.Controls.Add(this.cbSearch);
             this.pButton.Controls.Add(this.btnReload);
@@ -302,8 +306,28 @@ namespace demo
             this.pButton.Controls.Add(this.txtSearch);
             this.pButton.Location = new System.Drawing.Point(610, 12);
             this.pButton.Name = "pButton";
-            this.pButton.Size = new System.Drawing.Size(323, 176);
+            this.pButton.Size = new System.Drawing.Size(323, 205);
             this.pButton.TabIndex = 11;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(54)))), ((int)(((byte)(128)))));
+            this.guna2Button1.BorderRadius = 9;
+            this.guna2Button1.BorderThickness = 3;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.HoverState.BorderColor = System.Drawing.SystemColors.Control;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.Red;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.Location = new System.Drawing.Point(275, 3);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(45, 37);
+            this.guna2Button1.TabIndex = 11;
             // 
             // btnExit
             // 
@@ -315,7 +339,7 @@ namespace demo
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(201, 42);
+            this.btnExit.Location = new System.Drawing.Point(189, 42);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
             this.btnExit.Size = new System.Drawing.Size(102, 31);
@@ -355,7 +379,7 @@ namespace demo
             // 
             // btnUpdateCustomer
             // 
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(201, 11);
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(189, 11);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
             this.btnUpdateCustomer.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateCustomer.TabIndex = 2;
@@ -406,7 +430,7 @@ namespace demo
             this.groupBox1.Controls.Add(this.dgvCustomer);
             this.groupBox1.Location = new System.Drawing.Point(12, 223);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(935, 237);
+            this.groupBox1.Size = new System.Drawing.Size(921, 237);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Khách Hàng";
@@ -419,7 +443,7 @@ namespace demo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 481);
+            this.ClientSize = new System.Drawing.Size(942, 481);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pButton);
@@ -476,5 +500,6 @@ namespace demo
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private Guna.UI2.WinForms.Guna2Button btnExit;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
