@@ -35,7 +35,6 @@ namespace demo
             this.panel6 = new System.Windows.Forms.Panel();
             this.cbSearch = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -72,7 +71,6 @@ namespace demo
             // 
             this.panel6.Controls.Add(this.cbSearch);
             this.panel6.Controls.Add(this.txtSearch);
-            this.panel6.Controls.Add(this.btnUpdate);
             this.panel6.Controls.Add(this.btnDelete);
             this.panel6.Controls.Add(this.btnAdd);
             this.panel6.Location = new System.Drawing.Point(3, 120);
@@ -83,6 +81,7 @@ namespace demo
             // cbSearch
             // 
             this.cbSearch.BackColor = System.Drawing.Color.Transparent;
+            this.cbSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.cbSearch.BorderRadius = 9;
             this.cbSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -94,7 +93,7 @@ namespace demo
             this.cbSearch.HoverState.Parent = this.cbSearch;
             this.cbSearch.ItemHeight = 30;
             this.cbSearch.ItemsAppearance.Parent = this.cbSearch;
-            this.cbSearch.Location = new System.Drawing.Point(43, 67);
+            this.cbSearch.Location = new System.Drawing.Point(43, 75);
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.ShadowDecoration.Parent = this.cbSearch;
             this.cbSearch.Size = new System.Drawing.Size(180, 36);
@@ -128,23 +127,6 @@ namespace demo
             this.txtSearch.TabIndex = 38;
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BorderRadius = 15;
-            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
-            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
-            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(172, 12);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(77, 31);
-            this.btnUpdate.TabIndex = 5;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.BorderRadius = 15;
@@ -154,10 +136,10 @@ namespace demo
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(89, 12);
+            this.btnDelete.Location = new System.Drawing.Point(157, 12);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
-            this.btnDelete.Size = new System.Drawing.Size(77, 31);
+            this.btnDelete.Size = new System.Drawing.Size(92, 31);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Xoá";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -171,10 +153,10 @@ namespace demo
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(6, 12);
+            this.btnAdd.Location = new System.Drawing.Point(22, 12);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(77, 31);
+            this.btnAdd.Size = new System.Drawing.Size(92, 31);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -201,6 +183,7 @@ namespace demo
             this.txtIDColor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtIDColor.DisabledState.Parent = this.txtIDColor;
             this.txtIDColor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIDColor.Enabled = false;
             this.txtIDColor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIDColor.FocusedState.Parent = this.txtIDColor;
             this.txtIDColor.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -246,6 +229,7 @@ namespace demo
             this.txtColorName.Size = new System.Drawing.Size(144, 27);
             this.txtColorName.TabIndex = 13;
             this.txtColorName.TextChanged += new System.EventHandler(this.txtIDColor_TextChanged);
+            this.txtColorName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtColorName_KeyUp);
             // 
             // label5
             // 
@@ -257,7 +241,7 @@ namespace demo
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(14, 32);
+            this.label4.Location = new System.Drawing.Point(14, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 23);
             this.label4.TabIndex = 0;
@@ -373,7 +357,6 @@ namespace demo
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
-        private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2TextBox txtIDColor;
         private Guna.UI2.WinForms.Guna2TextBox txtColorName;
         private Guna.UI2.WinForms.Guna2Button btnExit;

@@ -48,11 +48,6 @@ namespace demo
             this.txtIDProduct = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDTypeProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbProvider = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -66,13 +61,6 @@ namespace demo
             this.errorProduct = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvProductDetail = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAddProduct = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteProduct = new Guna.UI2.WinForms.Guna2Button();
@@ -96,6 +84,20 @@ namespace demo
             this.nudNumber = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.pProduct = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnColor = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.errorProductDetail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDTypeProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pButton.SuspendLayout();
             this.pValues.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -108,6 +110,7 @@ namespace demo
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProductDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // pButton
@@ -141,6 +144,7 @@ namespace demo
             this.btnAddProductDetail.Size = new System.Drawing.Size(97, 36);
             this.btnAddProductDetail.TabIndex = 10;
             this.btnAddProductDetail.Text = "Thêm";
+            this.btnAddProductDetail.Click += new System.EventHandler(this.btnAddProductDetail_Click);
             // 
             // btnDeleteProductDetail
             // 
@@ -321,7 +325,7 @@ namespace demo
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
             this.btnExit.Size = new System.Drawing.Size(45, 37);
             this.btnExit.TabIndex = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // txtSearch
             // 
@@ -366,7 +370,6 @@ namespace demo
             this.btnSearch.Size = new System.Drawing.Size(86, 27);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Tìm Kiếm";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtIDProduct
             // 
@@ -393,7 +396,6 @@ namespace demo
             this.txtIDProduct.ShadowDecoration.Parent = this.txtIDProduct;
             this.txtIDProduct.Size = new System.Drawing.Size(145, 29);
             this.txtIDProduct.TabIndex = 11;
-            this.txtIDProduct.TextChanged += new System.EventHandler(this.txtIDProduct_TextChanged_1);
             this.txtIDProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDProduct_KeyPress_1);
             // 
             // groupBox1
@@ -426,41 +428,6 @@ namespace demo
             this.dgvProduct.Size = new System.Drawing.Size(443, 316);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDProduct";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Sản Phẩm";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ProductName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Sản Phẩm";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // IDTypeProduct
-            // 
-            this.IDTypeProduct.DataPropertyName = "IDProductType";
-            this.IDTypeProduct.HeaderText = "Mã Loại Sản Phẩm";
-            this.IDTypeProduct.Name = "IDTypeProduct";
-            this.IDTypeProduct.ReadOnly = true;
-            // 
-            // IDProvider
-            // 
-            this.IDProvider.DataPropertyName = "IDCustomer";
-            this.IDProvider.HeaderText = "Mã Nhà Cung Cấp";
-            this.IDProvider.Name = "IDProvider";
-            this.IDProvider.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Trang Thái";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // panel1
             // 
@@ -642,7 +609,8 @@ namespace demo
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15});
+            this.dataGridViewTextBoxColumn15,
+            this.Column1});
             this.dgvProductDetail.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvProductDetail.Location = new System.Drawing.Point(3, 16);
             this.dgvProductDetail.Name = "dgvProductDetail";
@@ -652,55 +620,6 @@ namespace demo
             this.dgvProductDetail.Size = new System.Drawing.Size(867, 316);
             this.dgvProductDetail.TabIndex = 0;
             this.dgvProductDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductDetail_CellClick);
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "IDProductDetail";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Mã Chi Tiết Sản Phẩm";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Size";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Kích Thước";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Color";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Màu Sắc";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "image";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Hình Ảnh";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "PriceIn";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Giá Nhập";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "PriceOut";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Giá Xuất";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Number";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Số Lượng";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
             // 
             // panel3
             // 
@@ -727,6 +646,7 @@ namespace demo
             this.btnAddProduct.Size = new System.Drawing.Size(90, 36);
             this.btnAddProduct.TabIndex = 10;
             this.btnAddProduct.Text = "Thêm";
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // btnDeleteProduct
             // 
@@ -743,6 +663,7 @@ namespace demo
             this.btnDeleteProduct.Size = new System.Drawing.Size(90, 36);
             this.btnDeleteProduct.TabIndex = 10;
             this.btnDeleteProduct.Text = "Xoá";
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
             // btnUpdateProduct
             // 
@@ -919,7 +840,6 @@ namespace demo
             this.txtImageName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtImageName.DisabledState.Parent = this.txtImageName;
             this.txtImageName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtImageName.Enabled = false;
             this.txtImageName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtImageName.FocusedState.Parent = this.txtImageName;
             this.txtImageName.Font = new System.Drawing.Font("Tahoma", 9F);
@@ -1078,6 +998,102 @@ namespace demo
             this.btnColor.TabIndex = 36;
             this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
+            // errorProductDetail
+            // 
+            this.errorProductDetail.ContainerControl = this;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "IDProductDetail";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Mã Chi Tiết Sản Phẩm";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Size";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Kích Thước";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Color";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Màu Sắc";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "image";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Hình Ảnh";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "PriceIn";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Giá Nhập";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "PriceOut";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Giá Xuất";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Number";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Số Lượng";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "IDProduct";
+            this.Column1.HeaderText = "Mã Sản Phẩm";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDProduct";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Sản Phẩm";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Sản Phẩm";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // IDTypeProduct
+            // 
+            this.IDTypeProduct.DataPropertyName = "IDProductType";
+            this.IDTypeProduct.HeaderText = "Mã Loại Sản Phẩm";
+            this.IDTypeProduct.Name = "IDTypeProduct";
+            this.IDTypeProduct.ReadOnly = true;
+            // 
+            // IDProvider
+            // 
+            this.IDProvider.DataPropertyName = "IDCustomer";
+            this.IDProvider.HeaderText = "Mã Nhà Cung Cấp";
+            this.IDProvider.Name = "IDProvider";
+            this.IDProvider.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Trang Thái";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
             // fProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1109,6 +1125,7 @@ namespace demo
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProductDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1136,20 +1153,8 @@ namespace demo
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2TextBox txtTo;
         private Guna.UI2.WinForms.Guna2TextBox txtFrom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDTypeProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDProvider;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvProductDetail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private Guna.UI2.WinForms.Guna2Button btnAddProductDetail;
         private Guna.UI2.WinForms.Guna2Button btnDeleteProductDetail;
         private Guna.UI2.WinForms.Guna2Button btnUpdateProductDetail;
@@ -1180,5 +1185,19 @@ namespace demo
         private Guna.UI2.WinForms.Guna2PictureBox pProduct;
         private Guna.UI2.WinForms.Guna2NumericUpDown nudNumber;
         private Guna.UI2.WinForms.Guna2Button btnOpenFolder;
+        private System.Windows.Forms.ErrorProvider errorProductDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDTypeProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDProvider;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

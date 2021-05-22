@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DarrenLee.Translator;
 namespace demo
 {
     public partial class fColor : Form
@@ -83,21 +82,6 @@ namespace demo
             }
             return false;
         }
-        bool CheckIDUpdate()
-        {
-            DataTable ProductDetail = new DataTable();
-            ProductDetail = ConnectSQL.ExcuteQuery("Select * from ProductDetail");
-            int SIZE = ProductDetail.Rows.Count;
-            for (int i = 0; i < SIZE; i++)
-            {
-                if (txtIDColor.Text == ProductDetail.Rows[i][2].ToString())
-                {
-                    return true;
-                    break;
-                }
-            }
-            return false;
-        }
         //Kiểm Tra Không Nhập Dữ Liệu
         int CheckNull()
         {
@@ -148,6 +132,7 @@ namespace demo
                     {
                         ConnectSQL.ExcuteQuery(query);
                         ShowColor();
+                        ShowInTextBox(0);
                         int SIZE2 = Colors.Rows.Count;
                         if (SIZE != SIZE2)
                         {
@@ -196,6 +181,7 @@ namespace demo
                     {
                         ConnectSQL.ExcuteQuery(query);
                         ShowColor();
+                        ShowInTextBox(0);
                         int SIZE2 = Colors.Rows.Count;
                         if (SIZE != SIZE2)
 
@@ -213,49 +199,7 @@ namespace demo
             }
 
         }
-        void Update()
-        {
-            try
-            {
-
-                string query = "UPDATE color SET ColorName = N'" + txtColorName.Text + "' WHERE IDColor = '" + txtIDColor.Text + "'";
-                if(CheckIDUpdate())
-                {
-                    MessageBox.Show("Còn sản phẩm màu này!", "Thông Báo");
-                }    
-                else if (CheckIDDel() && CheckNull() == -1 && !CheckIDUpdate())
-                {
-                    DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Màu", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (Question == DialogResult.Yes)
-                    {
-                        ConnectSQL.ExcuteQuery(query);
-                        if (ConnectSQL.ExcuteNonQuery(query) > 0)
-                        {
-                            MessageBox.Show("Cập Nhật Màu Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Cập Nhật Màu Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        errorColor.Clear();
-                    }
-                    ShowColor();
-                }
-                else if (CheckNull() == 0)
-                    txtIDColor.Focus();
-                else if (CheckNull() == 1)
-                    txtColorName.Focus();
-                else if (!CheckIDDel())
-                {
-                    MessageBox.Show("Kiểm tra lại mã màu", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtIDColor.Focus();
-                    errorColor.SetError(txtIDColor, "Nhập lại giá trị");
-                }
-            }catch
-            {
-                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
-            }
-        }
+    
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -295,6 +239,12 @@ namespace demo
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
             Search();
+        }
+
+        private void txtColorName_KeyUp(object sender, KeyEventArgs e)
+        {
+            ChangeFromColorNameToHex ColorChange = new ChangeFromColorNameToHex();
+            txtIDColor.Text = ColorChange.Change(txtColorName.Text);
         }
     }
 }

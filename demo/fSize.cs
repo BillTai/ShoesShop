@@ -161,6 +161,7 @@ namespace demo
                     {
                         ConnectSQL.ExcuteQuery(query);
                         ShowSize();
+                        ShowInTextBox(0);
                         int SIZE2 = SizePro.Rows.Count;
                         if (SIZE != SIZE2)
                         {
@@ -211,6 +212,7 @@ namespace demo
                     {
                         ConnectSQL.ExcuteQuery(query);
                         ShowSize();
+                        ShowInTextBox(0);
                         int SIZE2 = SizePro.Rows.Count;
                         if (SIZE != SIZE2)
 
@@ -231,7 +233,7 @@ namespace demo
             try
             {
 
-                string query = "UPDATE Size SET Width = '" + txtWidth.Text + "', Height = '" + txtHeight.Text + "'  WHERE IDColor = '" + txtSize.Text + "'";
+                string query = "UPDATE Size SET Width = '" + txtWidth.Text + "', Height = '" + txtHeight.Text + "'  WHERE IDSize = '" + txtSize.Text + "'";
                 if (CheckIDUpdate())
                 {
                     MessageBox.Show("Còn sản phẩm kích thước này!", "Thông Báo");
@@ -242,6 +244,8 @@ namespace demo
                     if (Question == DialogResult.Yes)
                     {
                         ConnectSQL.ExcuteQuery(query);
+                        ShowSize();
+                        ShowInTextBox(0);
                         if (ConnectSQL.ExcuteNonQuery(query) > 0)
                         {
                             MessageBox.Show("Cập Nhật Kích Thước Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -252,7 +256,6 @@ namespace demo
                         }
                         errorSize.Clear();
                     }
-                    ShowSize();
                 }
                 else if (CheckNull() == 0)
                     txtSize.Focus();

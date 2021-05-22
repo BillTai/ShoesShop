@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeFromColorNameToHex.cs" />
     <Compile Include="Connect.cs" />
     <Compile Include="Connected Services\TranslateService\Reference.cs">
       <AutoGen>True</AutoGen>
