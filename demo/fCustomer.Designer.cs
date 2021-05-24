@@ -55,16 +55,13 @@ namespace demo
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pButton = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.cbSearch = new System.Windows.Forms.ComboBox();
-            this.btnReload = new System.Windows.Forms.Button();
-            this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.btnRefreshText = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorCustomer = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -76,6 +73,7 @@ namespace demo
             // 
             // dgvCustomer
             // 
+            this.dgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomer.BackgroundColor = System.Drawing.Color.White;
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -92,7 +90,7 @@ namespace demo
             this.dgvCustomer.RowHeadersVisible = false;
             this.dgvCustomer.RowHeadersWidth = 40;
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomer.Size = new System.Drawing.Size(905, 242);
+            this.dgvCustomer.Size = new System.Drawing.Size(856, 222);
             this.dgvCustomer.TabIndex = 13;
             this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellClick);
             // 
@@ -102,7 +100,6 @@ namespace demo
             this.PhoneNum.HeaderText = "Số Điện Thoại";
             this.PhoneNum.Name = "PhoneNum";
             this.PhoneNum.ReadOnly = true;
-            this.PhoneNum.Width = 120;
             // 
             // customerdetail
             // 
@@ -117,7 +114,6 @@ namespace demo
             this.CustomerName.HeaderText = "Tên Khách Hàng";
             this.CustomerName.Name = "CustomerName";
             this.CustomerName.ReadOnly = true;
-            this.CustomerName.Width = 150;
             // 
             // IDCard
             // 
@@ -125,7 +121,6 @@ namespace demo
             this.IDCard.HeaderText = "Mã Thẻ";
             this.IDCard.Name = "IDCard";
             this.IDCard.ReadOnly = true;
-            this.IDCard.Width = 150;
             // 
             // Email
             // 
@@ -133,7 +128,6 @@ namespace demo
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
-            this.Email.Width = 160;
             // 
             // Address
             // 
@@ -141,7 +135,6 @@ namespace demo
             this.Address.HeaderText = "Địa Chỉ";
             this.Address.Name = "Address";
             this.Address.ReadOnly = true;
-            this.Address.Width = 120;
             // 
             // Status
             // 
@@ -149,7 +142,6 @@ namespace demo
             this.Status.HeaderText = "Trạng Thái";
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
-            this.Status.Width = 85;
             // 
             // panel1
             // 
@@ -187,7 +179,6 @@ namespace demo
             this.txtPhoneNum.Name = "txtPhoneNum";
             this.txtPhoneNum.Size = new System.Drawing.Size(138, 20);
             this.txtPhoneNum.TabIndex = 0;
-            this.txtPhoneNum.TextChanged += new System.EventHandler(this.txtPhoneNum_TextChanged);
             this.txtPhoneNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNum_KeyPress);
             // 
             // txtAddress
@@ -294,92 +285,80 @@ namespace demo
             // 
             // pButton
             // 
-            this.pButton.Controls.Add(this.guna2Button1);
+            this.pButton.Controls.Add(this.txtSearch);
             this.pButton.Controls.Add(this.btnExit);
             this.pButton.Controls.Add(this.cbSearch);
-            this.pButton.Controls.Add(this.btnReload);
-            this.pButton.Controls.Add(this.btnSearchCustomer);
             this.pButton.Controls.Add(this.btnUpdateCustomer);
             this.pButton.Controls.Add(this.btnRefreshText);
             this.pButton.Controls.Add(this.btnAddCustomer);
             this.pButton.Controls.Add(this.btnDeleteCustomer);
-            this.pButton.Controls.Add(this.txtSearch);
             this.pButton.Location = new System.Drawing.Point(610, 12);
             this.pButton.Name = "pButton";
-            this.pButton.Size = new System.Drawing.Size(323, 205);
+            this.pButton.Size = new System.Drawing.Size(271, 205);
             this.pButton.TabIndex = 11;
             // 
-            // guna2Button1
+            // txtSearch
             // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(54)))), ((int)(((byte)(128)))));
-            this.guna2Button1.BorderRadius = 9;
-            this.guna2Button1.BorderThickness = 3;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.SystemColors.Control;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.BorderColor = System.Drawing.SystemColors.Control;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.Red;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(275, 3);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(45, 37);
-            this.guna2Button1.TabIndex = 11;
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtSearch.BorderRadius = 10;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.Parent = this.txtSearch;
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.FocusedState.Parent = this.txtSearch;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.HoverState.Parent = this.txtSearch;
+            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
+            this.txtSearch.Location = new System.Drawing.Point(56, 139);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
+            this.txtSearch.Size = new System.Drawing.Size(161, 36);
+            this.txtSearch.TabIndex = 38;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // btnExit
             // 
-            this.btnExit.BorderRadius = 15;
+            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(54)))), ((int)(((byte)(128)))));
+            this.btnExit.BorderRadius = 9;
+            this.btnExit.BorderThickness = 3;
             this.btnExit.CheckedState.Parent = this.btnExit;
             this.btnExit.CustomImages.Parent = this.btnExit;
-            this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnExit.FillColor = System.Drawing.SystemColors.Control;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.HoverState.BorderColor = System.Drawing.SystemColors.Control;
             this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(189, 42);
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(211, 6);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(102, 31);
-            this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "Thoát";
+            this.btnExit.Size = new System.Drawing.Size(45, 37);
+            this.btnExit.TabIndex = 11;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // cbSearch
             // 
             this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(18, 93);
+            this.cbSearch.Location = new System.Drawing.Point(56, 101);
             this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(113, 21);
+            this.cbSearch.Size = new System.Drawing.Size(161, 21);
             this.cbSearch.TabIndex = 6;
             this.cbSearch.SelectedIndexChanged += new System.EventHandler(this.cbSearch_SelectedIndexChanged);
             // 
-            // btnReload
-            // 
-            this.btnReload.Location = new System.Drawing.Point(108, 50);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(75, 23);
-            this.btnReload.TabIndex = 4;
-            this.btnReload.Text = "Tải Lại";
-            this.btnReload.UseVisualStyleBackColor = true;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
-            // btnSearchCustomer
-            // 
-            this.btnSearchCustomer.Location = new System.Drawing.Point(18, 138);
-            this.btnSearchCustomer.Name = "btnSearchCustomer";
-            this.btnSearchCustomer.Size = new System.Drawing.Size(273, 23);
-            this.btnSearchCustomer.TabIndex = 8;
-            this.btnSearchCustomer.Text = "Tìm Kiếm";
-            this.btnSearchCustomer.UseVisualStyleBackColor = true;
-            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
-            // 
             // btnUpdateCustomer
             // 
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(189, 11);
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(18, 53);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
             this.btnUpdateCustomer.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateCustomer.TabIndex = 2;
@@ -389,7 +368,7 @@ namespace demo
             // 
             // btnRefreshText
             // 
-            this.btnRefreshText.Location = new System.Drawing.Point(18, 49);
+            this.btnRefreshText.Location = new System.Drawing.Point(108, 53);
             this.btnRefreshText.Name = "btnRefreshText";
             this.btnRefreshText.Size = new System.Drawing.Size(75, 23);
             this.btnRefreshText.TabIndex = 3;
@@ -417,20 +396,12 @@ namespace demo
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
             this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(137, 94);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(154, 20);
-            this.txtSearch.TabIndex = 7;
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvCustomer);
             this.groupBox1.Location = new System.Drawing.Point(12, 223);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(921, 237);
+            this.groupBox1.Size = new System.Drawing.Size(869, 255);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Khách Hàng";
@@ -443,7 +414,7 @@ namespace demo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 481);
+            this.ClientSize = new System.Drawing.Size(883, 481);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pButton);
@@ -456,7 +427,6 @@ namespace demo
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pButton.ResumeLayout(false);
-            this.pButton.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorCustomer)).EndInit();
             this.ResumeLayout(false);
@@ -472,13 +442,10 @@ namespace demo
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pButton;
-        private System.Windows.Forms.Button btnReload;
-        private System.Windows.Forms.Button btnSearchCustomer;
         private System.Windows.Forms.Button btnUpdateCustomer;
         private System.Windows.Forms.Button btnRefreshText;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnDeleteCustomer;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TextBox txtPhoneNum;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtEmail;
@@ -500,6 +467,6 @@ namespace demo
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private Guna.UI2.WinForms.Guna2Button btnExit;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
     }
 }

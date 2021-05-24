@@ -246,5 +246,6 @@ namespace demo
             ChangeFromColorNameToHex ColorChange = new ChangeFromColorNameToHex();
             txtIDColor.Text = ColorChange.Change(txtColorName.Text);
         }
+
     }
 }

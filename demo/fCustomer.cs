@@ -80,10 +80,9 @@ namespace demo
                 cbStatus.SelectedIndex = 1;
             else
                 cbStatus.SelectedIndex = 0;
-            if (Convert.ToInt32(ds.Rows[vt][6]) == 1)
-                cbcustomertype.SelectedIndex = 1;
-            else
-                cbcustomertype.SelectedIndex = 0;
+
+            cbcustomertype.SelectedItem = ds.Rows[vt][6].ToString();
+
         }
         //Kiểm Tra ID Có Tồn Tại Không
         bool CheckID()
@@ -190,7 +189,7 @@ namespace demo
         void AddCustomer()
         {
             int SIZE = Customer.Rows.Count;
-            string query = "INSERT INTO Customer (PhoneNum , CustomerName, IDCard, Email, Address, Status, CustomerType) VALUES('" + txtPhoneNum.Text + "', N'" + txtCustomerName.Text + "', '" + txtIDCard.Text + "', '" + txtEmail.Text + "', N'" + txtAddress.Text + "', '" + cbStatus.SelectedIndex + "', '" + cbcustomertype.SelectedIndex + "')";
+            string query = "INSERT INTO Customer (PhoneNum , CustomerName, IDCard, Email, Address, Status, CustomerType) VALUES('" + txtPhoneNum.Text + "', N'" + txtCustomerName.Text + "', '" + txtIDCard.Text + "', '" + txtEmail.Text + "', N'" + txtAddress.Text + "', '" + cbStatus.SelectedIndex + "', N'" + cbcustomertype.SelectedItem + "')";
             if (CheckAdd()==1)
             {
                 MessageBox.Show("SĐT Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -282,7 +281,7 @@ namespace demo
             }
             else
             {
-                string query = "update Customer set [PhoneNum] = '" + txtPhoneNum.Text + "', [CustomerName] = N'" + txtCustomerName.Text + "', [IDCard] = '" + txtIDCard.Text + "', [Email]= '" + txtEmail.Text + "',[Address]= N'" + txtAddress.Text + "', [Status]= '" + cbStatus.SelectedIndex + "', [CustomerType]= '" + cbcustomertype.SelectedIndex + "' where [PhoneNum] = '" + txtPhoneNum.Text + "'";
+                string query = "update Customer set [PhoneNum] = '" + txtPhoneNum.Text + "', [CustomerName] = N'" + txtCustomerName.Text + "', [IDCard] = '" + txtIDCard.Text + "', [Email]= '" + txtEmail.Text + "',[Address]= N'" + txtAddress.Text + "', [Status]= '" + cbStatus.SelectedIndex + "', [CustomerType]= N'" + cbcustomertype.SelectedItem + "' where [PhoneNum] = '" + txtPhoneNum.Text + "'";
                 DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Khách Hàng", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Question == DialogResult.Yes)
                 {
@@ -312,23 +311,7 @@ namespace demo
                 ShowInTextBox(vt, Customer);
 
         }
-        //Ẩn Các Nút Khi Chưa Nhập SĐT
-        private void txtPhoneNum_TextChanged(object sender, EventArgs e)
-        {
-            if(txtPhoneNum.Text == "")
-            {
-                btnAddCustomer.Enabled = false;
-                btnDeleteCustomer.Enabled = false;
-                btnUpdateCustomer.Enabled = false;
-            }    
-            else
-            {
-                errorCustomer.Clear();
-                btnAddCustomer.Enabled = true;
-                btnDeleteCustomer.Enabled = true;
-                btnUpdateCustomer.Enabled = true;
-            }    
-        }
+   
         //Chỉ Cho Nhập Số
         private void txtPhoneNum_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -343,14 +326,7 @@ namespace demo
                 e.Handled = true;
         }
         //Chỉ Cho Nhập Số
-        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(cbSearch.SelectedIndex ==0 || cbSearch.SelectedIndex == 2)
-            {
-                if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
-                    e.Handled = true;
-            }    
-        }
+
         // Xoá Dữ Liệu Tìm Kiếm + Focus txt
         private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -390,29 +366,6 @@ namespace demo
             }
         }
         //------------------------Nút------------------------//
-        //Nút Load Lại Danh Sách
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            errorCustomer.Clear();
-            ShowCustomer();
-        }
-        //Nút Tiềm Kiếm
-        private void btnSearchCustomer_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SearchCustomer();
-            }
-            catch
-            {
-                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
-            }
-        }
-        //Nút Thoát
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         //Nút Nhập Lại
         private void btnRefreshText_Click(object sender, EventArgs e)
         {
@@ -431,8 +384,6 @@ namespace demo
         {
             try
             {
-
-                errorCustomer.Clear();
                 errorCustomer.Clear();
                 if (CheckNull() == 0)
                     txtPhoneNum.Focus();
@@ -474,7 +425,6 @@ namespace demo
         {
             try
             {
-
                 errorCustomer.Clear();
                 if (CheckNull() == 0)
                     txtPhoneNum.Focus();
@@ -495,13 +445,24 @@ namespace demo
             {
                 MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
             }
-
-
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                SearchCustomer();
+            }
+            catch
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
+            }
+        }
+
     }
 }

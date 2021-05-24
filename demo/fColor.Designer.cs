@@ -33,8 +33,6 @@ namespace demo
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fColor));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.cbSearch = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -42,6 +40,8 @@ namespace demo
             this.txtColorName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.cbSearch = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.IDProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvColor = new System.Windows.Forms.DataGridView();
@@ -62,70 +62,19 @@ namespace demo
             // 
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Location = new System.Drawing.Point(3, 7);
+            this.panel1.Location = new System.Drawing.Point(3, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(272, 351);
+            this.panel1.Size = new System.Drawing.Size(224, 268);
             this.panel1.TabIndex = 4;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.cbSearch);
-            this.panel6.Controls.Add(this.txtSearch);
             this.panel6.Controls.Add(this.btnDelete);
             this.panel6.Controls.Add(this.btnAdd);
-            this.panel6.Location = new System.Drawing.Point(3, 120);
+            this.panel6.Location = new System.Drawing.Point(0, 121);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(266, 228);
+            this.panel6.Size = new System.Drawing.Size(221, 142);
             this.panel6.TabIndex = 4;
-            // 
-            // cbSearch
-            // 
-            this.cbSearch.BackColor = System.Drawing.Color.Transparent;
-            this.cbSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbSearch.BorderRadius = 9;
-            this.cbSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSearch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSearch.FocusedState.Parent = this.cbSearch;
-            this.cbSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbSearch.HoverState.Parent = this.cbSearch;
-            this.cbSearch.ItemHeight = 30;
-            this.cbSearch.ItemsAppearance.Parent = this.cbSearch;
-            this.cbSearch.Location = new System.Drawing.Point(43, 75);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.ShadowDecoration.Parent = this.cbSearch;
-            this.cbSearch.Size = new System.Drawing.Size(180, 36);
-            this.cbSearch.TabIndex = 39;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtSearch.BorderRadius = 10;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.Parent = this.txtSearch;
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.FocusedState.Parent = this.txtSearch;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.HoverState.Parent = this.txtSearch;
-            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
-            this.txtSearch.Location = new System.Drawing.Point(43, 140);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(180, 27);
-            this.txtSearch.TabIndex = 38;
-            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // btnDelete
             // 
@@ -136,7 +85,7 @@ namespace demo
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(157, 12);
+            this.btnDelete.Location = new System.Drawing.Point(122, 53);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
             this.btnDelete.Size = new System.Drawing.Size(92, 31);
@@ -153,7 +102,7 @@ namespace demo
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(22, 12);
+            this.btnAdd.Location = new System.Drawing.Point(12, 53);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(92, 31);
@@ -167,9 +116,9 @@ namespace demo
             this.panel5.Controls.Add(this.txtColorName);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(3, 4);
+            this.panel5.Location = new System.Drawing.Point(3, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(269, 110);
+            this.panel5.Size = new System.Drawing.Size(218, 110);
             this.panel5.TabIndex = 1;
             // 
             // txtIDColor
@@ -190,14 +139,14 @@ namespace demo
             this.txtIDColor.ForeColor = System.Drawing.Color.Black;
             this.txtIDColor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIDColor.HoverState.Parent = this.txtIDColor;
-            this.txtIDColor.Location = new System.Drawing.Point(105, 17);
+            this.txtIDColor.Location = new System.Drawing.Point(80, 17);
             this.txtIDColor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIDColor.Name = "txtIDColor";
             this.txtIDColor.PasswordChar = '\0';
             this.txtIDColor.PlaceholderText = "";
             this.txtIDColor.SelectedText = "";
             this.txtIDColor.ShadowDecoration.Parent = this.txtIDColor;
-            this.txtIDColor.Size = new System.Drawing.Size(144, 27);
+            this.txtIDColor.Size = new System.Drawing.Size(131, 27);
             this.txtIDColor.TabIndex = 13;
             this.txtIDColor.TextChanged += new System.EventHandler(this.txtIDColor_TextChanged);
             this.txtIDColor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDColor_KeyPress);
@@ -219,14 +168,14 @@ namespace demo
             this.txtColorName.ForeColor = System.Drawing.Color.Black;
             this.txtColorName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtColorName.HoverState.Parent = this.txtColorName;
-            this.txtColorName.Location = new System.Drawing.Point(105, 68);
+            this.txtColorName.Location = new System.Drawing.Point(80, 68);
             this.txtColorName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtColorName.Name = "txtColorName";
             this.txtColorName.PasswordChar = '\0';
             this.txtColorName.PlaceholderText = "";
             this.txtColorName.SelectedText = "";
             this.txtColorName.ShadowDecoration.Parent = this.txtColorName;
-            this.txtColorName.Size = new System.Drawing.Size(144, 27);
+            this.txtColorName.Size = new System.Drawing.Size(131, 27);
             this.txtColorName.TabIndex = 13;
             this.txtColorName.TextChanged += new System.EventHandler(this.txtIDColor_TextChanged);
             this.txtColorName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtColorName_KeyUp);
@@ -247,6 +196,55 @@ namespace demo
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã Màu:";
             // 
+            // cbSearch
+            // 
+            this.cbSearch.BackColor = System.Drawing.Color.Transparent;
+            this.cbSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbSearch.BorderRadius = 9;
+            this.cbSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSearch.FocusedState.Parent = this.cbSearch;
+            this.cbSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbSearch.HoverState.Parent = this.cbSearch;
+            this.cbSearch.ItemHeight = 30;
+            this.cbSearch.ItemsAppearance.Parent = this.cbSearch;
+            this.cbSearch.Location = new System.Drawing.Point(6, 19);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.ShadowDecoration.Parent = this.cbSearch;
+            this.cbSearch.Size = new System.Drawing.Size(122, 36);
+            this.cbSearch.TabIndex = 39;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtSearch.BorderRadius = 10;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.Parent = this.txtSearch;
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.FocusedState.Parent = this.txtSearch;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.HoverState.Parent = this.txtSearch;
+            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
+            this.txtSearch.Location = new System.Drawing.Point(134, 19);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
+            this.txtSearch.Size = new System.Drawing.Size(141, 33);
+            this.txtSearch.TabIndex = 38;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
             // IDProductDetail
             // 
             this.IDProductDetail.DataPropertyName = "IDProductDetail";
@@ -257,11 +255,13 @@ namespace demo
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbSearch);
             this.groupBox1.Controls.Add(this.dgvColor);
+            this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.btnExit);
-            this.groupBox1.Location = new System.Drawing.Point(275, 3);
+            this.groupBox1.Location = new System.Drawing.Point(230, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(291, 355);
+            this.groupBox1.Size = new System.Drawing.Size(346, 324);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Màu";
@@ -274,12 +274,12 @@ namespace demo
             this.dgvColor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.dgvColor.Location = new System.Drawing.Point(6, 52);
+            this.dgvColor.Location = new System.Drawing.Point(6, 69);
             this.dgvColor.Name = "dgvColor";
             this.dgvColor.ReadOnly = true;
             this.dgvColor.RowHeadersVisible = false;
             this.dgvColor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvColor.Size = new System.Drawing.Size(274, 300);
+            this.dgvColor.Size = new System.Drawing.Size(330, 253);
             this.dgvColor.TabIndex = 0;
             this.dgvColor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColor_CellClick);
             // 
@@ -311,7 +311,7 @@ namespace demo
             this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnExit.HoverState.Parent = this.btnExit;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(235, 9);
+            this.btnExit.Location = new System.Drawing.Point(295, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
             this.btnExit.Size = new System.Drawing.Size(45, 37);
@@ -326,7 +326,7 @@ namespace demo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 363);
+            this.ClientSize = new System.Drawing.Size(578, 333);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

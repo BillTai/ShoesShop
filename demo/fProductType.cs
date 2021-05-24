@@ -105,9 +105,13 @@ namespace demo
             }
             else
             {
-
-                ConnectSQL.ExcuteQuery(query);
-                ShowProductType();
+                DialogResult Question = MessageBox.Show("Bạn Có Muốn Xoá Loại Sản Phẩm", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Question == DialogResult.Yes)
+                {
+                    ConnectSQL.ExcuteQuery(query);
+                    ShowProductType();
+                    ShowInTextBox(0, ProductType);
+                }
                 int SIZE2 = ProductType.Rows.Count;
                 if (SIZE != SIZE2)
                 {
@@ -122,7 +126,7 @@ namespace demo
         // cập nhật loại sản phẩm
         void UpdateProductType()
         {
-            if (!CheckIDPro(txtIDProductType.Text))
+            if (!CheckID())
             {
                 MessageBox.Show("Kiểm Tra Lại ID", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 errorProductType.SetError(txtIDProductType, "Nhập giá trị");
@@ -131,8 +135,14 @@ namespace demo
             else
             {
                 string query = "update ProductType set  [ProductTypeName] = N'" + txtProductTypeName.Text + "' where [IDProductType] = '" + txtIDProductType.Text + "'";
-                ConnectSQL.ExcuteQuery(query);
-                ShowProductType();
+                DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Sản Phẩm", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Question == DialogResult.Yes)
+                {
+                    ConnectSQL.ExcuteQuery(query);
+                    ShowProductType();
+                    ShowInTextBox(0, ProductType);
+
+                }
                 if (ConnectSQL.ExcuteNonQuery(query) > 0)
                 {
                     MessageBox.Show("Cập Nhật Sản Phẩm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -158,6 +168,7 @@ namespace demo
                 }
             }
             return Flag;
+
         }
         //Thêm loại sản phẩm
         void AddProductType()
@@ -178,6 +189,7 @@ namespace demo
                     ConnectSQL.ExcuteQuery(query);
                 }
                 ShowProductType();
+                ShowInTextBox(0, ProductType);
 
                 int SIZE2 = ProductType.Rows.Count;
                 if (SIZE != SIZE2)
@@ -191,90 +203,9 @@ namespace demo
             }
         }
         //------------------------Nút------------------------//
-        //Nút xoá
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            errorProductType.Clear();
-            if (!CheckID())
-            {
-                MessageBox.Show("Kiểm Tra Lại ID", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                errorProductType.SetError(txtIDProductType, "Nhập giá trị");
-                txtIDProductType.Focus();
-            }
-            else
-            {
-                DialogResult Question = MessageBox.Show("Bạn Có Muốn Xoá Loại Sản Phẩm", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Question == DialogResult.Yes)
-                {
-                    DeleteProductType();
-                }
-            }
-        }
-        // Nút cập nhật
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            errorProductType.Clear();
-            if (!CheckID())
-            {
-                MessageBox.Show("Kiểm Tra Lại ID", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                errorProductType.SetError(txtIDProductType, "Nhập giá trị");
-                txtIDProductType.Focus();
-            }
-            else if (string.IsNullOrEmpty(txtProductTypeName.Text))
-            {
-                errorProductType.SetError(txtProductTypeName, "Nhập giá trị");
-                txtProductTypeName.Focus();
-            }
-            else
-            {
-                DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Sản Phẩm", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Question == DialogResult.Yes)
-                {                    
-                    UpdateProductType();
-                }
 
-            }    
-        }
-        //Nút thoát
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        //Nút thêm
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            errorProductType.Clear();
-            if (string.IsNullOrEmpty(txtProductTypeName.Text))
-            {
-                errorProductType.SetError(txtProductTypeName, "Nhập giá trị");
-                txtProductTypeName.Focus();
-            }
-            else
-            {              
-                AddProductType();
-            }    
-        }
-        //Nút tìm kiếm
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            errorProductType.Clear();
-            SearchProducType();
-        }
-        //Nút nhập lại
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            errorProductType.Clear();
-            txtIDProductType.Text = "";
-            txtProductTypeName.Text = "";
-            txtSearch.Text = "";
-            txtIDProductType.Focus();
-        }
-        //Nút tải lại danh sách
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            errorProductType.Clear();
-            ShowProductType();
-        }
+
+
         //------------------------Sự kiện------------------------//
         //Lây vị trí khi click vào dgv
         private void dgvProductType_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -284,36 +215,91 @@ namespace demo
             if (vt >= 0 && vt != SIZE)
                 ShowInTextBox(vt, ProductType);
         }
-        //Ản hiện nút thêm xoá sửa khi không nhập
-        private void txtIDProductType_TextChanged(object sender, EventArgs e)
+        private void btnExit_Click_1(object sender, EventArgs e)
         {
-            if (txtIDProductType.Text == "")
-            {
-                btnAdd.Enabled = false;
-                btnDelete.Enabled = false;
-                btnUpdate.Enabled = false;
-            }
-            else
-            {
-                errorProductType.Clear();
-                btnAdd.Enabled = true;
-                btnDelete.Enabled = true;
-                btnUpdate.Enabled = true;
-            }    
+            this.Close();
         }
-        //Tắt bắt lỗi
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            errorProductType.Clear();
+            SearchProducType();
+        }
+
         private void txtProductTypeName_TextChanged(object sender, EventArgs e)
         {
-            if(txtProductTypeName.Text != "")
             errorProductType.Clear();
         }
-        //Txt thay đổi khi lựa chọn tìm kiếm
-        private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            txtSearch.Text = "";
-            txtSearch.Focus();
+            try
+            {
+                errorProductType.Clear();
+                if (string.IsNullOrEmpty(txtIDProductType.Text))
+                {
+                    errorProductType.SetError(txtIDProductType, "Nhập giá trị");
+                    txtIDProductType.Focus();
+                }
+                else if (string.IsNullOrEmpty(txtProductTypeName.Text))
+                {
+                    errorProductType.SetError(txtProductTypeName, "Nhập giá trị");
+                    txtProductTypeName.Focus();
+                }
+                else
+                {
+                    AddProductType();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại!", "Thông Báo");
+            }
         }
-        //Viết hoa
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                errorProductType.Clear();
+                if (!CheckID())
+                {
+                    MessageBox.Show("Kiểm Tra Lại ID", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    errorProductType.SetError(txtIDProductType, "Nhập giá trị");
+                    txtIDProductType.Focus();
+                }
+                else
+                {
+                    DeleteProductType();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại!", "Thông Báo");
+            }
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                errorProductType.Clear();
+                if (string.IsNullOrEmpty(txtProductTypeName.Text))
+                {
+                    errorProductType.SetError(txtProductTypeName, "Nhập giá trị");
+                    txtProductTypeName.Focus();
+                }
+                else
+                {
+                    UpdateProductType();
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại!", "Thông Báo");
+            }
+        }
+
         private void txtIDProductType_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());

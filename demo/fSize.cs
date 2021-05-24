@@ -131,15 +131,20 @@ namespace demo
         {
             try
             {
-                string query = "";
-                for (int i = 0; i < SizePro.Columns.Count; i++)
+                if (string.IsNullOrEmpty(txtSearch.Text))
                 {
-                    if (cbSearch.SelectedIndex == i)
+                    string query = "";
+                    for (int i = 0; i < SizePro.Columns.Count; i++)
                     {
-                        query = "select * from Size where " + SizePro.Columns[i].ColumnName + " between '" + txtFrom.Text + "' and '" + txtTo.Text + "'";
+                        if (cbSearch.SelectedIndex == i)
+                        {
+                            query = "select * from Size where " + SizePro.Columns[i].ColumnName + " between '" + txtFrom.Text + "' and '" + txtTo.Text + "'";
+                        }
                     }
+                    ConnectSql(query, dgvSize);
                 }
-                ConnectSql(query, dgvSize);
+                else
+                    Search();
             }
             catch
             {

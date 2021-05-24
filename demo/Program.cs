@@ -54,12 +54,12 @@ namespace demo
             //else
             //    Application.Run(new fLogin());
 
+            //Application.Run(new fBill());
             Application.Run(new fProduct());
             //Application.Run(new fCustomer());
             //Application.Run(new fSize());
             //Application.Run(new fColor());
             //Application.Run(new fStaff());
-            //Application.Run(new fProvider());
             //Application.Run(new fProductType());
             //Application.Run(new fProductDetail());
         }
