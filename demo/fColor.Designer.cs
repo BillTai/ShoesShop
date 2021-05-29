@@ -50,6 +50,7 @@ namespace demo
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.errorColor = new System.Windows.Forms.ErrorProvider(this.components);
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -64,7 +65,7 @@ namespace demo
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Location = new System.Drawing.Point(3, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(224, 268);
+            this.panel1.Size = new System.Drawing.Size(270, 268);
             this.panel1.TabIndex = 4;
             // 
             // panel6
@@ -73,7 +74,7 @@ namespace demo
             this.panel6.Controls.Add(this.btnAdd);
             this.panel6.Location = new System.Drawing.Point(0, 121);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(221, 142);
+            this.panel6.Size = new System.Drawing.Size(267, 142);
             this.panel6.TabIndex = 4;
             // 
             // btnDelete
@@ -85,7 +86,7 @@ namespace demo
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(122, 53);
+            this.btnDelete.Location = new System.Drawing.Point(139, 53);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
             this.btnDelete.Size = new System.Drawing.Size(92, 31);
@@ -102,7 +103,7 @@ namespace demo
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(12, 53);
+            this.btnAdd.Location = new System.Drawing.Point(29, 53);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(92, 31);
@@ -112,13 +113,14 @@ namespace demo
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.guna2Button1);
             this.panel5.Controls.Add(this.txtIDColor);
             this.panel5.Controls.Add(this.txtColorName);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Location = new System.Drawing.Point(3, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(218, 110);
+            this.panel5.Size = new System.Drawing.Size(264, 110);
             this.panel5.TabIndex = 1;
             // 
             // txtIDColor
@@ -259,7 +261,7 @@ namespace demo
             this.groupBox1.Controls.Add(this.dgvColor);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.btnExit);
-            this.groupBox1.Location = new System.Drawing.Point(230, 3);
+            this.groupBox1.Location = new System.Drawing.Point(279, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(346, 324);
             this.groupBox1.TabIndex = 5;
@@ -322,11 +324,28 @@ namespace demo
             // 
             this.errorColor.ContainerControl = this;
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 15;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(217, 68);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(44, 27);
+            this.guna2Button1.TabIndex = 5;
+            this.guna2Button1.Text = "...";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // fColor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 333);
+            this.ClientSize = new System.Drawing.Size(628, 333);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -366,5 +385,6 @@ namespace demo
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.ErrorProvider errorColor;
         private Guna.UI2.WinForms.Guna2ComboBox cbSearch;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

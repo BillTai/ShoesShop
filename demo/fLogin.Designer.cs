@@ -39,15 +39,16 @@ namespace demo
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnRegister = new System.Windows.Forms.Button();
             this.pbShowPassword = new System.Windows.Forms.PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShowPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(183, 118);
+            this.label1.Location = new System.Drawing.Point(271, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 0;
@@ -55,7 +56,7 @@ namespace demo
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(198, 199);
+            this.btnLogin.Location = new System.Drawing.Point(286, 235);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 0;
@@ -65,7 +66,7 @@ namespace demo
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(263, 118);
+            this.txtUserName.Location = new System.Drawing.Point(351, 154);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(160, 20);
             this.txtUserName.TabIndex = 1;
@@ -75,7 +76,7 @@ namespace demo
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(183, 146);
+            this.label2.Location = new System.Drawing.Point(271, 182);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 0;
@@ -83,7 +84,7 @@ namespace demo
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(263, 146);
+            this.txtPassword.Location = new System.Drawing.Point(351, 182);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(160, 20);
             this.txtPassword.TabIndex = 2;
@@ -96,7 +97,7 @@ namespace demo
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(348, 199);
+            this.btnRegister.Location = new System.Drawing.Point(436, 235);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
             this.btnRegister.TabIndex = 1;
@@ -107,7 +108,7 @@ namespace demo
             // pbShowPassword
             // 
             this.pbShowPassword.Image = ((System.Drawing.Image)(resources.GetObject("pbShowPassword.Image")));
-            this.pbShowPassword.Location = new System.Drawing.Point(429, 146);
+            this.pbShowPassword.Location = new System.Drawing.Point(517, 182);
             this.pbShowPassword.Name = "pbShowPassword";
             this.pbShowPassword.Size = new System.Drawing.Size(22, 20);
             this.pbShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -116,32 +117,24 @@ namespace demo
             this.pbShowPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
             this.pbShowPassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbShowPassword_MouseUp);
             // 
-            // guna2Button1
+            // pictureBox1
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2Button1.BorderRadius = 9;
-            this.guna2Button1.BorderThickness = 4;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(170, 12);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(307, 337);
-            this.guna2Button1.TabIndex = 9;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(35, 98);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(218, 214);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // fLogin
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(644, 361);
+            this.ClientSize = new System.Drawing.Size(644, 426);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbShowPassword);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtPassword);
@@ -149,13 +142,13 @@ namespace demo
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.guna2Button1);
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.fLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShowPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,7 +164,7 @@ namespace demo
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.PictureBox pbShowPassword;
         internal System.Windows.Forms.TextBox txtUserName;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

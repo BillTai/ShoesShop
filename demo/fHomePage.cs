@@ -94,21 +94,17 @@ namespace demo
         }
         //------------------------Khai Báo Biến------------------------//
         //Nút quản lý sản phẩm
-        void mstAddProduct_Click_1(object sender, EventArgs e)
-        {
-            Form fEditPro = new fProduct();
-            fEditPro.ShowDialog();
-        }
+       
         //Nút quản lý loại sản phẩm
         private void mtsEditProductType_Click(object sender, EventArgs e)
         {
-            Form fEditProType = new fProductType();
+            fProductType fEditProType = new fProductType();
             fEditProType.ShowDialog();
         }
         //Nút quản lý nhân viên
         private void mtsEditStaff_Click(object sender, EventArgs e)
         {
-            Form fS = new fStaff();
+            fStaff fS = new fStaff();
             fS.ShowDialog();
         }
         //Nút thông tin tài khoản
@@ -139,12 +135,15 @@ namespace demo
         //Nút thoát
         private void mstExit_Click_1(object sender, EventArgs e)
         {
+            Account = ConnectSQL.ExcuteQuery("Update Account set Status = '0' where IDStaff = '" + ReturnIDAccount + "'");         
             this.Close();
         }
 
-        private void càiĐặtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quảnLýSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            fProduct pro = new fProduct();
+            pro.ShowDialog();
+            this.Close();
         }
     }
 }

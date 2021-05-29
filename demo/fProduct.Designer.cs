@@ -35,7 +35,6 @@ namespace demo
             this.btnAddProductDetail = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteProductDetail = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdateProductDetail = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.txtIDProduct = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -44,13 +43,16 @@ namespace demo
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDTypeProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbProvider = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbProductType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtTotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtProductName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -95,18 +97,15 @@ namespace demo
             this.btnOpenFolder = new Guna.UI2.WinForms.Guna2Button();
             this.pProduct = new Guna.UI2.WinForms.Guna2PictureBox();
             this.errorProductDetail = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbSearch = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtFrom = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.From = new System.Windows.Forms.Label();
-            this.pValues = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnImages = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.pButton.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
@@ -120,7 +119,6 @@ namespace demo
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProductDetail)).BeginInit();
-            this.pValues.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -131,7 +129,6 @@ namespace demo
             this.pButton.Controls.Add(this.btnAddProductDetail);
             this.pButton.Controls.Add(this.btnDeleteProductDetail);
             this.pButton.Controls.Add(this.btnUpdateProductDetail);
-            this.pButton.Controls.Add(this.btnRefresh);
             this.pButton.Controls.Add(this.btnExit);
             this.pButton.Location = new System.Drawing.Point(1059, 12);
             this.pButton.Name = "pButton";
@@ -181,29 +178,13 @@ namespace demo
             this.btnUpdateProductDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdateProductDetail.ForeColor = System.Drawing.Color.Black;
             this.btnUpdateProductDetail.HoverState.Parent = this.btnUpdateProductDetail;
-            this.btnUpdateProductDetail.Location = new System.Drawing.Point(8, 66);
+            this.btnUpdateProductDetail.Location = new System.Drawing.Point(76, 74);
             this.btnUpdateProductDetail.Name = "btnUpdateProductDetail";
             this.btnUpdateProductDetail.ShadowDecoration.Parent = this.btnUpdateProductDetail;
             this.btnUpdateProductDetail.Size = new System.Drawing.Size(106, 36);
             this.btnUpdateProductDetail.TabIndex = 10;
             this.btnUpdateProductDetail.Text = "Cập Nhật";
             this.btnUpdateProductDetail.Click += new System.EventHandler(this.btnUpdateProductDetail_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BorderRadius = 9;
-            this.btnRefresh.CheckedState.Parent = this.btnRefresh;
-            this.btnRefresh.CustomImages.Parent = this.btnRefresh;
-            this.btnRefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.HoverState.Parent = this.btnRefresh;
-            this.btnRefresh.Location = new System.Drawing.Point(133, 66);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.ShadowDecoration.Parent = this.btnRefresh;
-            this.btnRefresh.Size = new System.Drawing.Size(106, 36);
-            this.btnRefresh.TabIndex = 10;
-            this.btnRefresh.Text = "Nhập Lại";
             // 
             // btnExit
             // 
@@ -243,14 +224,14 @@ namespace demo
             this.txtIDProduct.ForeColor = System.Drawing.Color.Black;
             this.txtIDProduct.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIDProduct.HoverState.Parent = this.txtIDProduct;
-            this.txtIDProduct.Location = new System.Drawing.Point(128, 9);
+            this.txtIDProduct.Location = new System.Drawing.Point(129, 4);
             this.txtIDProduct.Name = "txtIDProduct";
             this.txtIDProduct.PasswordChar = '\0';
             this.txtIDProduct.PlaceholderText = "";
             this.txtIDProduct.SelectedText = "";
             this.txtIDProduct.ShadowDecoration.Parent = this.txtIDProduct;
             this.txtIDProduct.Size = new System.Drawing.Size(145, 29);
-            this.txtIDProduct.TabIndex = 11;
+            this.txtIDProduct.TabIndex = 0;
             this.txtIDProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDProduct_KeyPress_1);
             // 
             // groupBox1
@@ -258,7 +239,7 @@ namespace demo
             this.groupBox1.Controls.Add(this.dgvProduct);
             this.groupBox1.Location = new System.Drawing.Point(12, 310);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(456, 345);
+            this.groupBox1.Size = new System.Drawing.Size(483, 345);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách sản phẩm";
@@ -273,6 +254,7 @@ namespace demo
             this.dataGridViewTextBoxColumn2,
             this.IDTypeProduct,
             this.IDProvider,
+            this.Column3,
             this.dataGridViewTextBoxColumn7});
             this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvProduct.Location = new System.Drawing.Point(3, 16);
@@ -280,7 +262,7 @@ namespace demo
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.RowHeadersVisible = false;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(443, 326);
+            this.dgvProduct.Size = new System.Drawing.Size(476, 326);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
             // 
@@ -312,6 +294,13 @@ namespace demo
             this.IDProvider.Name = "IDProvider";
             this.IDProvider.ReadOnly = true;
             // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Total";
+            this.Column3.HeaderText = "Số Lượng";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Status";
@@ -324,9 +313,11 @@ namespace demo
             this.panel1.Controls.Add(this.cbStatus);
             this.panel1.Controls.Add(this.cbProvider);
             this.panel1.Controls.Add(this.cbProductType);
+            this.panel1.Controls.Add(this.txtTotal);
             this.panel1.Controls.Add(this.txtProductName);
             this.panel1.Controls.Add(this.txtIDProduct);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label9);
@@ -352,11 +343,11 @@ namespace demo
             this.cbStatus.HoverState.Parent = this.cbStatus;
             this.cbStatus.ItemHeight = 30;
             this.cbStatus.ItemsAppearance.Parent = this.cbStatus;
-            this.cbStatus.Location = new System.Drawing.Point(129, 191);
+            this.cbStatus.Location = new System.Drawing.Point(129, 162);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.ShadowDecoration.Parent = this.cbStatus;
             this.cbStatus.Size = new System.Drawing.Size(145, 36);
-            this.cbStatus.TabIndex = 27;
+            this.cbStatus.TabIndex = 4;
             // 
             // cbProvider
             // 
@@ -374,11 +365,11 @@ namespace demo
             this.cbProvider.HoverState.Parent = this.cbProvider;
             this.cbProvider.ItemHeight = 30;
             this.cbProvider.ItemsAppearance.Parent = this.cbProvider;
-            this.cbProvider.Location = new System.Drawing.Point(129, 142);
+            this.cbProvider.Location = new System.Drawing.Point(130, 119);
             this.cbProvider.Name = "cbProvider";
             this.cbProvider.ShadowDecoration.Parent = this.cbProvider;
             this.cbProvider.Size = new System.Drawing.Size(145, 36);
-            this.cbProvider.TabIndex = 27;
+            this.cbProvider.TabIndex = 3;
             // 
             // cbProductType
             // 
@@ -396,11 +387,39 @@ namespace demo
             this.cbProductType.HoverState.Parent = this.cbProductType;
             this.cbProductType.ItemHeight = 30;
             this.cbProductType.ItemsAppearance.Parent = this.cbProductType;
-            this.cbProductType.Location = new System.Drawing.Point(129, 93);
+            this.cbProductType.Location = new System.Drawing.Point(130, 76);
             this.cbProductType.Name = "cbProductType";
             this.cbProductType.ShadowDecoration.Parent = this.cbProductType;
             this.cbProductType.Size = new System.Drawing.Size(145, 36);
-            this.cbProductType.TabIndex = 27;
+            this.cbProductType.TabIndex = 2;
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtTotal.BorderRadius = 10;
+            this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotal.DefaultText = "";
+            this.txtTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotal.DisabledState.Parent = this.txtTotal;
+            this.txtTotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotal.Enabled = false;
+            this.txtTotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotal.FocusedState.Parent = this.txtTotal;
+            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTotal.ForeColor = System.Drawing.Color.Black;
+            this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotal.HoverState.Parent = this.txtTotal;
+            this.txtTotal.Location = new System.Drawing.Point(130, 210);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.PasswordChar = '\0';
+            this.txtTotal.PlaceholderText = "";
+            this.txtTotal.SelectedText = "";
+            this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
+            this.txtTotal.Size = new System.Drawing.Size(144, 27);
+            this.txtTotal.TabIndex = 5;
+            this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceIn_KeyPress);
             // 
             // txtProductName
             // 
@@ -419,28 +438,37 @@ namespace demo
             this.txtProductName.ForeColor = System.Drawing.Color.Black;
             this.txtProductName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtProductName.HoverState.Parent = this.txtProductName;
-            this.txtProductName.Location = new System.Drawing.Point(129, 51);
+            this.txtProductName.Location = new System.Drawing.Point(130, 40);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.PasswordChar = '\0';
             this.txtProductName.PlaceholderText = "";
             this.txtProductName.SelectedText = "";
             this.txtProductName.ShadowDecoration.Parent = this.txtProductName;
             this.txtProductName.Size = new System.Drawing.Size(145, 29);
-            this.txtProductName.TabIndex = 11;
+            this.txtProductName.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 101);
+            this.label4.Location = new System.Drawing.Point(5, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 23);
             this.label4.TabIndex = 21;
             this.label4.Text = "Tên Loại Sản Phẩm";
             // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(5, 214);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(119, 23);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Tổng Số Lượng:";
+            // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 194);
+            this.label7.Location = new System.Drawing.Point(5, 178);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(119, 23);
             this.label7.TabIndex = 22;
@@ -449,7 +477,7 @@ namespace demo
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 151);
+            this.label5.Location = new System.Drawing.Point(6, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 23);
             this.label5.TabIndex = 26;
@@ -458,7 +486,7 @@ namespace demo
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 55);
+            this.label9.Location = new System.Drawing.Point(5, 49);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(112, 23);
             this.label9.TabIndex = 19;
@@ -467,7 +495,7 @@ namespace demo
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 15);
+            this.label10.Location = new System.Drawing.Point(5, 13);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(112, 23);
             this.label10.TabIndex = 24;
@@ -480,9 +508,9 @@ namespace demo
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvProductDetail);
-            this.groupBox2.Location = new System.Drawing.Point(474, 310);
+            this.groupBox2.Location = new System.Drawing.Point(501, 310);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(882, 357);
+            this.groupBox2.Size = new System.Drawing.Size(855, 357);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi Tiết Sản Phẩm";
@@ -508,7 +536,7 @@ namespace demo
             this.dgvProductDetail.ReadOnly = true;
             this.dgvProductDetail.RowHeadersVisible = false;
             this.dgvProductDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductDetail.Size = new System.Drawing.Size(868, 338);
+            this.dgvProductDetail.Size = new System.Drawing.Size(846, 338);
             this.dgvProductDetail.TabIndex = 0;
             this.dgvProductDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductDetail_CellClick);
             // 
@@ -725,7 +753,7 @@ namespace demo
             this.txtPriceIn.SelectedText = "";
             this.txtPriceIn.ShadowDecoration.Parent = this.txtPriceIn;
             this.txtPriceIn.Size = new System.Drawing.Size(223, 29);
-            this.txtPriceIn.TabIndex = 11;
+            this.txtPriceIn.TabIndex = 2;
             this.txtPriceIn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceIn_KeyPress);
             // 
             // txtPriceOut
@@ -753,7 +781,7 @@ namespace demo
             this.txtPriceOut.SelectedText = "";
             this.txtPriceOut.ShadowDecoration.Parent = this.txtPriceOut;
             this.txtPriceOut.Size = new System.Drawing.Size(223, 27);
-            this.txtPriceOut.TabIndex = 11;
+            this.txtPriceOut.TabIndex = 3;
             this.txtPriceOut.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceIn_KeyPress);
             // 
             // txtIDProductDetail
@@ -782,7 +810,7 @@ namespace demo
             this.txtIDProductDetail.SelectedText = "";
             this.txtIDProductDetail.ShadowDecoration.Parent = this.txtIDProductDetail;
             this.txtIDProductDetail.Size = new System.Drawing.Size(220, 27);
-            this.txtIDProductDetail.TabIndex = 11;
+            this.txtIDProductDetail.TabIndex = 0;
             this.txtIDProductDetail.TextChanged += new System.EventHandler(this.txtIDProductDetail_TextChanged);
             // 
             // txtImageName
@@ -811,7 +839,7 @@ namespace demo
             this.txtImageName.SelectedText = "";
             this.txtImageName.ShadowDecoration.Parent = this.txtImageName;
             this.txtImageName.Size = new System.Drawing.Size(118, 27);
-            this.txtImageName.TabIndex = 11;
+            this.txtImageName.TabIndex = 0;
             // 
             // flp1
             // 
@@ -819,7 +847,7 @@ namespace demo
             this.flp1.Location = new System.Drawing.Point(121, 162);
             this.flp1.Name = "flp1";
             this.flp1.Size = new System.Drawing.Size(191, 46);
-            this.flp1.TabIndex = 35;
+            this.flp1.TabIndex = 4;
             // 
             // flp2
             // 
@@ -827,7 +855,7 @@ namespace demo
             this.flp2.Location = new System.Drawing.Point(72, 226);
             this.flp2.Name = "flp2";
             this.flp2.Size = new System.Drawing.Size(240, 63);
-            this.flp2.TabIndex = 35;
+            this.flp2.TabIndex = 5;
             // 
             // btnSize
             // 
@@ -904,7 +932,7 @@ namespace demo
             this.nudNumber.Name = "nudNumber";
             this.nudNumber.ShadowDecoration.Parent = this.nudNumber;
             this.nudNumber.Size = new System.Drawing.Size(169, 29);
-            this.nudNumber.TabIndex = 38;
+            this.nudNumber.TabIndex = 1;
             this.nudNumber.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
             this.nudNumber.Value = new decimal(new int[] {
             1,
@@ -967,7 +995,7 @@ namespace demo
             this.txtImageDetail.SelectedText = "";
             this.txtImageDetail.ShadowDecoration.Parent = this.txtImageDetail;
             this.txtImageDetail.Size = new System.Drawing.Size(144, 27);
-            this.txtImageDetail.TabIndex = 11;
+            this.txtImageDetail.TabIndex = 6;
             // 
             // btnColor
             // 
@@ -1024,22 +1052,6 @@ namespace demo
             // 
             this.errorProductDetail.ContainerControl = this;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BorderRadius = 9;
-            this.btnSearch.CheckedState.Parent = this.btnSearch;
-            this.btnSearch.CustomImages.Parent = this.btnSearch;
-            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSearch.HoverState.Parent = this.btnSearch;
-            this.btnSearch.Location = new System.Drawing.Point(207, 57);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
-            this.btnSearch.Size = new System.Drawing.Size(86, 27);
-            this.btnSearch.TabIndex = 10;
-            this.btnSearch.Text = "Tìm Kiếm";
-            // 
             // txtSearch
             // 
             this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -1058,14 +1070,14 @@ namespace demo
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
-            this.txtSearch.Location = new System.Drawing.Point(4, 57);
+            this.txtSearch.Location = new System.Drawing.Point(58, 80);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(153, 27);
-            this.txtSearch.TabIndex = 11;
+            this.txtSearch.Size = new System.Drawing.Size(114, 27);
+            this.txtSearch.TabIndex = 1;
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyUp);
             // 
             // cbSearch
@@ -1086,99 +1098,13 @@ namespace demo
             this.cbSearch.IntegralHeight = false;
             this.cbSearch.ItemHeight = 30;
             this.cbSearch.ItemsAppearance.Parent = this.cbSearch;
-            this.cbSearch.Location = new System.Drawing.Point(4, 15);
+            this.cbSearch.Location = new System.Drawing.Point(0, 12);
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.ShadowDecoration.Color = System.Drawing.Color.Silver;
             this.cbSearch.ShadowDecoration.Parent = this.cbSearch;
-            this.cbSearch.Size = new System.Drawing.Size(293, 36);
-            this.cbSearch.TabIndex = 12;
+            this.cbSearch.Size = new System.Drawing.Size(207, 36);
+            this.cbSearch.TabIndex = 0;
             this.cbSearch.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
-            // 
-            // txtFrom
-            // 
-            this.txtFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtFrom.BorderRadius = 10;
-            this.txtFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFrom.DefaultText = "";
-            this.txtFrom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFrom.DisabledState.Parent = this.txtFrom;
-            this.txtFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFrom.FocusedState.Parent = this.txtFrom;
-            this.txtFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtFrom.ForeColor = System.Drawing.Color.Black;
-            this.txtFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFrom.HoverState.Parent = this.txtFrom;
-            this.txtFrom.Location = new System.Drawing.Point(30, 3);
-            this.txtFrom.Name = "txtFrom";
-            this.txtFrom.PasswordChar = '\0';
-            this.txtFrom.PlaceholderText = "";
-            this.txtFrom.SelectedText = "";
-            this.txtFrom.ShadowDecoration.Parent = this.txtFrom;
-            this.txtFrom.Size = new System.Drawing.Size(84, 27);
-            this.txtFrom.TabIndex = 11;
-            this.txtFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceIn_KeyPress);
-            // 
-            // txtTo
-            // 
-            this.txtTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtTo.BorderRadius = 10;
-            this.txtTo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTo.DefaultText = "";
-            this.txtTo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTo.DisabledState.Parent = this.txtTo;
-            this.txtTo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTo.FocusedState.Parent = this.txtTo;
-            this.txtTo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTo.ForeColor = System.Drawing.Color.Black;
-            this.txtTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTo.HoverState.Parent = this.txtTo;
-            this.txtTo.Location = new System.Drawing.Point(159, 4);
-            this.txtTo.Name = "txtTo";
-            this.txtTo.PasswordChar = '\0';
-            this.txtTo.PlaceholderText = "";
-            this.txtTo.SelectedText = "";
-            this.txtTo.ShadowDecoration.Parent = this.txtTo;
-            this.txtTo.Size = new System.Drawing.Size(82, 27);
-            this.txtTo.TabIndex = 11;
-            this.txtTo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceIn_KeyPress);
-            // 
-            // From
-            // 
-            this.From.AutoSize = true;
-            this.From.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.From.Location = new System.Drawing.Point(3, 17);
-            this.From.Name = "From";
-            this.From.Size = new System.Drawing.Size(27, 14);
-            this.From.TabIndex = 0;
-            this.From.Text = "Từ:";
-            // 
-            // pValues
-            // 
-            this.pValues.Controls.Add(this.label11);
-            this.pValues.Controls.Add(this.From);
-            this.pValues.Controls.Add(this.txtTo);
-            this.pValues.Controls.Add(this.txtFrom);
-            this.pValues.Location = new System.Drawing.Point(43, 91);
-            this.pValues.Name = "pValues";
-            this.pValues.Size = new System.Drawing.Size(250, 41);
-            this.pValues.TabIndex = 37;
-            this.pValues.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(120, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 14);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Đến:";
             // 
             // groupBox4
             // 
@@ -1199,7 +1125,7 @@ namespace demo
             this.btnImages.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnImages.ForeColor = System.Drawing.Color.Black;
             this.btnImages.HoverState.Parent = this.btnImages;
-            this.btnImages.Location = new System.Drawing.Point(3, 135);
+            this.btnImages.Location = new System.Drawing.Point(1045, 274);
             this.btnImages.Name = "btnImages";
             this.btnImages.ShadowDecoration.Parent = this.btnImages;
             this.btnImages.Size = new System.Drawing.Size(40, 23);
@@ -1221,14 +1147,32 @@ namespace demo
             // panel5
             // 
             this.panel5.Controls.Add(this.cbSearch);
-            this.panel5.Controls.Add(this.btnSearch);
-            this.panel5.Controls.Add(this.pValues);
             this.panel5.Controls.Add(this.txtSearch);
-            this.panel5.Controls.Add(this.btnImages);
-            this.panel5.Location = new System.Drawing.Point(1045, 135);
+            this.panel5.Location = new System.Drawing.Point(1091, 135);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(311, 166);
+            this.panel5.Size = new System.Drawing.Size(265, 166);
             this.panel5.TabIndex = 41;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 9;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(417, 284);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(54, 23);
+            this.guna2Button1.TabIndex = 10;
+            this.guna2Button1.Text = "Excel";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // fProduct
             // 
@@ -1238,6 +1182,8 @@ namespace demo
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1361, 667);
             this.Controls.Add(this.panel5);
+            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.btnImages);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -1263,8 +1209,6 @@ namespace demo
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProductDetail)).EndInit();
-            this.pValues.ResumeLayout(false);
-            this.pValues.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -1316,11 +1260,6 @@ namespace demo
         private Guna.UI2.WinForms.Guna2NumericUpDown nudNumber;
         private Guna.UI2.WinForms.Guna2Button btnOpenFolder;
         private System.Windows.Forms.ErrorProvider errorProductDetail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDTypeProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDProvider;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
@@ -1332,15 +1271,10 @@ namespace demo
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private Guna.UI2.WinForms.Guna2Button btnAddProductDetail;
         private Guna.UI2.WinForms.Guna2Button btnDeleteProductDetail;
-        private System.Windows.Forms.Panel pValues;
-        private System.Windows.Forms.Label From;
-        private Guna.UI2.WinForms.Guna2TextBox txtTo;
-        private Guna.UI2.WinForms.Guna2TextBox txtFrom;
+        private Guna.UI2.WinForms.Guna2TextBox txtTotal;
         private Guna.UI2.WinForms.Guna2Button btnUpdateProductDetail;
         private Guna.UI2.WinForms.Guna2ComboBox cbSearch;
-        private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private Guna.UI2.WinForms.Guna2Button btnSearch;
         private System.Windows.Forms.FlowLayoutPanel flpImageDetail;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -1349,6 +1283,15 @@ namespace demo
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2TextBox txtImageDetail;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDTypeProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDProvider;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

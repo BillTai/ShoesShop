@@ -45,9 +45,13 @@ namespace demo
         }
         void ShowInTextBox(int vt)
         {
-            txtSize.Text = SizePro.Rows[vt][0].ToString();
-            txtWidth.Text = SizePro.Rows[vt][1].ToString();
-            txtHeight.Text = SizePro.Rows[vt][2].ToString();
+            if(SizePro.Rows.Count>0)
+            {
+                txtSize.Text = SizePro.Rows[vt][0].ToString();
+                txtWidth.Text = SizePro.Rows[vt][1].ToString();
+                txtHeight.Text = SizePro.Rows[vt][2].ToString();
+            }    
+            
 
         }
 

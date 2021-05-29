@@ -43,6 +43,7 @@ namespace demo
             this.mtsAddCustomer = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mtsEditProductType = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýSảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mtsEditStaff = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -219,25 +220,33 @@ namespace demo
             // mtsAddCustomer
             // 
             this.mtsAddCustomer.Name = "mtsAddCustomer";
-            this.mtsAddCustomer.Size = new System.Drawing.Size(250, 22);
-            this.mtsAddCustomer.Text = "Thêm mới và quản lý khách hàng";
+            this.mtsAddCustomer.Size = new System.Drawing.Size(180, 22);
+            this.mtsAddCustomer.Text = "Quản lý khách hàng";
             this.mtsAddCustomer.Click += new System.EventHandler(this.mtsAddCustomer_Click);
             // 
             // quảnLýHàngToolStripMenuItem
             // 
             this.quảnLýHàngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mtsEditProductType});
+            this.mtsEditProductType,
+            this.quảnLýSảnPhẩmToolStripMenuItem});
             this.quảnLýHàngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýHàngToolStripMenuItem.Image")));
             this.quảnLýHàngToolStripMenuItem.Name = "quảnLýHàngToolStripMenuItem";
-            this.quảnLýHàngToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
-            this.quảnLýHàngToolStripMenuItem.Text = "Quản lý hàng";
+            this.quảnLýHàngToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
+            this.quảnLýHàngToolStripMenuItem.Text = "Quản sản phẩm";
             // 
             // mtsEditProductType
             // 
             this.mtsEditProductType.Name = "mtsEditProductType";
-            this.mtsEditProductType.Size = new System.Drawing.Size(225, 22);
-            this.mtsEditProductType.Text = "Thêm và sửa đổi nhóm hàng";
+            this.mtsEditProductType.Size = new System.Drawing.Size(192, 22);
+            this.mtsEditProductType.Text = "Quản lý loại sản phẩm";
             this.mtsEditProductType.Click += new System.EventHandler(this.mtsEditProductType_Click);
+            // 
+            // quảnLýSảnPhẩmToolStripMenuItem
+            // 
+            this.quảnLýSảnPhẩmToolStripMenuItem.Name = "quảnLýSảnPhẩmToolStripMenuItem";
+            this.quảnLýSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.quảnLýSảnPhẩmToolStripMenuItem.Text = "Quản lý sản phẩm";
+            this.quảnLýSảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.quảnLýSảnPhẩmToolStripMenuItem_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 
@@ -322,12 +331,11 @@ namespace demo
             this.càiĐặtToolStripMenuItem.Name = "càiĐặtToolStripMenuItem";
             this.càiĐặtToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.càiĐặtToolStripMenuItem.Text = "Cài đặt";
-            this.càiĐặtToolStripMenuItem.Click += new System.EventHandler(this.càiĐặtToolStripMenuItem_Click);
             // 
             // mtsLogOut
             // 
             this.mtsLogOut.Name = "mtsLogOut";
-            this.mtsLogOut.Size = new System.Drawing.Size(180, 22);
+            this.mtsLogOut.Size = new System.Drawing.Size(129, 22);
             this.mtsLogOut.Text = "Đăng Xuất";
             this.mtsLogOut.Click += new System.EventHandler(this.mtsLogOut_Click);
             // 
@@ -1067,5 +1075,6 @@ namespace demo
         private DataGridViewTextBoxColumn IDProvider;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private TabControl tHome;
+        private ToolStripMenuItem quảnLýSảnPhẩmToolStripMenuItem;
     }
 }

@@ -44,8 +44,12 @@ namespace demo
         }
         void ShowInTextBox(int vt)
         {
-            txtIDColor.Text = Colors.Rows[vt][0].ToString();
-            txtColorName.Text = Colors.Rows[vt][1].ToString();
+            if(Colors.Rows.Count>0)
+            {
+                txtIDColor.Text = Colors.Rows[vt][0].ToString();
+                txtColorName.Text = Colors.Rows[vt][1].ToString();
+            }    
+            
         }       
         private void dgvColor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -247,5 +251,15 @@ namespace demo
             txtIDColor.Text = ColorChange.Change(txtColorName.Text);
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ColorDialog c = new ColorDialog();
+           
+            if (c.ShowDialog() == DialogResult.OK)
+            {
+                txtColorName.Text = c.Color.Name;
+                txtIDColor.Text = c.Color.ToArgb().ToString();
+            }    
+        }
     }
 }

@@ -61,7 +61,6 @@ namespace demo
             //Application.Run(new fColor());
             //Application.Run(new fStaff());
             //Application.Run(new fProductType());
-            //Application.Run(new fProductDetail());
         }
 
     }
