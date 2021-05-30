@@ -234,21 +234,9 @@ namespace demo
             e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            errorColor.Clear();
-            Update();
-        }
-
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
             Search();
-        }
-
-        private void txtColorName_KeyUp(object sender, KeyEventArgs e)
-        {
-            ChangeFromColorNameToHex ColorChange = new ChangeFromColorNameToHex();
-            txtIDColor.Text = ColorChange.Change(txtColorName.Text);
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

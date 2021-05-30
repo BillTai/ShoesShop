@@ -133,7 +133,7 @@ namespace demo
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(644, 426);
+            this.ClientSize = new System.Drawing.Size(621, 411);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbShowPassword);
             this.Controls.Add(this.btnRegister);

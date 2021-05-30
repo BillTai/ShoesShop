@@ -180,7 +180,6 @@ namespace demo
             this.txtColorName.Size = new System.Drawing.Size(131, 27);
             this.txtColorName.TabIndex = 13;
             this.txtColorName.TextChanged += new System.EventHandler(this.txtIDColor_TextChanged);
-            this.txtColorName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtColorName_KeyUp);
             // 
             // label5
             // 

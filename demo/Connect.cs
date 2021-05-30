@@ -9,7 +9,7 @@ namespace demo
 {
     public class Connect
     {
-        string connectionSTR = @"Data Source=DESKTOP-JKPMEMA\SQLEXPRESS;Initial Catalog=ShoesShop2;Integrated Security=True";
+        string connectionSTR = @"Data Source=DESKTOP-JKPMEMA\SQLEXPRESS;Initial Catalog=ShoesShop3;Integrated Security=True";
         public DataTable ExcuteQuery(string query)
         {
             SqlConnection connect = new SqlConnection(connectionSTR);          

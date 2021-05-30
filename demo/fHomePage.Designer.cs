@@ -119,6 +119,7 @@ namespace demo
             this.IDProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tHome = new System.Windows.Forms.TabControl();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.menuStrip.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -183,12 +184,14 @@ namespace demo
             this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
             this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.đăngNhậpToolStripMenuItem.Text = "Tạo Đơn";
+            this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
             // 
             // đăngKýToolStripMenuItem
             // 
             this.đăngKýToolStripMenuItem.Name = "đăngKýToolStripMenuItem";
             this.đăngKýToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.đăngKýToolStripMenuItem.Text = "Tìm hoá đơn cũ";
+            this.đăngKýToolStripMenuItem.Click += new System.EventHandler(this.đăngKýToolStripMenuItem_Click);
             // 
             // menToolStripMenuItem
             // 
@@ -914,7 +917,7 @@ namespace demo
             // 
             // IDProvider
             // 
-            this.IDProvider.DataPropertyName = "IDProvider";
+            this.IDProvider.DataPropertyName = "IDCustomer";
             this.IDProvider.HeaderText = "Mã Nhà Cung Cấp";
             this.IDProvider.Name = "IDProvider";
             this.IDProvider.ReadOnly = true;
@@ -944,14 +947,37 @@ namespace demo
             this.tHome.Size = new System.Drawing.Size(1044, 577);
             this.tHome.TabIndex = 1;
             // 
+            // btnExit
+            // 
+            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(54)))), ((int)(((byte)(128)))));
+            this.btnExit.BorderRadius = 9;
+            this.btnExit.BorderThickness = 3;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.FillColor = System.Drawing.SystemColors.Control;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.HoverState.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(1003, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(34, 38);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // fHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1044, 603);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.tHome);
             this.Controls.Add(this.menuStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Name = "fHomePage";
@@ -1069,12 +1095,13 @@ namespace demo
         private TabPage tProduct;
         private GroupBox groupBox1;
         private DataGridView dgvProduct;
+        private TabControl tHome;
+        private ToolStripMenuItem quảnLýSảnPhẩmToolStripMenuItem;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn IDTypeProduct;
         private DataGridViewTextBoxColumn IDProvider;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private TabControl tHome;
-        private ToolStripMenuItem quảnLýSảnPhẩmToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

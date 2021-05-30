@@ -98,22 +98,27 @@ namespace demo
         //Nút quản lý loại sản phẩm
         private void mtsEditProductType_Click(object sender, EventArgs e)
         {
+            this.Hide();
             fProductType fEditProType = new fProductType();
             fEditProType.ShowDialog();
+            this.Close();
         }
         //Nút quản lý nhân viên
         private void mtsEditStaff_Click(object sender, EventArgs e)
         {
+            this.Hide();           
             fStaff fS = new fStaff();
             fS.ShowDialog();
+            this.Close();
         }
         //Nút thông tin tài khoản
         private void mtsInfoAccount_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
             fInfoAccount fInfo = new fInfoAccount();
             fInfo.IDAccount = ReturnIDAccount;
             fInfo.ShowDialog();
+            this.Close();
         }
         //Nút quản lý khách hàng
         private void mtsAddCustomer_Click(object sender, EventArgs e)
@@ -141,9 +146,37 @@ namespace demo
 
         private void quảnLýSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             fProduct pro = new fProduct();
             pro.ShowDialog();
             this.Close();
+        }
+
+        private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fBill bill = new fBill();
+            bill.ShowDialog();
+            this.Close();
+        }
+
+        private void đăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fBillSearch bills = new fBillSearch();
+            bills.ShowDialog();
+            this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult Question = MessageBox.Show("Bạn Có Muốn Đăng Xuất ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Question == DialogResult.Yes)
+            {
+                mtsLogOut_Click(sender, e);
+            }
+            else
+                this.Close();
         }
     }
 }

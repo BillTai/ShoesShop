@@ -67,7 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChangeFromColorNameToHex.cs" />
     <Compile Include="Connect.cs" />
     <Compile Include="Connected Services\TranslateService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -79,6 +78,12 @@
     </Compile>
     <Compile Include="fBill.designer.cs">
       <DependentUpon>fBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBillSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBillSearch.designer.cs">
+      <DependentUpon>fBillSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="fColor.cs">
       <SubType>Form</SubType>
@@ -150,6 +155,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBillSearch.resx">
+      <DependentUpon>fBillSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fColor.resx">
       <DependentUpon>fColor.cs</DependentUpon>

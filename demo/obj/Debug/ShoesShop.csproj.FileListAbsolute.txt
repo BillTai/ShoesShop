@@ -72,3 +72,4 @@ C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\bin\Debug\ExcelDataReader.pdb
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\bin\Debug\ExcelDataReader.xml
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\bin\Debug\ExcelDataReader.DataSet.pdb
 C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\obj\Debug\demo.fBillSearch.resources

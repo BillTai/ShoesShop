@@ -217,6 +217,9 @@ namespace demo
         }
         private void btnExit_Click_1(object sender, EventArgs e)
         {
+            this.Hide();
+            fHomePage HP = new fHomePage();
+            HP.ShowDialog();
             this.Close();
         }
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)

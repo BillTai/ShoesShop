@@ -826,7 +826,7 @@ namespace demo
         }
         private void btnSize_Click(object sender, EventArgs e)
         {
-            player.controls.stop();
+            //player.controls.stop();
 
             this.Hide();
             fSize fSize = new fSize();
@@ -835,7 +835,7 @@ namespace demo
         }
         private void btnColor_Click(object sender, EventArgs e)
         {
-            player.controls.stop();
+            //player.controls.stop();
 
             this.Hide();
             fColor fColor = new fColor();
@@ -890,7 +890,10 @@ namespace demo
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            player.controls.stop();
+            //player.controls.stop();
+            this.Hide();
+            fHomePage HP = new fHomePage();
+            HP.ShowDialog();
             this.Close();
         }
 
