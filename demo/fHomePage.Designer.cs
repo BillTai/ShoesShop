@@ -150,6 +150,7 @@ namespace demo
             this.menuStrip.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuStrip.AutoSize = false;
             this.menuStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mntHome,
@@ -162,7 +163,7 @@ namespace demo
             this.mstExit});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(837, 24);
+            this.menuStrip.Size = new System.Drawing.Size(837, 38);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -176,7 +177,7 @@ namespace demo
             this.gostoToolStripMenuItem});
             this.mntHome.Image = ((System.Drawing.Image)(resources.GetObject("mntHome.Image")));
             this.mntHome.Name = "mntHome";
-            this.mntHome.Size = new System.Drawing.Size(87, 20);
+            this.mntHome.Size = new System.Drawing.Size(87, 34);
             this.mntHome.Text = "Bán Hàng";
             // 
             // đăngNhậpToolStripMenuItem
@@ -217,7 +218,7 @@ namespace demo
             this.mtsAddCustomer});
             this.quảnLýKháchHàngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýKháchHàngToolStripMenuItem.Image")));
             this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
-            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(141, 20);
+            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(141, 34);
             this.quảnLýKháchHàngToolStripMenuItem.Text = "Quản lý khách hàng";
             // 
             // mtsAddCustomer
@@ -234,7 +235,7 @@ namespace demo
             this.quảnLýSảnPhẩmToolStripMenuItem});
             this.quảnLýHàngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýHàngToolStripMenuItem.Image")));
             this.quảnLýHàngToolStripMenuItem.Name = "quảnLýHàngToolStripMenuItem";
-            this.quảnLýHàngToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
+            this.quảnLýHàngToolStripMenuItem.Size = new System.Drawing.Size(119, 34);
             this.quảnLýHàngToolStripMenuItem.Text = "Quản sản phẩm";
             // 
             // mtsEditProductType
@@ -257,7 +258,7 @@ namespace demo
             this.mtsEditStaff});
             this.trợGiúpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trợGiúpToolStripMenuItem.Image")));
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(131, 20);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(131, 34);
             this.trợGiúpToolStripMenuItem.Text = "Quản lý nhân viên";
             // 
             // mtsEditStaff
@@ -277,7 +278,7 @@ namespace demo
             this.thốngKêXuấtKhoToolStripMenuItem1});
             this.quảnLýTàiKhoảnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýTàiKhoảnToolStripMenuItem.Image")));
             this.quảnLýTàiKhoảnToolStripMenuItem.Name = "quảnLýTàiKhoảnToolStripMenuItem";
-            this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(99, 34);
             this.quảnLýTàiKhoảnToolStripMenuItem.Text = "Quản lý kho";
             // 
             // hàngTrongKhoToolStripMenuItem
@@ -316,13 +317,13 @@ namespace demo
             this.mtsInfoAccount});
             this.quảnLýTàiKhoảnToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýTàiKhoảnToolStripMenuItem1.Image")));
             this.quảnLýTàiKhoảnToolStripMenuItem1.Name = "quảnLýTàiKhoảnToolStripMenuItem1";
-            this.quảnLýTàiKhoảnToolStripMenuItem1.Size = new System.Drawing.Size(128, 20);
+            this.quảnLýTàiKhoảnToolStripMenuItem1.Size = new System.Drawing.Size(128, 34);
             this.quảnLýTàiKhoảnToolStripMenuItem1.Text = "Quản lý tài khoản";
             // 
             // mtsInfoAccount
             // 
             this.mtsInfoAccount.Name = "mtsInfoAccount";
-            this.mtsInfoAccount.Size = new System.Drawing.Size(177, 22);
+            this.mtsInfoAccount.Size = new System.Drawing.Size(180, 22);
             this.mtsInfoAccount.Text = "Thông tin tài khoản";
             this.mtsInfoAccount.Click += new System.EventHandler(this.mtsInfoAccount_Click);
             // 
@@ -332,7 +333,7 @@ namespace demo
             this.mtsLogOut});
             this.càiĐặtToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("càiĐặtToolStripMenuItem.Image")));
             this.càiĐặtToolStripMenuItem.Name = "càiĐặtToolStripMenuItem";
-            this.càiĐặtToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.càiĐặtToolStripMenuItem.Size = new System.Drawing.Size(72, 34);
             this.càiĐặtToolStripMenuItem.Text = "Cài đặt";
             // 
             // mtsLogOut
@@ -346,7 +347,7 @@ namespace demo
             // 
             this.mstExit.Image = ((System.Drawing.Image)(resources.GetObject("mstExit.Image")));
             this.mstExit.Name = "mstExit";
-            this.mstExit.Size = new System.Drawing.Size(65, 20);
+            this.mstExit.Size = new System.Drawing.Size(65, 34);
             this.mstExit.Text = "Thoát";
             this.mstExit.Click += new System.EventHandler(this.mstExit_Click_1);
             // 
@@ -858,7 +859,7 @@ namespace demo
             this.tProduct.Location = new System.Drawing.Point(4, 22);
             this.tProduct.Name = "tProduct";
             this.tProduct.Padding = new System.Windows.Forms.Padding(3);
-            this.tProduct.Size = new System.Drawing.Size(1036, 551);
+            this.tProduct.Size = new System.Drawing.Size(1036, 543);
             this.tProduct.TabIndex = 1;
             this.tProduct.Text = "Sản Phẩm";
             this.tProduct.UseVisualStyleBackColor = true;
@@ -869,7 +870,7 @@ namespace demo
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1030, 545);
+            this.groupBox1.Size = new System.Drawing.Size(1030, 537);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Sản Phẩm";
@@ -891,7 +892,7 @@ namespace demo
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.RowHeadersVisible = false;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(1024, 526);
+            this.dgvProduct.Size = new System.Drawing.Size(1024, 518);
             this.dgvProduct.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -941,10 +942,10 @@ namespace demo
             this.tHome.Controls.Add(this.tabPage2);
             this.tHome.Controls.Add(this.tabPage3);
             this.tHome.Controls.Add(this.tabPage4);
-            this.tHome.Location = new System.Drawing.Point(0, 24);
+            this.tHome.Location = new System.Drawing.Point(0, 32);
             this.tHome.Name = "tHome";
             this.tHome.SelectedIndex = 0;
-            this.tHome.Size = new System.Drawing.Size(1044, 577);
+            this.tHome.Size = new System.Drawing.Size(1044, 569);
             this.tHome.TabIndex = 1;
             // 
             // btnExit
@@ -1009,7 +1010,6 @@ namespace demo
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.tHome.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

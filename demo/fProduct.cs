@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarcodeLib;
+using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -968,9 +969,32 @@ namespace demo
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnCreateBarCode_Click(object sender, EventArgs e)
         {
-            Search();
+            if (txtIDProductDetail.Text != "Tự động phát sinh ...")
+            {
+                picbarcode.Image = null;
+                Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+                picbarcode.Image = barcode.Draw(txtIDProductDetail.Text, 50);
+            }
+            else
+                picbarcode.Image = null;
+        }
+
+        private void btnSaveBarCode_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.InitialDirectory = @"C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\Barcode";      
+            saveFileDialog1.Title = "Save Image Files";
+            saveFileDialog1.DefaultExt = "png";
+            saveFileDialog1.Filter = "(*.jpg);(*.png)|*.jpg;*.png";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (picbarcode.Image != null)
+                    picbarcode.Image.Save(saveFileDialog1.FileName);
+                else
+                    MessageBox.Show("Vui Lòng Chọn Ảnh", "Thông Báo");
+            }
         }
     }
 }

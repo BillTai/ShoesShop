@@ -88,11 +88,12 @@ namespace demo
             this.flp2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSize = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtImageDetail = new Guna.UI2.WinForms.Guna2TextBox();
             this.nudNumber = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flpImageDetail = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnImages = new Guna.UI2.WinForms.Guna2Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtImageDetail = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnColor = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnOpenFolder = new Guna.UI2.WinForms.Guna2Button();
             this.pProduct = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -100,12 +101,15 @@ namespace demo
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbSearch = new Guna.UI2.WinForms.Guna2ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnImages = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.picbarcode = new System.Windows.Forms.PictureBox();
+            this.btnCreateBarCode = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSaveBarCode = new Guna.UI2.WinForms.Guna2Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pButton.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
@@ -122,6 +126,8 @@ namespace demo
             this.groupBox4.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbarcode)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pButton
@@ -130,9 +136,9 @@ namespace demo
             this.pButton.Controls.Add(this.btnDeleteProductDetail);
             this.pButton.Controls.Add(this.btnUpdateProductDetail);
             this.pButton.Controls.Add(this.btnExit);
-            this.pButton.Location = new System.Drawing.Point(1059, 12);
+            this.pButton.Location = new System.Drawing.Point(1046, 12);
             this.pButton.Name = "pButton";
-            this.pButton.Size = new System.Drawing.Size(297, 113);
+            this.pButton.Size = new System.Drawing.Size(310, 69);
             this.pButton.TabIndex = 0;
             // 
             // btnAddProductDetail
@@ -147,7 +153,7 @@ namespace demo
             this.btnAddProductDetail.Location = new System.Drawing.Point(8, 15);
             this.btnAddProductDetail.Name = "btnAddProductDetail";
             this.btnAddProductDetail.ShadowDecoration.Parent = this.btnAddProductDetail;
-            this.btnAddProductDetail.Size = new System.Drawing.Size(106, 36);
+            this.btnAddProductDetail.Size = new System.Drawing.Size(81, 36);
             this.btnAddProductDetail.TabIndex = 10;
             this.btnAddProductDetail.Text = "Thêm";
             this.btnAddProductDetail.Click += new System.EventHandler(this.btnAddProductDetail_Click);
@@ -161,10 +167,10 @@ namespace demo
             this.btnDeleteProductDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDeleteProductDetail.ForeColor = System.Drawing.Color.Black;
             this.btnDeleteProductDetail.HoverState.Parent = this.btnDeleteProductDetail;
-            this.btnDeleteProductDetail.Location = new System.Drawing.Point(133, 15);
+            this.btnDeleteProductDetail.Location = new System.Drawing.Point(95, 15);
             this.btnDeleteProductDetail.Name = "btnDeleteProductDetail";
             this.btnDeleteProductDetail.ShadowDecoration.Parent = this.btnDeleteProductDetail;
-            this.btnDeleteProductDetail.Size = new System.Drawing.Size(106, 36);
+            this.btnDeleteProductDetail.Size = new System.Drawing.Size(81, 36);
             this.btnDeleteProductDetail.TabIndex = 10;
             this.btnDeleteProductDetail.Text = "Xoá";
             this.btnDeleteProductDetail.Click += new System.EventHandler(this.btnDeleteProductDetail_Click);
@@ -178,10 +184,10 @@ namespace demo
             this.btnUpdateProductDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdateProductDetail.ForeColor = System.Drawing.Color.Black;
             this.btnUpdateProductDetail.HoverState.Parent = this.btnUpdateProductDetail;
-            this.btnUpdateProductDetail.Location = new System.Drawing.Point(76, 74);
+            this.btnUpdateProductDetail.Location = new System.Drawing.Point(182, 16);
             this.btnUpdateProductDetail.Name = "btnUpdateProductDetail";
             this.btnUpdateProductDetail.ShadowDecoration.Parent = this.btnUpdateProductDetail;
-            this.btnUpdateProductDetail.Size = new System.Drawing.Size(106, 36);
+            this.btnUpdateProductDetail.Size = new System.Drawing.Size(81, 36);
             this.btnUpdateProductDetail.TabIndex = 10;
             this.btnUpdateProductDetail.Text = "Cập Nhật";
             this.btnUpdateProductDetail.Click += new System.EventHandler(this.btnUpdateProductDetail_Click);
@@ -200,7 +206,7 @@ namespace demo
             this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnExit.HoverState.Parent = this.btnExit;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(260, 3);
+            this.btnExit.Location = new System.Drawing.Point(276, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
             this.btnExit.Size = new System.Drawing.Size(34, 38);
@@ -880,10 +886,11 @@ namespace demo
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtImageDetail);
             this.panel2.Controls.Add(this.nudNumber);
             this.panel2.Controls.Add(this.groupBox3);
+            this.panel2.Controls.Add(this.btnImages);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.txtImageDetail);
             this.panel2.Controls.Add(this.btnColor);
             this.panel2.Controls.Add(this.btnSize);
             this.panel2.Controls.Add(this.flp2);
@@ -901,6 +908,34 @@ namespace demo
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(569, 292);
             this.panel2.TabIndex = 9;
+            // 
+            // txtImageDetail
+            // 
+            this.txtImageDetail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtImageDetail.BorderRadius = 10;
+            this.txtImageDetail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtImageDetail.DefaultText = "";
+            this.txtImageDetail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtImageDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtImageDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtImageDetail.DisabledState.Parent = this.txtImageDetail;
+            this.txtImageDetail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtImageDetail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtImageDetail.FocusedState.Parent = this.txtImageDetail;
+            this.txtImageDetail.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.txtImageDetail.ForeColor = System.Drawing.Color.Black;
+            this.txtImageDetail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtImageDetail.HoverState.Parent = this.txtImageDetail;
+            this.txtImageDetail.Location = new System.Drawing.Point(403, 258);
+            this.txtImageDetail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtImageDetail.Name = "txtImageDetail";
+            this.txtImageDetail.PasswordChar = '\0';
+            this.txtImageDetail.PlaceholderText = "";
+            this.txtImageDetail.ReadOnly = true;
+            this.txtImageDetail.SelectedText = "";
+            this.txtImageDetail.ShadowDecoration.Parent = this.txtImageDetail;
+            this.txtImageDetail.Size = new System.Drawing.Size(120, 27);
+            this.txtImageDetail.TabIndex = 6;
             // 
             // nudNumber
             // 
@@ -960,42 +995,31 @@ namespace demo
             this.flpImageDetail.Size = new System.Drawing.Size(207, 237);
             this.flpImageDetail.TabIndex = 12;
             // 
+            // btnImages
+            // 
+            this.btnImages.BorderRadius = 9;
+            this.btnImages.CheckedState.Parent = this.btnImages;
+            this.btnImages.CustomImages.Parent = this.btnImages;
+            this.btnImages.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
+            this.btnImages.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnImages.ForeColor = System.Drawing.Color.Black;
+            this.btnImages.HoverState.Parent = this.btnImages;
+            this.btnImages.Location = new System.Drawing.Point(529, 262);
+            this.btnImages.Name = "btnImages";
+            this.btnImages.ShadowDecoration.Parent = this.btnImages;
+            this.btnImages.Size = new System.Drawing.Size(37, 23);
+            this.btnImages.TabIndex = 10;
+            this.btnImages.Text = "...";
+            this.btnImages.Click += new System.EventHandler(this.btnImages_Click);
+            // 
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(352, 262);
+            this.label14.Location = new System.Drawing.Point(351, 262);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 23);
             this.label14.TabIndex = 25;
             this.label14.Text = "Chi Tiết:";
-            // 
-            // txtImageDetail
-            // 
-            this.txtImageDetail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtImageDetail.BorderRadius = 10;
-            this.txtImageDetail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtImageDetail.DefaultText = "";
-            this.txtImageDetail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtImageDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtImageDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtImageDetail.DisabledState.Parent = this.txtImageDetail;
-            this.txtImageDetail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtImageDetail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtImageDetail.FocusedState.Parent = this.txtImageDetail;
-            this.txtImageDetail.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txtImageDetail.ForeColor = System.Drawing.Color.Black;
-            this.txtImageDetail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtImageDetail.HoverState.Parent = this.txtImageDetail;
-            this.txtImageDetail.Location = new System.Drawing.Point(416, 258);
-            this.txtImageDetail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtImageDetail.Name = "txtImageDetail";
-            this.txtImageDetail.PasswordChar = '\0';
-            this.txtImageDetail.PlaceholderText = "";
-            this.txtImageDetail.ReadOnly = true;
-            this.txtImageDetail.SelectedText = "";
-            this.txtImageDetail.ShadowDecoration.Parent = this.txtImageDetail;
-            this.txtImageDetail.Size = new System.Drawing.Size(144, 27);
-            this.txtImageDetail.TabIndex = 6;
             // 
             // btnColor
             // 
@@ -1070,7 +1094,7 @@ namespace demo
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
-            this.txtSearch.Location = new System.Drawing.Point(3, 80);
+            this.txtSearch.Location = new System.Drawing.Point(49, 58);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
@@ -1098,7 +1122,7 @@ namespace demo
             this.cbSearch.IntegralHeight = false;
             this.cbSearch.ItemHeight = 30;
             this.cbSearch.ItemsAppearance.Parent = this.cbSearch;
-            this.cbSearch.Location = new System.Drawing.Point(0, 12);
+            this.cbSearch.Location = new System.Drawing.Point(46, 12);
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.ShadowDecoration.Color = System.Drawing.Color.Silver;
             this.cbSearch.ShadowDecoration.Parent = this.cbSearch;
@@ -1116,23 +1140,6 @@ namespace demo
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ảnh Đại Diện";
             // 
-            // btnImages
-            // 
-            this.btnImages.BorderRadius = 9;
-            this.btnImages.CheckedState.Parent = this.btnImages;
-            this.btnImages.CustomImages.Parent = this.btnImages;
-            this.btnImages.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
-            this.btnImages.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnImages.ForeColor = System.Drawing.Color.Black;
-            this.btnImages.HoverState.Parent = this.btnImages;
-            this.btnImages.Location = new System.Drawing.Point(1045, 274);
-            this.btnImages.Name = "btnImages";
-            this.btnImages.ShadowDecoration.Parent = this.btnImages;
-            this.btnImages.Size = new System.Drawing.Size(40, 23);
-            this.btnImages.TabIndex = 10;
-            this.btnImages.Text = "...";
-            this.btnImages.Click += new System.EventHandler(this.btnImages_Click);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btnOpenFolder);
@@ -1148,9 +1155,9 @@ namespace demo
             // 
             this.panel5.Controls.Add(this.cbSearch);
             this.panel5.Controls.Add(this.txtSearch);
-            this.panel5.Location = new System.Drawing.Point(1091, 135);
+            this.panel5.Location = new System.Drawing.Point(1045, 87);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(265, 166);
+            this.panel5.Size = new System.Drawing.Size(311, 94);
             this.panel5.TabIndex = 41;
             // 
             // openFileDialog1
@@ -1174,6 +1181,60 @@ namespace demo
             this.guna2Button1.Text = "Excel";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // picbarcode
+            // 
+            this.picbarcode.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picbarcode.Location = new System.Drawing.Point(0, 15);
+            this.picbarcode.Name = "picbarcode";
+            this.picbarcode.Size = new System.Drawing.Size(258, 72);
+            this.picbarcode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbarcode.TabIndex = 42;
+            this.picbarcode.TabStop = false;
+            // 
+            // btnCreateBarCode
+            // 
+            this.btnCreateBarCode.BorderRadius = 9;
+            this.btnCreateBarCode.CheckedState.Parent = this.btnCreateBarCode;
+            this.btnCreateBarCode.CustomImages.Parent = this.btnCreateBarCode;
+            this.btnCreateBarCode.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
+            this.btnCreateBarCode.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCreateBarCode.ForeColor = System.Drawing.Color.Black;
+            this.btnCreateBarCode.HoverState.Parent = this.btnCreateBarCode;
+            this.btnCreateBarCode.Location = new System.Drawing.Point(1166, 278);
+            this.btnCreateBarCode.Name = "btnCreateBarCode";
+            this.btnCreateBarCode.ShadowDecoration.Parent = this.btnCreateBarCode;
+            this.btnCreateBarCode.Size = new System.Drawing.Size(111, 23);
+            this.btnCreateBarCode.TabIndex = 10;
+            this.btnCreateBarCode.Text = "Taọ Mã Vạch";
+            this.btnCreateBarCode.Click += new System.EventHandler(this.btnCreateBarCode_Click);
+            // 
+            // btnSaveBarCode
+            // 
+            this.btnSaveBarCode.BorderRadius = 9;
+            this.btnSaveBarCode.CheckedState.Parent = this.btnSaveBarCode;
+            this.btnSaveBarCode.CustomImages.Parent = this.btnSaveBarCode;
+            this.btnSaveBarCode.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
+            this.btnSaveBarCode.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSaveBarCode.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveBarCode.HoverState.Parent = this.btnSaveBarCode;
+            this.btnSaveBarCode.Location = new System.Drawing.Point(1295, 278);
+            this.btnSaveBarCode.Name = "btnSaveBarCode";
+            this.btnSaveBarCode.ShadowDecoration.Parent = this.btnSaveBarCode;
+            this.btnSaveBarCode.Size = new System.Drawing.Size(54, 23);
+            this.btnSaveBarCode.TabIndex = 10;
+            this.btnSaveBarCode.Text = "Lưu";
+            this.btnSaveBarCode.Click += new System.EventHandler(this.btnSaveBarCode_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.picbarcode);
+            this.groupBox5.Location = new System.Drawing.Point(1074, 184);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(258, 90);
+            this.groupBox5.TabIndex = 43;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Mã Vạch";
+            // 
             // fProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1181,9 +1242,11 @@ namespace demo
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1361, 667);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.panel5);
+            this.Controls.Add(this.btnSaveBarCode);
+            this.Controls.Add(this.btnCreateBarCode);
             this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.btnImages);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -1212,6 +1275,8 @@ namespace demo
             this.groupBox4.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picbarcode)).EndInit();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1293,5 +1358,9 @@ namespace demo
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.PictureBox picbarcode;
+        private Guna.UI2.WinForms.Guna2Button btnSaveBarCode;
+        private Guna.UI2.WinForms.Guna2Button btnCreateBarCode;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
