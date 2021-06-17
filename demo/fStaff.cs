@@ -66,7 +66,7 @@ namespace demo
             
             txtIDStaff.Text = ds.Rows[vt][0].ToString();
             txtStaffName.Text = ds.Rows[vt][1].ToString();
-            txtSalary.Text = ds.Rows[vt][2].ToString();
+            txtSalary.Text = string.Format("{0:n0}", ds.Rows[vt][2]);
             txtPhoneNum.Text = ds.Rows[vt][3].ToString();
             txtEmail.Text = ds.Rows[vt][4].ToString();
             txtAddress.Text = ds.Rows[vt][5].ToString();
@@ -185,42 +185,49 @@ namespace demo
         //Tìm kiếm nhân viên
         void SearchStaff()
         {
-            string query = "";
-            for (int i = 0; i < Staff.Columns.Count; i++)
+            try
             {
-                if (cbSearch.SelectedIndex == 0)
+                string query = "";
+                for (int i = 0; i < Staff.Columns.Count; i++)
                 {
-                    query = "select * from Staff where IDStaff LIKE '%" + txtSearch.Text + "%'";
-                }
-                else if (cbSearch.SelectedIndex == 1)
-                {
-                    query = "select * from Staff where StaffName LIKE N'%" + txtSearch.Text + "%'";
-                }
-                else if (cbSearch.SelectedIndex == 2)
-                {
-                    query = "select * from Staff where Salary between '" + txtFrom.Text + "' and '" + txtTo.Text + "'";
+                    if (cbSearch.SelectedIndex == 0)
+                    {
+                        query = "select * from Staff where IDStaff LIKE '%" + txtSearch.Text + "%'";
+                    }
+                    else if (cbSearch.SelectedIndex == 1)
+                    {
+                        query = "select * from Staff where StaffName LIKE N'%" + txtSearch.Text + "%'";
+                    }
+                    else if (cbSearch.SelectedIndex == 2)
+                    {
+                        query = "select * from Staff where Salary between '" + txtFrom.Text + "' and '" + txtTo.Text + "'";
 
-                }
-                else if (cbSearch.SelectedIndex == 3)
-                {
-                    query = "select * from Staff where PhoneNum LIKE N'%" + txtSearch.Text + "%'";
-                }
-                else if (cbSearch.SelectedIndex == 4)
-                {
-                    query = "select * from Staff where Email LIKE N'%" + txtSearch.Text + "%'";
+                    }
+                    else if (cbSearch.SelectedIndex == 3)
+                    {
+                        query = "select * from Staff where PhoneNum LIKE N'%" + txtSearch.Text + "%'";
+                    }
+                    else if (cbSearch.SelectedIndex == 4)
+                    {
+                        query = "select * from Staff where Email LIKE N'%" + txtSearch.Text + "%'";
 
-                }
-                else if (cbSearch.SelectedIndex == 5)
-                {
-                    query = "select * from Staff where Address LIKE N'%" + txtSearch.Text + "%'";
-                }
-                else if (cbSearch.SelectedIndex == 6)
-                {
-                    query = "select * from Staff where Status between '" + txtFrom.Text + "' and '" + txtTo.Text + "'";
+                    }
+                    else if (cbSearch.SelectedIndex == 5)
+                    {
+                        query = "select * from Staff where Address LIKE N'%" + txtSearch.Text + "%'";
+                    }
+                    else if (cbSearch.SelectedIndex == 6)
+                    {
+                        query = "select * from Staff where Status between '" + txtFrom.Text + "' and '" + txtTo.Text + "'";
 
+                    }
+                    ConnectSql(query, dgvStaff);
                 }
-                ConnectSql(query, dgvStaff);
+            }catch
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
             }
+
         }
         //Nhập Lại
         private void RefreshTextBox()
@@ -237,10 +244,11 @@ namespace demo
         //Thêm nhân viên mới
         void AddStaff()
         {
+            try
+            {
+                int SIZE = Staff.Rows.Count;
+                string query = "INSERT INTO Staff (IDStaff, StaffName, Salary, PhoneNum, Email, Address, Status) VALUES ('" + txtIDStaff.Text + "', N'" + txtStaffName.Text + "', '" + txtSalary.Text + "', '" + txtPhoneNum.Text + "', '" + txtEmail.Text + "', N'" + txtAddress.Text + "', '" + cbStatus.SelectedIndex + "')";
 
-            int SIZE = Staff.Rows.Count;
-            string query = "INSERT INTO Staff (IDStaff, StaffName, Salary, PhoneNum, Email, Address, Status) VALUES ('" + txtIDStaff.Text + "', N'" + txtStaffName.Text + "', '" + txtSalary.Text + "', '" + txtPhoneNum.Text + "', '" + txtEmail.Text + "', N'" + txtAddress.Text + "', '" + cbStatus.SelectedIndex + "')";
-            
                 ConnectSQL.ExcuteQuery(query);
                 ShowStaff();
 
@@ -253,90 +261,109 @@ namespace demo
                 {
                     MessageBox.Show("Thêm Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }catch
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
+            }
+            
         }
         // Xoá nhân viên
         void DeleteStaff()
         {
-            if (!CheckID())
+            try
             {
-                MessageBox.Show("Kiểm tra lại ID", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtIDStaff.Focus();
-                errorStaff.SetError(txtIDStaff, "Nhập lại giá trị");
-            }
-            else
-            {
-
-                int SIZE = Staff.Rows.Count;
-                fHomePage fHP = new fHomePage();
-                if (txtIDStaff.Text == fHP.ReturnIDAccount)
+                if (!CheckID())
                 {
-
-                    MessageBox.Show("Tài Khoản Đang Hoạt Động", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Kiểm tra lại ID", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtIDStaff.Focus();
+                    errorStaff.SetError(txtIDStaff, "Nhập lại giá trị");
                 }
                 else
                 {
-                    DialogResult Question = MessageBox.Show("Bạn Có Muốn Xoá Nhân Viên", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (Question == DialogResult.Yes)
-                    {
-                        ConnectSQL.ExcuteQuery("delete from Staff where IDStaff = '" + txtIDStaff.Text + "'");
-                        ConnectSQL.ExcuteQuery("delete from Account where IDStaff = '" + txtIDStaff.Text + "'");
-                        ShowStaff();
-                    }
 
-                    int SIZE2 = Staff.Rows.Count;
-                    if (SIZE != SIZE2)
+                    int SIZE = Staff.Rows.Count;
+                    fHomePage fHP = new fHomePage();
+                    if (txtIDStaff.Text == fHP.ReturnIDAccount)
                     {
-                        MessageBox.Show("Xoá Nhân Viên Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                        MessageBox.Show("Tài Khoản Đang Hoạt Động", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show("Xoá Nhân Viên Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        DialogResult Question = MessageBox.Show("Bạn Có Muốn Xoá Nhân Viên", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (Question == DialogResult.Yes)
+                        {
+                            ConnectSQL.ExcuteQuery("delete from Staff where IDStaff = '" + txtIDStaff.Text + "'");
+                            ConnectSQL.ExcuteQuery("delete from Account where IDStaff = '" + txtIDStaff.Text + "'");
+                            ShowStaff();
+                        }
 
+                        int SIZE2 = Staff.Rows.Count;
+                        if (SIZE != SIZE2)
+                        {
+                            MessageBox.Show("Xoá Nhân Viên Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xoá Nhân Viên Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                    }
                 }
+            }catch
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
             }
+
         }
         // Chỉnh sửa thông tin nhân viên
         void UpdateStaff()
         {
-            if (!CheckID())
+            try
             {
-                MessageBox.Show("Kiểm tra lại ID", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtIDStaff.Focus();
-                errorStaff.SetError(txtIDStaff, "Nhập lại giá trị");
-            }
-            else
-            {
-                  
-                if (CheckUpdate() == 1)
-                    MessageBox.Show("Email Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else if (CheckUpdate() == 2)
-                    MessageBox.Show("SĐT Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (!CheckID())
+                {
+                    MessageBox.Show("Kiểm tra lại ID", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtIDStaff.Focus();
+                    errorStaff.SetError(txtIDStaff, "Nhập lại giá trị");
+                }
                 else
                 {
-                    string query = "update Staff set [StaffName] = N'" + txtStaffName.Text + "',[Salary] = '" + txtSalary.Text + "', [PhoneNum] = '" + txtPhoneNum.Text + "', [Email] = '" + txtEmail.Text + "', [Address] = N'" + txtAddress.Text + "', [Status] = '" + cbStatus.SelectedIndex + "' where[IDStaff] = '" + txtIDStaff.Text + "'";
-                    DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Nhân Viên", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (Question == DialogResult.Yes)
-                    {
-                        ConnectSQL.ExcuteQuery("Update Account set [UserName] = '" + txtStaffName.Text + "', [PhoneNum] = '" + txtPhoneNum.Text + "', [Email] = '" + txtEmail.Text + "' where [IDStaff] = '" + txtIDStaff.Text + "'");
-                        if (cbStatus.SelectedIndex > 2)
-                        {
-                            ConnectSQL.ExcuteQuery("delete from Account where IDStaff = '" + txtIDStaff.Text + "'");
-                        }
-                        ConnectSQL.ExcuteQuery(query);
-                    }
-                    ShowStaff();
-                    if (ConnectSQL.ExcuteNonQuery(query) > 0)
-                    {
-                        MessageBox.Show("Cập Nhật Thông Tin Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+
+                    if (CheckUpdate() == 1)
+                        MessageBox.Show("Email Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else if (CheckUpdate() == 2)
+                        MessageBox.Show("SĐT Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
                     {
-                        MessageBox.Show("Cập Nhật Thông Tin Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string query = "update Staff set [StaffName] = N'" + txtStaffName.Text + "',[Salary] = '" + txtSalary.Text + "', [PhoneNum] = '" + txtPhoneNum.Text + "', [Email] = '" + txtEmail.Text + "', [Address] = N'" + txtAddress.Text + "', [Status] = '" + cbStatus.SelectedIndex + "' where[IDStaff] = '" + txtIDStaff.Text + "'";
+                        DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Nhân Viên", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (Question == DialogResult.Yes)
+                        {
+                            ConnectSQL.ExcuteQuery("Update Account set [UserName] = '" + txtStaffName.Text + "', [PhoneNum] = '" + txtPhoneNum.Text + "', [Email] = '" + txtEmail.Text + "' where [IDStaff] = '" + txtIDStaff.Text + "'");
+                            if (cbStatus.SelectedIndex > 2)
+                            {
+                                ConnectSQL.ExcuteQuery("delete from Account where IDStaff = '" + txtIDStaff.Text + "'");
+                            }
+                            ConnectSQL.ExcuteQuery(query);
+                        }
+                        ShowStaff();
+                        if (ConnectSQL.ExcuteNonQuery(query) > 0)
+                        {
+                            MessageBox.Show("Cập Nhật Thông Tin Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cập Nhật Thông Tin Không Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
+            }catch
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
             }
+
 
 
         }
@@ -348,12 +375,6 @@ namespace demo
             errorStaff.Clear();
             RefreshTextBox();
 
-        }
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-
-            errorStaff.Clear();
-            ShowStaff();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -520,6 +541,12 @@ namespace demo
         private void txtIDStaff_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
+        }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            errorStaff.Clear();
+            SearchStaff();
         }
     }
 

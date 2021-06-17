@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,7 +24,8 @@ namespace demo
             cbStatus.Items.Add("Giám đốc");
             cbStatus.Items.Add("Nhân viên bán hàng");
             cbStatus.Items.Add("Kế Toán");
-            cbStatus.SelectedIndex = 1;
+            cbStatus.SelectedIndex = 0;
+            btnSaveQrcode.Visible = false;
         }
         //------------------------Khai Báo Biến------------------------//
         // Tạo lớp + datatable
@@ -41,6 +44,7 @@ namespace demo
                 if (txtIDStaff.Text == Staff.Rows[0][0].ToString() && txtUsername.Text == Staff.Rows[0][1].ToString() && txtPhoneNum.Text == Staff.Rows[0][2].ToString() && txtEmail.Text == Staff.Rows[0][3].ToString() && cbStatus.SelectedIndex == Convert.ToInt32(Staff.Rows[0][4]))
                 {
                     Flag = true;
+                    
                 }
             }    
             return Flag;         
@@ -132,98 +136,171 @@ namespace demo
             this.Close();
         }
         // Nút đăng ký
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            CheckNullValue();
-            
-            if (CheckNull()==-1)
-            {
-                if (CheckRegister())
-                {
-                    if (CheckAccount())
-                    {
-                        MessageBox.Show("Tài khoản đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        string query = "INSERT INTO Account VALUES(N'" + txtUsername.Text + "', '" + txtPassword.Text + "', '" + txtPhoneNum.Text + "', '" + txtEmail.Text + "', '" + txtIDStaff.Text + "','0')";
-                        Staff = ConnectSQL.ExcuteQuery(query);
-                        MessageBox.Show("Tạo tài khoản thành công:" + "\nUsername: " + txtUsername.Text + "\nIDStaff: " + txtIDStaff.Text + "\nChức vụ: " + cbStatus.SelectedItem, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Form fLog = new fLogin();
-                        this.Hide();
-                        fLog.ShowDialog();
-                        this.Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Không thể tạo tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            } 
-            else if(CheckNull()==0)
-            {
-                MessageBox.Show("Vui lòng nhập mã nhân viên", "Thông báo");
-                txtIDStaff.Focus();
-            }    
-            else if (CheckNull() == 1)
-            {
-                MessageBox.Show("Vui lòng nhập tên nhân viên", "Thông báo");
-                txtUsername.Focus();
-            }    
-            else if (CheckNull() == 2)
-            {
-                MessageBox.Show("Vui lòng nhập email", "Thông báo");
-                txtEmail.Focus();
-            }    
-            else if (CheckNull() == 3)
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại", "Thông báo");
-                txtPhoneNum.Focus();
-            }
-            else if (CheckNull() == 4)
-            {
-                MessageBox.Show("Vui lòng nhập mật khẩu", "Thông báo");
-                txtPassword.Focus();
-            }
-            else if (CheckNull() == 5)
-            {
-                MessageBox.Show("Vui lòng nhập xác nhận mật khẩu", "Thông báo");
-                txtRePassword.Focus();
-            }
-            else if (CheckNull() == 6)
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại mật khẩu", "Thông báo");
-                txtRePassword.Focus();
-            }
-        }
+        
         //------------------------Sự kiện------------------------//
         //Chỉ Nhập Số
-        private void txtPhoneNum_KeyPress(object sender, KeyPressEventArgs e)
+     
+
+        private void txtIDStaff_TextChanged_1(object sender, EventArgs e)
+        {
+            errorRegister.Clear();
+        }
+
+        private void txtIDStaff_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            errorRegister.Clear();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            errorRegister.Clear();
+
+        }
+
+        private void txtPhoneNum_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
                 e.Handled = true;
         }
-        //Tắt lỗi
-        private void txtIDStaff_TextChanged(object sender, EventArgs e)
+
+        private void txtPhoneNum_TextChanged(object sender, EventArgs e)
         {
             errorRegister.Clear();
+
         }
-        //Chặn phím space
-        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void txtPassword_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (char.IsWhiteSpace(e.KeyChar) == true)
                 e.Handled = true;
         }
-        //Chặn phím space
-        private void txtRePassword_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            if (char.IsWhiteSpace(e.KeyChar)==true)
+            errorRegister.Clear();
+
+        }
+
+        private void txtRePassword_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar) == true)
                 e.Handled = true;
         }
-        //Viết hoa
-        private void txtIDStaff_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void txtRePassword_TextChanged(object sender, EventArgs e)
         {
-            e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
+            errorRegister.Clear();
+
+        }
+
+        private void btnRegister_Click_1(object sender, EventArgs e)
+        {
+            //try
+            //{
+                CheckNullValue();
+
+                if (CheckNull() == -1)
+                {
+                    if (CheckRegister())
+                    {
+                        if (CheckAccount())
+                        {
+                            MessageBox.Show("Tài khoản đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            string a = txtPassword.Text;
+                            byte[] temp = ASCIIEncoding.ASCII.GetBytes(a);
+                            byte[] pass = new MD5CryptoServiceProvider().ComputeHash(temp);
+                            string password = "";
+                            foreach (byte item in pass)
+                            {
+                                password += item;
+                            }
+                            string query = "INSERT INTO Account VALUES(N'" + txtUsername.Text + "', '" +password + "', '" + txtPhoneNum.Text + "', '" + txtEmail.Text + "', '" + txtIDStaff.Text + "','0')";
+                            Staff = ConnectSQL.ExcuteQuery(query);
+                            MessageBox.Show("Tạo tài khoản thành công:" + "\nUsername: " + txtUsername.Text + "\nIDStaff: " + txtIDStaff.Text + "\nChức vụ: " + cbStatus.SelectedItem, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            string qrcode = txtIDStaff.Text + " " + txtPassword.Text;
+                            pQrcode.Image = null;
+                            Zen.Barcode.CodeQrBarcodeDraw qrcodec = Zen.Barcode.BarcodeDrawFactory.CodeQr;
+                            pQrcode.Image = qrcodec.Draw(qrcode, 50);
+                            btnSaveQrcode.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể tạo tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else if (CheckNull() == 0)
+                {
+                    MessageBox.Show("Vui lòng nhập mã nhân viên", "Thông báo");
+                    txtIDStaff.Focus();
+                }
+                else if (CheckNull() == 1)
+                {
+                    MessageBox.Show("Vui lòng nhập tên nhân viên", "Thông báo");
+                    txtUsername.Focus();
+                }
+                else if (CheckNull() == 2)
+                {
+                    MessageBox.Show("Vui lòng nhập email", "Thông báo");
+                    txtEmail.Focus();
+                }
+                else if (CheckNull() == 3)
+                {
+                    MessageBox.Show("Vui lòng nhập số điện thoại", "Thông báo");
+                    txtPhoneNum.Focus();
+                }
+                else if (CheckNull() == 4)
+                {
+                    MessageBox.Show("Vui lòng nhập mật khẩu", "Thông báo");
+                    txtPassword.Focus();
+                }
+                else if (CheckNull() == 5)
+                {
+                    MessageBox.Show("Vui lòng nhập xác nhận mật khẩu", "Thông báo");
+                    txtRePassword.Focus();
+                }
+                else if (CheckNull() == 6)
+                {
+                    MessageBox.Show("Vui lòng kiểm tra lại mật khẩu", "Thông báo");
+                    txtRePassword.Focus();
+                }
+            //}catch
+            //{
+            //    MessageBox.Show("Vui lòng kiểm tra lại", "Thông báo");
+            //}
+            
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            fLogin login = new fLogin();
+            this.Hide();
+            login.ShowDialog();
+            this.Close();
+        }
+
+        private void btnSaveQrcode_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.InitialDirectory = Path.GetFullPath("Barcode") + @"\";
+            saveFileDialog1.Title = "Save Image Files";
+            saveFileDialog1.DefaultExt = "png";
+            saveFileDialog1.Filter = "(*.jpg);(*.png)|*.jpg;*.png";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (pQrcode.Image != null)
+                    pQrcode.Image.Save(saveFileDialog1.FileName);
+                else
+                    MessageBox.Show("Vui Lòng Chọn Ảnh", "Thông Báo");
+            }
         }
     }
 }

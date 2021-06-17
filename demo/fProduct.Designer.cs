@@ -86,15 +86,17 @@ namespace demo
             this.txtImageName = new Guna.UI2.WinForms.Guna2TextBox();
             this.flp1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flp2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSize = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtImageDetail = new Guna.UI2.WinForms.Guna2TextBox();
             this.nudNumber = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flpImageDetail = new System.Windows.Forms.FlowLayoutPanel();
             this.btnImages = new Guna.UI2.WinForms.Guna2Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnColor = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnColor = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnSize = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnOpenFolder = new Guna.UI2.WinForms.Guna2Button();
             this.pProduct = new Guna.UI2.WinForms.Guna2PictureBox();
             this.errorProductDetail = new System.Windows.Forms.ErrorProvider(this.components);
@@ -121,6 +123,8 @@ namespace demo
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnColor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProductDetail)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -863,36 +867,15 @@ namespace demo
             this.flp2.Size = new System.Drawing.Size(240, 63);
             this.flp2.TabIndex = 5;
             // 
-            // btnSize
-            // 
-            this.btnSize.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
-            this.btnSize.CheckedState.Parent = this.btnSize;
-            this.btnSize.CustomImages.Parent = this.btnSize;
-            this.btnSize.FillColor = System.Drawing.SystemColors.Control;
-            this.btnSize.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSize.ForeColor = System.Drawing.Color.White;
-            this.btnSize.HoverState.Parent = this.btnSize;
-            this.btnSize.Image = ((System.Drawing.Image)(resources.GetObject("btnSize.Image")));
-            this.btnSize.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSize.Location = new System.Drawing.Point(318, 172);
-            this.btnSize.Name = "btnSize";
-            this.btnSize.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnSize.ShadowDecoration.Parent = this.btnSize;
-            this.btnSize.Size = new System.Drawing.Size(30, 30);
-            this.btnSize.TabIndex = 36;
-            this.btnSize.Click += new System.EventHandler(this.btnSize_Click);
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.txtImageDetail);
             this.panel2.Controls.Add(this.nudNumber);
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.btnImages);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.btnColor);
-            this.panel2.Controls.Add(this.btnSize);
             this.panel2.Controls.Add(this.flp2);
             this.panel2.Controls.Add(this.flp1);
             this.panel2.Controls.Add(this.txtPriceOut);
@@ -904,10 +887,32 @@ namespace demo
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtIDProductDetail);
+            this.panel2.Controls.Add(this.btnColor);
+            this.panel2.Controls.Add(this.btnSize);
             this.panel2.Location = new System.Drawing.Point(474, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(569, 292);
             this.panel2.TabIndex = 9;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(306, 127);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(31, 14);
+            this.label16.TabIndex = 45;
+            this.label16.Text = "VNĐ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(306, 92);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(31, 14);
+            this.label11.TabIndex = 45;
+            this.label11.Text = "VNĐ";
             // 
             // txtImageDetail
             // 
@@ -969,6 +974,7 @@ namespace demo
             this.nudNumber.Size = new System.Drawing.Size(169, 29);
             this.nudNumber.TabIndex = 1;
             this.nudNumber.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
+            this.nudNumber.UpDownButtonForeColor = System.Drawing.Color.White;
             this.nudNumber.Value = new decimal(new int[] {
             1,
             0,
@@ -1023,24 +1029,27 @@ namespace demo
             // 
             // btnColor
             // 
-            this.btnColor.BackColor = System.Drawing.SystemColors.Control;
-            this.btnColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnColor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
-            this.btnColor.CheckedState.Parent = this.btnColor;
-            this.btnColor.CustomImages.Parent = this.btnColor;
-            this.btnColor.FillColor = System.Drawing.SystemColors.Control;
-            this.btnColor.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnColor.ForeColor = System.Drawing.Color.White;
-            this.btnColor.HoverState.Parent = this.btnColor;
             this.btnColor.Image = ((System.Drawing.Image)(resources.GetObject("btnColor.Image")));
-            this.btnColor.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnColor.Location = new System.Drawing.Point(318, 240);
+            this.btnColor.Location = new System.Drawing.Point(309, 227);
             this.btnColor.Name = "btnColor";
-            this.btnColor.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnColor.ShadowDecoration.Parent = this.btnColor;
-            this.btnColor.Size = new System.Drawing.Size(30, 30);
-            this.btnColor.TabIndex = 36;
-            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            this.btnColor.Size = new System.Drawing.Size(53, 53);
+            this.btnColor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnColor.TabIndex = 44;
+            this.btnColor.TabStop = false;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click_1);
+            // 
+            // btnSize
+            // 
+            this.btnSize.Image = ((System.Drawing.Image)(resources.GetObject("btnSize.Image")));
+            this.btnSize.Location = new System.Drawing.Point(309, 157);
+            this.btnSize.Name = "btnSize";
+            this.btnSize.ShadowDecoration.Parent = this.btnSize;
+            this.btnSize.Size = new System.Drawing.Size(53, 53);
+            this.btnSize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSize.TabIndex = 44;
+            this.btnSize.TabStop = false;
+            this.btnSize.Click += new System.EventHandler(this.btnSize_Click_1);
             // 
             // btnOpenFolder
             // 
@@ -1241,6 +1250,7 @@ namespace demo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1361, 667);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.panel5);
@@ -1268,8 +1278,11 @@ namespace demo
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductDetail)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnColor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProductDetail)).EndInit();
             this.groupBox4.ResumeLayout(false);
@@ -1303,8 +1316,6 @@ namespace demo
         private Guna.UI2.WinForms.Guna2Button btnDeleteProduct;
         private Guna.UI2.WinForms.Guna2Button btnUpdateProduct;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2CircleButton btnColor;
-        private Guna.UI2.WinForms.Guna2CircleButton btnSize;
         private System.Windows.Forms.FlowLayoutPanel flp2;
         private System.Windows.Forms.FlowLayoutPanel flp1;
         private Guna.UI2.WinForms.Guna2TextBox txtImageName;
@@ -1362,5 +1373,9 @@ namespace demo
         private Guna.UI2.WinForms.Guna2Button btnSaveBarCode;
         private Guna.UI2.WinForms.Guna2Button btnCreateBarCode;
         private System.Windows.Forms.GroupBox groupBox5;
+        private Guna.UI2.WinForms.Guna2PictureBox btnSize;
+        private Guna.UI2.WinForms.Guna2PictureBox btnColor;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label11;
     }
 }

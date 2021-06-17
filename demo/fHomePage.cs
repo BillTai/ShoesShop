@@ -15,6 +15,8 @@ namespace demo
     {
         public fHomePage()
         {
+            Connect ConnectSQL = new Connect();
+            DataTable Account = new DataTable();
             InitializeComponent();
             ShowProduct();
             ShowProductType();
@@ -24,10 +26,9 @@ namespace demo
             ShowBillDetail();
             ShowStaff();
         }
+        DataTable Bill = new DataTable();
         private void fHomePages_Load(object sender, EventArgs e)
         {
-            Connect ConnectSQL = new Connect();
-            DataTable Account = new DataTable();
             Account = ConnectSQL.ExcuteQuery("Select IDStaff, Status from Account");
             for (int i = 0; i < Account.Rows.Count; i++)
             {
@@ -36,6 +37,23 @@ namespace demo
                     ReturnIDAccount = Account.Rows[i][0].ToString();
                 }
             }
+            Bill = ConnectSQL.ExcuteQuery("select distinct YEAR(date) from Bill");
+            for(int i = 0;i < Bill.Rows.Count; i++)
+            {
+                if (Bill.Rows[0][0] != DBNull.Value)
+                    cbYear.Items.Add(Bill.Rows[i][0].ToString());
+            }
+            cbYear.SelectedIndex = 0;
+            cMonth.Checked = true;
+            chartMonth.ChartAreas[0].AxisX.Minimum = 1;
+            chartMonth.ChartAreas[0].AxisX.Maximum = 12;
+            timer1.Start();
+            CreateChartMonth();
+            CreateChartQuy();
+
+
+
+
         }
         //------------------------Khai Báo Biến------------------------//
         Connect ConnectSQL = new Connect();
@@ -47,6 +65,41 @@ namespace demo
         {
             Connect connect = new Connect();
             drv.DataSource = connect.ExcuteQuery(query);
+        }
+        void CreateChartMonth()
+        {
+            chartMonth.Series["Doanh Thu"].Points.Clear();
+            for (int i = 1; i < 13; i++)
+            {
+                Bill = ConnectSQL.ExcuteQuery("select sum(totalprice) from Bill where TypeBill =N'Hóa Ðơn Bán' and  MONTH(date) = " + i + " and YEAR(Date) = " + cbYear.SelectedItem + " ");
+                if (Bill.Rows[0][0] == DBNull.Value)
+                    chartMonth.Series["Doanh Thu"].Points.AddXY(i, 0);
+                else
+                    chartMonth.Series["Doanh Thu"].Points.AddXY(i, Convert.ToDouble(Bill.Rows[0][0]));
+            }
+        }
+        void CreateChartQuy()
+        {
+            chartquy.Series["Quý"].Points.Clear();
+
+            Bill = ConnectSQL.ExcuteQuery("select sum(totalprice) from Bill where TypeBill =N'Hóa Ðơn Bán' and  MONTH(date) <= 12 and YEAR(Date) = " + cbYear.SelectedItem + " ");
+            double TotalPrice = Convert.ToDouble(Bill.Rows[0][0]);
+            int start = 1;
+            for (int i = 1; i < 5; i++)
+            {
+                string query = "select sum(totalprice) from Bill where TypeBill =N'Hóa Ðơn Bán' and MONTH(date) >= '" + start + "' and   MONTH(date) <= " + i * 3 + " and YEAR(Date) = " + cbYear.SelectedItem + "";
+                Bill = ConnectSQL.ExcuteQuery(query);
+                if (Bill.Rows[0][0] == DBNull.Value)
+                    chartquy.Series["Quý"].Points.AddXY("Quý " + i, 0);
+                else
+                {
+                    double s = (100 / (TotalPrice / Convert.ToDouble(Bill.Rows[0][0]))) / 100;
+                    chartquy.Series["Quý"].Points.AddXY("Quý " + i, s);
+                }
+
+                start = i * 3;
+            }
+            txtTotalPrice.Text = string.Format("{0:n0}", TotalPrice);
         }
         //Danh sách loại sản phẩm
         void ShowProduct()
@@ -154,18 +207,18 @@ namespace demo
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            fBill bill = new fBill();
-            bill.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //fBill bill = new fBill();
+            //bill.ShowDialog();
+            //this.Close();
         }
 
         private void đăngKýToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            fBillSearch bills = new fBillSearch();
-            bills.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //fBillSearch bills = new fBillSearch();
+            //bills.ShowDialog();
+            //this.Close();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -178,5 +231,36 @@ namespace demo
             else
                 this.Close();
         }
+
+        private void cMonth_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cMonth.Checked)
+            {
+
+                chartquy.Visible = false;
+                chartMonth.Visible = true;
+            }
+            else
+            {
+                chartquy.Visible = true;
+                chartMonth.Visible = false;
+            }    
+        }
+
+        private void cquy_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cquy.Checked)
+            {
+                chartquy.Visible = true;
+                chartMonth.Visible = false;
+            }
+        }
+
+        private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CreateChartMonth();
+            CreateChartQuy();
+        }
+
     }
 }

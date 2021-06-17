@@ -56,7 +56,8 @@ namespace demo
             try
             {
                 int SIZE = Bill.Rows.Count;
-
+                ConnectSql("select * from bill", dgvBill, Bill);
+                ShowBillDetail(0);
                 string query = "";
                 if(cbTK.SelectedIndex == 1)
                 {
@@ -74,7 +75,7 @@ namespace demo
                         query = "select* from Bill where IDCustomer like N'%"+txtSearch.Text+"%'";
                 }
                 ConnectSql(query, dgvBill, Bill);
-                    ShowBillDetail(0);
+                ShowBillDetail(0);
 
             }
             catch

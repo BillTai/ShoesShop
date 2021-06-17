@@ -175,8 +175,8 @@ namespace demo
                 filename += txtImageName.Text;
                 Bitmap img = new Bitmap(filename);
                 pProduct.Image = img;
-                txtPriceIn.Text = ProductDetail.Rows[vt][4].ToString();
-                txtPriceOut.Text = ProductDetail.Rows[vt][5].ToString();
+                txtPriceIn.Text = string.Format("{0:n0}", ProductDetail.Rows[vt][4]);
+                txtPriceOut.Text = string.Format("{0:n0}", ProductDetail.Rows[vt][5]);
                 nudNumber.Value = Convert.ToInt32(ProductDetail.Rows[vt][6]);
                 string Images = txtImageDetail.Text = ProductDetail.Rows[vt][8].ToString();
                 string[] filenames = Images.Split(';');
@@ -825,15 +825,7 @@ namespace demo
             errorProductDetail.Clear();
             Search();
         }
-        private void btnSize_Click(object sender, EventArgs e)
-        {
-            //player.controls.stop();
 
-            this.Hide();
-            fSize fSize = new fSize();
-            fSize.ShowDialog();
-            this.Close();
-        }
         private void btnColor_Click(object sender, EventArgs e)
         {
             //player.controls.stop();
@@ -856,7 +848,8 @@ namespace demo
             {
                 OpenFileDialog Image = new OpenFileDialog();
                 Image.Filter = "(*.jpg);(*.png)|*.jpg;*.png";
-                Image.InitialDirectory = Path.GetDirectoryName(@"C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\bin\Debug\image\");
+                //Image.InitialDirectory = Path.GetDirectoryName(@"C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\demo\bin\Debug\image\");
+                Image.InitialDirectory = Path.GetFullPath("image") + @"\";
                 if (Image.ShowDialog() == DialogResult.Yes)
                 {
                     Image.ShowDialog();
@@ -963,6 +956,7 @@ namespace demo
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            saveFileDialog1.InitialDirectory = Path.GetFullPath("Excel") + @"\";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ToExcel(dgvProduct, saveFileDialog1.FileName, Product);
@@ -984,7 +978,9 @@ namespace demo
         private void btnSaveBarCode_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.InitialDirectory = @"C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\Barcode";      
+            //saveFileDialog1.InitialDirectory = @"C:\Users\Bill\Desktop\Shoesshop1\ShoesShop\Barcode";
+            saveFileDialog1.InitialDirectory = Path.GetFullPath("image") + @"\";
+
             saveFileDialog1.Title = "Save Image Files";
             saveFileDialog1.DefaultExt = "png";
             saveFileDialog1.Filter = "(*.jpg);(*.png)|*.jpg;*.png";
@@ -995,6 +991,22 @@ namespace demo
                 else
                     MessageBox.Show("Vui Lòng Chọn Ảnh", "Thông Báo");
             }
+        }
+
+        private void btnSize_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            fSize fSize = new fSize();
+            fSize.ShowDialog();
+            this.Close();
+        }
+
+        private void btnColor_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            fColor fColor = new fColor();
+            fColor.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -38,7 +38,8 @@ namespace demo
             // 
             // timer1
             // 
-            this.timer1.Interval = 3400;
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // mdaVideo
@@ -49,7 +50,6 @@ namespace demo
             this.mdaVideo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mdaVideo.OcxState")));
             this.mdaVideo.Size = new System.Drawing.Size(660, 400);
             this.mdaVideo.TabIndex = 0;
-            this.mdaVideo.Enter += new System.EventHandler(this.mdaVideo_Enter);
             // 
             // fLoading
             // 

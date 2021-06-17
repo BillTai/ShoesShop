@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -53,10 +54,18 @@ namespace demo
 
                 if (CheckPassword() == 0)
                 {
-                    DialogResult Question = MessageBox.Show("Bạn Có Muốn Thêm Khách Hàng", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Thông Tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (Question == DialogResult.Yes)
                     {
-                        SQLAccount.ExcuteQuery(" update Account set [Password] = '" + txtNewPassword.Text + "' where [IDStaff] = '" + txtIDAccount.Text + "'");
+                        string a = txtNewPassword.Text;
+                        byte[] temp = ASCIIEncoding.ASCII.GetBytes(a);
+                        byte[] pass = new MD5CryptoServiceProvider().ComputeHash(temp);
+                        string password = "";
+                        foreach (byte item in pass)
+                        {
+                            password += item;
+                        }
+                        SQLAccount.ExcuteQuery(" update Account set [Password] = '" + password + "' where [IDStaff] = '" + txtIDAccount.Text + "'");
                         MessageBox.Show("Cập nhật mật khẩu thành công!", "Thông báo");
                     }
                 }
