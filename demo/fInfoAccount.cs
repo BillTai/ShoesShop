@@ -41,9 +41,7 @@ namespace demo
         //Nút thoát
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            fHomePage HP = new fHomePage();
-            HP.ShowDialog();
+           
             this.Close();
         }
         //Nút cập nhật

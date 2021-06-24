@@ -26,6 +26,7 @@ namespace demo
         DataTable ProductDetail = new DataTable();
         DataTable Color = new DataTable();
         DataTable Size = new DataTable();
+        DataTable FullProductDetail = new DataTable();
         int LocationClickProduct = 0;
         //Kết nối query và dgv với sql
 
@@ -45,6 +46,12 @@ namespace demo
             ProductDetail = ConnectSQL.ExcuteQuery("Select * from ProductDetail where IDProduct = '" + Product.Rows[vt][0] + "'");
             dgvProductDetail.DataSource = ProductDetail;
         }
+        void ShowFullProductDetail()
+        {
+            
+            FullProductDetail = ConnectSQL.ExcuteQuery("Select * from ProductDetail");
+            dgvFullProductDetail.DataSource = FullProductDetail;
+        }
         private void fEditProduct_Load(object sender, EventArgs e)
         {
             
@@ -59,6 +66,7 @@ namespace demo
             }
             ConnectColorSize();
             DataTable TypeName = new DataTable();
+            ShowFullProductDetail();
             TypeName = ConnectSQL.ExcuteQuery("Select ProductTypeName from ProductType");
             Customer = ConnectSQL.ExcuteQuery("Select * from Customer where CustomerType = N'Nhà Cung Cấp'");
             int SizeNum = Size.Rows.Count;
@@ -104,6 +112,9 @@ namespace demo
             cbSearch.SelectedIndex = 0;
             cbStatus.Items.Add("Còn hàng");
             cbStatus.Items.Add("Hết hàng");
+            cbExcel.Items.Add("Tất cả");
+            cbExcel.Items.Add("Một loại");
+            cbExcel.SelectedIndex = 0;
             if (Product.Rows.Count > 0)
             {
                 ShowInTextBox(0);
@@ -884,10 +895,7 @@ namespace demo
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            //player.controls.stop();
-            this.Hide();
-            fHomePage HP = new fHomePage();
-            HP.ShowDialog();
+           
             this.Close();
         }
 
@@ -959,7 +967,17 @@ namespace demo
             saveFileDialog1.InitialDirectory = Path.GetFullPath("Excel") + @"\";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                ToExcel(dgvProduct, saveFileDialog1.FileName, Product);
+                if(cbExcel.SelectedIndex==0)
+                {
+                    ToExcel(dgvFullProductDetail, saveFileDialog1.FileName, FullProductDetail);
+
+                }
+                else if (cbExcel.SelectedIndex ==1)
+                {
+
+                    ToExcel(dgvProductDetail, saveFileDialog1.FileName, ProductDetail);
+                }
+
             }
         }
 

@@ -112,6 +112,20 @@ namespace demo
             this.btnCreateBarCode = new Guna.UI2.WinForms.Guna2Button();
             this.btnSaveBarCode = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.cbExcel = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.dgvFullProductDetail = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pButton.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
@@ -132,6 +146,8 @@ namespace demo
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbarcode)).BeginInit();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFullProductDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // pButton
@@ -249,7 +265,7 @@ namespace demo
             this.groupBox1.Controls.Add(this.dgvProduct);
             this.groupBox1.Location = new System.Drawing.Point(12, 310);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(483, 345);
+            this.groupBox1.Size = new System.Drawing.Size(483, 393);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách sản phẩm";
@@ -272,7 +288,7 @@ namespace demo
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.RowHeadersVisible = false;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(476, 326);
+            this.dgvProduct.Size = new System.Drawing.Size(476, 374);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
             // 
@@ -1182,7 +1198,7 @@ namespace demo
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(417, 284);
+            this.guna2Button1.Location = new System.Drawing.Point(1278, 680);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(54, 23);
@@ -1244,6 +1260,131 @@ namespace demo
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Mã Vạch";
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            // 
+            // cbExcel
+            // 
+            this.cbExcel.AutoRoundedCorners = true;
+            this.cbExcel.BackColor = System.Drawing.Color.Transparent;
+            this.cbExcel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbExcel.BorderRadius = 17;
+            this.cbExcel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbExcel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbExcel.DropDownWidth = 140;
+            this.cbExcel.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbExcel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbExcel.FocusedState.Parent = this.cbExcel;
+            this.cbExcel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbExcel.ForeColor = System.Drawing.Color.Black;
+            this.cbExcel.HoverState.Parent = this.cbExcel;
+            this.cbExcel.ItemHeight = 30;
+            this.cbExcel.ItemsAppearance.Parent = this.cbExcel;
+            this.cbExcel.Location = new System.Drawing.Point(1146, 674);
+            this.cbExcel.Name = "cbExcel";
+            this.cbExcel.ShadowDecoration.Parent = this.cbExcel;
+            this.cbExcel.Size = new System.Drawing.Size(126, 36);
+            this.cbExcel.TabIndex = 44;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.dgvFullProductDetail);
+            this.groupBox6.Location = new System.Drawing.Point(504, 679);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(636, 31);
+            this.groupBox6.TabIndex = 45;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Chi Tiết Sản Phẩm";
+            this.groupBox6.Visible = false;
+            // 
+            // dgvFullProductDetail
+            // 
+            this.dgvFullProductDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFullProductDetail.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFullProductDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFullProductDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn19});
+            this.dgvFullProductDetail.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvFullProductDetail.Location = new System.Drawing.Point(3, 16);
+            this.dgvFullProductDetail.Name = "dgvFullProductDetail";
+            this.dgvFullProductDetail.ReadOnly = true;
+            this.dgvFullProductDetail.RowHeadersVisible = false;
+            this.dgvFullProductDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFullProductDetail.Size = new System.Drawing.Size(689, 12);
+            this.dgvFullProductDetail.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "IDProduct";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Mã Sản Phẩm";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "IDProductDetail";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Mã Chi Tiết Sản Phẩm";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Size";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Kích Thước";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Color";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Màu Sắc";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "image";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Hình Ảnh";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "PriceIn";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Giá Nhập";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "PriceOut";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Giá Xuất";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Number";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Số Lượng";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "ImageDetail";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Hình Ảnh Chi Tiết";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            // 
             // fProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1251,7 +1392,9 @@ namespace demo
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1361, 667);
+            this.ClientSize = new System.Drawing.Size(1361, 703);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.cbExcel);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnSaveBarCode);
@@ -1265,6 +1408,7 @@ namespace demo
             this.Controls.Add(this.pButton);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fEditProduct";
@@ -1290,6 +1434,8 @@ namespace demo
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picbarcode)).EndInit();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFullProductDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1377,5 +1523,19 @@ namespace demo
         private Guna.UI2.WinForms.Guna2PictureBox btnColor;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbExcel;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.DataGridView dgvFullProductDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
     }
 }

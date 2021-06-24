@@ -33,14 +33,22 @@ namespace demo
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHomePage));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.mntHome = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +73,6 @@ namespace demo
             this.mtsInfoAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.càiĐặtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mtsLogOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.mstExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
@@ -79,15 +86,44 @@ namespace demo
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dgvBillDetail = new System.Windows.Forms.DataGridView();
+            this.IDB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dgvBill = new System.Windows.Forms.DataGridView();
+            this.IDBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
+            this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tStatistical = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgvProductDetail = new System.Windows.Forms.DataGridView();
+            this.IDProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tTypeProduct = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvProductType = new System.Windows.Forms.DataGridView();
@@ -96,6 +132,12 @@ namespace demo
             this.tProduct = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDTypeProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tHome = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
@@ -113,41 +155,12 @@ namespace demo
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDTypeProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypeBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.chartProduct = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.rCustomer = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rProduct = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.chartCustomer = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnReload = new Guna.UI2.WinForms.Guna2CircleButton();
             this.menuStrip.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -174,12 +187,14 @@ namespace demo
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartquy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMonth)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
-            this.menuStrip.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.menuStrip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.menuStrip.AutoSize = false;
             this.menuStrip.BackColor = System.Drawing.Color.Transparent;
@@ -191,11 +206,10 @@ namespace demo
             this.trợGiúpToolStripMenuItem,
             this.quảnLýTàiKhoảnToolStripMenuItem,
             this.quảnLýTàiKhoảnToolStripMenuItem1,
-            this.càiĐặtToolStripMenuItem,
-            this.mstExit});
+            this.càiĐặtToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(837, 38);
+            this.menuStrip.Size = new System.Drawing.Size(951, 38);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -355,7 +369,7 @@ namespace demo
             // mtsInfoAccount
             // 
             this.mtsInfoAccount.Name = "mtsInfoAccount";
-            this.mtsInfoAccount.Size = new System.Drawing.Size(177, 22);
+            this.mtsInfoAccount.Size = new System.Drawing.Size(180, 22);
             this.mtsInfoAccount.Text = "Thông tin tài khoản";
             this.mtsInfoAccount.Click += new System.EventHandler(this.mtsInfoAccount_Click);
             // 
@@ -371,25 +385,17 @@ namespace demo
             // mtsLogOut
             // 
             this.mtsLogOut.Name = "mtsLogOut";
-            this.mtsLogOut.Size = new System.Drawing.Size(129, 22);
+            this.mtsLogOut.Size = new System.Drawing.Size(180, 22);
             this.mtsLogOut.Text = "Đăng Xuất";
             this.mtsLogOut.Click += new System.EventHandler(this.mtsLogOut_Click);
-            // 
-            // mstExit
-            // 
-            this.mstExit.Image = ((System.Drawing.Image)(resources.GetObject("mstExit.Image")));
-            this.mstExit.Name = "mstExit";
-            this.mstExit.Size = new System.Drawing.Size(65, 34);
-            this.mstExit.Text = "Thoát";
-            this.mstExit.Click += new System.EventHandler(this.mstExit_Click_1);
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.groupBox4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1036, 543);
+            this.tabPage4.Size = new System.Drawing.Size(1150, 571);
             this.tabPage4.TabIndex = 8;
             this.tabPage4.Text = "Nhân Viên";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -400,7 +406,7 @@ namespace demo
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1030, 537);
+            this.groupBox4.Size = new System.Drawing.Size(1144, 565);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh Sách Nhân Viên";
@@ -424,8 +430,9 @@ namespace demo
             this.dgvStaff.Location = new System.Drawing.Point(3, 16);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.ReadOnly = true;
+            this.dgvStaff.RowHeadersVisible = false;
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStaff.Size = new System.Drawing.Size(1024, 518);
+            this.dgvStaff.Size = new System.Drawing.Size(1138, 502);
             this.dgvStaff.TabIndex = 14;
             // 
             // IDStaff
@@ -480,10 +487,10 @@ namespace demo
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox7);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1036, 543);
+            this.tabPage3.Size = new System.Drawing.Size(1150, 534);
             this.tabPage3.TabIndex = 7;
             this.tabPage3.Text = "Chi Tiết Hoá Đơn";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -494,13 +501,16 @@ namespace demo
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(1030, 537);
+            this.groupBox7.Size = new System.Drawing.Size(1144, 528);
             this.groupBox7.TabIndex = 4;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Danh Sách Chi Tiết Hoá Đơn";
             // 
             // dgvBillDetail
             // 
+            this.dgvBillDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBillDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBillDetail.BackgroundColor = System.Drawing.Color.White;
             this.dgvBillDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -511,21 +521,63 @@ namespace demo
             this.Price,
             this.Discount,
             this.Column5});
-            this.dgvBillDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBillDetail.Location = new System.Drawing.Point(3, 16);
             this.dgvBillDetail.Name = "dgvBillDetail";
             this.dgvBillDetail.ReadOnly = true;
+            this.dgvBillDetail.RowHeadersVisible = false;
             this.dgvBillDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBillDetail.Size = new System.Drawing.Size(1024, 518);
+            this.dgvBillDetail.Size = new System.Drawing.Size(1138, 506);
             this.dgvBillDetail.TabIndex = 3;
+            // 
+            // IDB
+            // 
+            this.IDB.DataPropertyName = "IDBill";
+            this.IDB.HeaderText = "Mã Hoá Đơn";
+            this.IDB.Name = "IDB";
+            this.IDB.ReadOnly = true;
+            // 
+            // IDPro
+            // 
+            this.IDPro.DataPropertyName = "IDProductDetail";
+            this.IDPro.HeaderText = "Mã Chi Tiết Sản Phẩm";
+            this.IDPro.Name = "IDPro";
+            this.IDPro.ReadOnly = true;
+            // 
+            // Number
+            // 
+            this.Number.DataPropertyName = "Number";
+            this.Number.HeaderText = "Số Lượng";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Giá Bán";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // Discount
+            // 
+            this.Discount.DataPropertyName = "Discount";
+            this.Discount.HeaderText = "Giảm Giá";
+            this.Discount.Name = "Discount";
+            this.Discount.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "TotalPrice";
+            this.Column5.HeaderText = "Tổng Tiền";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox8);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1036, 543);
+            this.tabPage2.Size = new System.Drawing.Size(1150, 571);
             this.tabPage2.TabIndex = 6;
             this.tabPage2.Text = "Hoá Đơn";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -536,13 +588,16 @@ namespace demo
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(3, 3);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(1030, 537);
+            this.groupBox8.Size = new System.Drawing.Size(1144, 565);
             this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Danh Sách Hoá Đơn";
             // 
             // dgvBill
             // 
+            this.dgvBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBill.BackgroundColor = System.Drawing.Color.White;
             this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -554,21 +609,70 @@ namespace demo
             this.TypeBill,
             this.TT,
             this.Column4});
-            this.dgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBill.Location = new System.Drawing.Point(3, 16);
             this.dgvBill.Name = "dgvBill";
             this.dgvBill.ReadOnly = true;
+            this.dgvBill.RowHeadersVisible = false;
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBill.Size = new System.Drawing.Size(1024, 518);
+            this.dgvBill.Size = new System.Drawing.Size(1136, 526);
             this.dgvBill.TabIndex = 3;
+            // 
+            // IDBill
+            // 
+            this.IDBill.DataPropertyName = "IDBill";
+            this.IDBill.HeaderText = "Mã Hoá Đơn";
+            this.IDBill.Name = "IDBill";
+            this.IDBill.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Ngày Bán";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // IDCustomer
+            // 
+            this.IDCustomer.DataPropertyName = "IDCustomer";
+            this.IDCustomer.HeaderText = "Mã Khách Hàng";
+            this.IDCustomer.Name = "IDCustomer";
+            this.IDCustomer.ReadOnly = true;
+            // 
+            // IDNV
+            // 
+            this.IDNV.DataPropertyName = "IDStaff";
+            this.IDNV.HeaderText = "Mã Nhân Viên";
+            this.IDNV.Name = "IDNV";
+            this.IDNV.ReadOnly = true;
+            // 
+            // TypeBill
+            // 
+            this.TypeBill.DataPropertyName = "TypeBill";
+            this.TypeBill.HeaderText = "Loại Hoá Đơn";
+            this.TypeBill.Name = "TypeBill";
+            this.TypeBill.ReadOnly = true;
+            // 
+            // TT
+            // 
+            this.TT.DataPropertyName = "Status";
+            this.TT.HeaderText = "Trạng Thái";
+            this.TT.Name = "TT";
+            this.TT.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TotalPrice";
+            this.Column4.HeaderText = "Tổng Tiền";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1036, 543);
+            this.tabPage1.Size = new System.Drawing.Size(1150, 524);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Khách Hàng";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -579,7 +683,7 @@ namespace demo
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1030, 537);
+            this.groupBox3.Size = new System.Drawing.Size(1144, 518);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Khách Hàng";
@@ -603,18 +707,68 @@ namespace demo
             this.dgvCustomer.Location = new System.Drawing.Point(3, 16);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.ReadOnly = true;
+            this.dgvCustomer.RowHeadersVisible = false;
             this.dgvCustomer.RowHeadersWidth = 40;
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomer.Size = new System.Drawing.Size(1024, 518);
+            this.dgvCustomer.Size = new System.Drawing.Size(1138, 499);
             this.dgvCustomer.TabIndex = 14;
+            // 
+            // PhoneNum
+            // 
+            this.PhoneNum.DataPropertyName = "PhoneNum";
+            this.PhoneNum.HeaderText = "Số Điện Thoại";
+            this.PhoneNum.Name = "PhoneNum";
+            this.PhoneNum.ReadOnly = true;
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.DataPropertyName = "CustomerName";
+            this.CustomerName.HeaderText = "Tên Khách Hàng";
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
+            // 
+            // IDCard
+            // 
+            this.IDCard.DataPropertyName = "IDCard";
+            this.IDCard.HeaderText = "Mã Thẻ";
+            this.IDCard.Name = "IDCard";
+            this.IDCard.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Địa Chỉ";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Trạng Thái";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "CustomerType";
+            this.Column3.HeaderText = "Loại Khách Hàng";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // tStatistical
             // 
             this.tStatistical.Controls.Add(this.groupBox6);
-            this.tStatistical.Location = new System.Drawing.Point(4, 22);
+            this.tStatistical.Location = new System.Drawing.Point(4, 23);
             this.tStatistical.Name = "tStatistical";
             this.tStatistical.Padding = new System.Windows.Forms.Padding(3);
-            this.tStatistical.Size = new System.Drawing.Size(1036, 543);
+            this.tStatistical.Size = new System.Drawing.Size(1150, 524);
             this.tStatistical.TabIndex = 3;
             this.tStatistical.Text = "Chi Tiết Sản Phẩm";
             this.tStatistical.UseVisualStyleBackColor = true;
@@ -625,7 +779,7 @@ namespace demo
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(3, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1030, 537);
+            this.groupBox6.Size = new System.Drawing.Size(1144, 518);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Danh Sách Chi Tiết Sản Phẩm";
@@ -645,402 +799,14 @@ namespace demo
             this.Mau,
             this.Size,
             this.Column2});
-            this.dgvProductDetail.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dgvProductDetail.Location = new System.Drawing.Point(3, 16);
+            this.dgvProductDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductDetail.Location = new System.Drawing.Point(3, 18);
             this.dgvProductDetail.Name = "dgvProductDetail";
             this.dgvProductDetail.ReadOnly = true;
             this.dgvProductDetail.RowHeadersVisible = false;
             this.dgvProductDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductDetail.Size = new System.Drawing.Size(1021, 518);
+            this.dgvProductDetail.Size = new System.Drawing.Size(1138, 497);
             this.dgvProductDetail.TabIndex = 1;
-            // 
-            // tTypeProduct
-            // 
-            this.tTypeProduct.Controls.Add(this.groupBox2);
-            this.tTypeProduct.Location = new System.Drawing.Point(4, 22);
-            this.tTypeProduct.Name = "tTypeProduct";
-            this.tTypeProduct.Padding = new System.Windows.Forms.Padding(3);
-            this.tTypeProduct.Size = new System.Drawing.Size(1036, 543);
-            this.tTypeProduct.TabIndex = 2;
-            this.tTypeProduct.Text = "Loại Sản Phẩm";
-            this.tTypeProduct.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dgvProductType);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1030, 537);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh Sách Loại Sản Phẩm";
-            // 
-            // dgvProductType
-            // 
-            this.dgvProductType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProductType.BackgroundColor = System.Drawing.Color.White;
-            this.dgvProductType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDProductType,
-            this.ProductTypeName});
-            this.dgvProductType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProductType.Location = new System.Drawing.Point(3, 16);
-            this.dgvProductType.Name = "dgvProductType";
-            this.dgvProductType.ReadOnly = true;
-            this.dgvProductType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductType.Size = new System.Drawing.Size(1024, 518);
-            this.dgvProductType.TabIndex = 2;
-            // 
-            // IDProductType
-            // 
-            this.IDProductType.DataPropertyName = "IDProductType";
-            this.IDProductType.HeaderText = "Mã Loại Sản Phẩm";
-            this.IDProductType.Name = "IDProductType";
-            this.IDProductType.ReadOnly = true;
-            // 
-            // ProductTypeName
-            // 
-            this.ProductTypeName.DataPropertyName = "ProductTypeName";
-            this.ProductTypeName.HeaderText = "Tên Loại Sản Phẩm";
-            this.ProductTypeName.Name = "ProductTypeName";
-            this.ProductTypeName.ReadOnly = true;
-            // 
-            // tProduct
-            // 
-            this.tProduct.Controls.Add(this.groupBox1);
-            this.tProduct.Location = new System.Drawing.Point(4, 22);
-            this.tProduct.Name = "tProduct";
-            this.tProduct.Padding = new System.Windows.Forms.Padding(3);
-            this.tProduct.Size = new System.Drawing.Size(1036, 543);
-            this.tProduct.TabIndex = 1;
-            this.tProduct.Text = "Sản Phẩm";
-            this.tProduct.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvProduct);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1030, 537);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh Sách Sản Phẩm";
-            // 
-            // dgvProduct
-            // 
-            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
-            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.IDTypeProduct,
-            this.IDProvider,
-            this.dataGridViewTextBoxColumn7,
-            this.Column1});
-            this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dgvProduct.Location = new System.Drawing.Point(3, 16);
-            this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.ReadOnly = true;
-            this.dgvProduct.RowHeadersVisible = false;
-            this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(1024, 518);
-            this.dgvProduct.TabIndex = 1;
-            // 
-            // tHome
-            // 
-            this.tHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tHome.Controls.Add(this.tProduct);
-            this.tHome.Controls.Add(this.tTypeProduct);
-            this.tHome.Controls.Add(this.tStatistical);
-            this.tHome.Controls.Add(this.tabPage1);
-            this.tHome.Controls.Add(this.tabPage2);
-            this.tHome.Controls.Add(this.tabPage3);
-            this.tHome.Controls.Add(this.tabPage4);
-            this.tHome.Controls.Add(this.tabPage5);
-            this.tHome.Controls.Add(this.tabPage6);
-            this.tHome.Location = new System.Drawing.Point(0, 32);
-            this.tHome.Name = "tHome";
-            this.tHome.SelectedIndex = 0;
-            this.tHome.Size = new System.Drawing.Size(1044, 569);
-            this.tHome.TabIndex = 1;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.label16);
-            this.tabPage5.Controls.Add(this.txtTotalPrice);
-            this.tabPage5.Controls.Add(this.label2);
-            this.tabPage5.Controls.Add(this.chartquy);
-            this.tabPage5.Controls.Add(this.cquy);
-            this.tabPage5.Controls.Add(this.cMonth);
-            this.tabPage5.Controls.Add(this.label1);
-            this.tabPage5.Controls.Add(this.cbYear);
-            this.tabPage5.Controls.Add(this.chartMonth);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1036, 543);
-            this.tabPage5.TabIndex = 9;
-            this.tabPage5.Text = "Biểu Đồ Doanh Thu";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(967, 496);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(31, 14);
-            this.label16.TabIndex = 46;
-            this.label16.Text = "VNĐ";
-            // 
-            // txtTotalPrice
-            // 
-            this.txtTotalPrice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtTotalPrice.BorderRadius = 10;
-            this.txtTotalPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotalPrice.DefaultText = "";
-            this.txtTotalPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTotalPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTotalPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalPrice.DisabledState.Parent = this.txtTotalPrice;
-            this.txtTotalPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalPrice.FocusedState.Parent = this.txtTotalPrice;
-            this.txtTotalPrice.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txtTotalPrice.ForeColor = System.Drawing.Color.Black;
-            this.txtTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalPrice.HoverState.Parent = this.txtTotalPrice;
-            this.txtTotalPrice.Location = new System.Drawing.Point(775, 490);
-            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.PasswordChar = '\0';
-            this.txtTotalPrice.PlaceholderText = "";
-            this.txtTotalPrice.ReadOnly = true;
-            this.txtTotalPrice.SelectedText = "";
-            this.txtTotalPrice.ShadowDecoration.Parent = this.txtTotalPrice;
-            this.txtTotalPrice.Size = new System.Drawing.Size(230, 27);
-            this.txtTotalPrice.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(645, 503);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 14);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Tổng Doanh Thu:";
-            // 
-            // chartquy
-            // 
-            chartArea7.Area3DStyle.Enable3D = true;
-            chartArea7.Area3DStyle.Inclination = 23;
-            chartArea7.Name = "ChartArea1";
-            this.chartquy.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartquy.Legends.Add(legend7);
-            this.chartquy.Location = new System.Drawing.Point(55, 81);
-            this.chartquy.Name = "chartquy";
-            this.chartquy.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series7.IsValueShownAsLabel = true;
-            series7.LabelFormat = "#.##%";
-            series7.Legend = "Legend1";
-            series7.Name = "Quý";
-            this.chartquy.Series.Add(series7);
-            this.chartquy.Size = new System.Drawing.Size(921, 386);
-            this.chartquy.TabIndex = 4;
-            this.chartquy.Text = "chart1";
-            title7.Name = "Title1";
-            title7.Text = "Doanh Thu Theo Quý";
-            this.chartquy.Titles.Add(title7);
-            // 
-            // cquy
-            // 
-            this.cquy.AutoSize = true;
-            this.cquy.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cquy.CheckedState.BorderThickness = 0;
-            this.cquy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cquy.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.cquy.CheckedState.InnerOffset = -4;
-            this.cquy.Location = new System.Drawing.Point(416, 16);
-            this.cquy.Name = "cquy";
-            this.cquy.Size = new System.Drawing.Size(122, 17);
-            this.cquy.TabIndex = 3;
-            this.cquy.Text = "Thống Kê Theo Quý";
-            this.cquy.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cquy.UncheckedState.BorderThickness = 2;
-            this.cquy.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.cquy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.cquy.CheckedChanged += new System.EventHandler(this.cquy_CheckedChanged);
-            // 
-            // cMonth
-            // 
-            this.cMonth.AutoSize = true;
-            this.cMonth.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cMonth.CheckedState.BorderThickness = 0;
-            this.cMonth.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cMonth.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.cMonth.CheckedState.InnerOffset = -4;
-            this.cMonth.Location = new System.Drawing.Point(261, 16);
-            this.cMonth.Name = "cMonth";
-            this.cMonth.Size = new System.Drawing.Size(134, 17);
-            this.cMonth.TabIndex = 3;
-            this.cMonth.Text = "Thống Kê Theo Tháng";
-            this.cMonth.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cMonth.UncheckedState.BorderThickness = 2;
-            this.cMonth.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.cMonth.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.cMonth.CheckedChanged += new System.EventHandler(this.cMonth_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Năm:";
-            // 
-            // cbYear
-            // 
-            this.cbYear.BackColor = System.Drawing.Color.Transparent;
-            this.cbYear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbYear.BorderRadius = 5;
-            this.cbYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbYear.DropDownHeight = 100;
-            this.cbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbYear.DropDownWidth = 260;
-            this.cbYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbYear.FocusedState.Parent = this.cbYear;
-            this.cbYear.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbYear.HoverState.Parent = this.cbYear;
-            this.cbYear.IntegralHeight = false;
-            this.cbYear.ItemHeight = 30;
-            this.cbYear.ItemsAppearance.Parent = this.cbYear;
-            this.cbYear.Location = new System.Drawing.Point(73, 6);
-            this.cbYear.Name = "cbYear";
-            this.cbYear.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.cbYear.ShadowDecoration.Parent = this.cbYear;
-            this.cbYear.Size = new System.Drawing.Size(131, 36);
-            this.cbYear.TabIndex = 1;
-            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
-            // 
-            // chartMonth
-            // 
-            chartArea8.Name = "ChartArea1";
-            this.chartMonth.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chartMonth.Legends.Add(legend8);
-            this.chartMonth.Location = new System.Drawing.Point(55, 81);
-            this.chartMonth.Name = "chartMonth";
-            series8.BorderColor = System.Drawing.Color.White;
-            series8.BorderWidth = 4;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Color = System.Drawing.Color.LimeGreen;
-            series8.Legend = "Legend1";
-            series8.Name = "Doanh Thu";
-            series8.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series8.YValuesPerPoint = 4;
-            this.chartMonth.Series.Add(series8);
-            this.chartMonth.Size = new System.Drawing.Size(921, 386);
-            this.chartMonth.TabIndex = 0;
-            this.chartMonth.Text = "chart1";
-            title8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title8.Name = "Title1";
-            title8.Text = "Doanh Thu Theo Tháng";
-            this.chartMonth.Titles.Add(title8);
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1036, 543);
-            this.tabPage6.TabIndex = 10;
-            this.tabPage6.Text = "tabPage6";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(54)))), ((int)(((byte)(128)))));
-            this.btnExit.BorderRadius = 9;
-            this.btnExit.BorderThickness = 3;
-            this.btnExit.CheckedState.Parent = this.btnExit;
-            this.btnExit.CustomImages.Parent = this.btnExit;
-            this.btnExit.FillColor = System.Drawing.SystemColors.Control;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.HoverState.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
-            this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(1003, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(34, 38);
-            this.btnExit.TabIndex = 11;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 7000;
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDProduct";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Sản Phẩm";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ProductName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Sản Phẩm";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // IDTypeProduct
-            // 
-            this.IDTypeProduct.DataPropertyName = "IDProductType";
-            this.IDTypeProduct.HeaderText = "Mã Loại Sản Phẩm";
-            this.IDTypeProduct.Name = "IDTypeProduct";
-            this.IDTypeProduct.ReadOnly = true;
-            // 
-            // IDProvider
-            // 
-            this.IDProvider.DataPropertyName = "IDCustomer";
-            this.IDProvider.HeaderText = "Mã Nhà Cung Cấp";
-            this.IDProvider.Name = "IDProvider";
-            this.IDProvider.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Trang Thái";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Total";
-            this.Column1.HeaderText = "Số Lượng";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // IDProductDetail
             // 
@@ -1105,152 +871,550 @@ namespace demo
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
-            // PhoneNum
+            // tTypeProduct
             // 
-            this.PhoneNum.DataPropertyName = "PhoneNum";
-            this.PhoneNum.HeaderText = "Số Điện Thoại";
-            this.PhoneNum.Name = "PhoneNum";
-            this.PhoneNum.ReadOnly = true;
+            this.tTypeProduct.Controls.Add(this.groupBox2);
+            this.tTypeProduct.Location = new System.Drawing.Point(4, 23);
+            this.tTypeProduct.Name = "tTypeProduct";
+            this.tTypeProduct.Padding = new System.Windows.Forms.Padding(3);
+            this.tTypeProduct.Size = new System.Drawing.Size(1150, 524);
+            this.tTypeProduct.TabIndex = 2;
+            this.tTypeProduct.Text = "Loại Sản Phẩm";
+            this.tTypeProduct.UseVisualStyleBackColor = true;
             // 
-            // CustomerName
+            // groupBox2
             // 
-            this.CustomerName.DataPropertyName = "CustomerName";
-            this.CustomerName.HeaderText = "Tên Khách Hàng";
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.ReadOnly = true;
+            this.groupBox2.Controls.Add(this.dgvProductType);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1144, 518);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Danh Sách Loại Sản Phẩm";
             // 
-            // IDCard
+            // dgvProductType
             // 
-            this.IDCard.DataPropertyName = "IDCard";
-            this.IDCard.HeaderText = "Mã Thẻ";
-            this.IDCard.Name = "IDCard";
-            this.IDCard.ReadOnly = true;
+            this.dgvProductType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductType.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProductType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDProductType,
+            this.ProductTypeName});
+            this.dgvProductType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductType.Location = new System.Drawing.Point(3, 18);
+            this.dgvProductType.Name = "dgvProductType";
+            this.dgvProductType.ReadOnly = true;
+            this.dgvProductType.RowHeadersVisible = false;
+            this.dgvProductType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductType.Size = new System.Drawing.Size(1138, 497);
+            this.dgvProductType.TabIndex = 2;
             // 
-            // Email
+            // IDProductType
             // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
+            this.IDProductType.DataPropertyName = "IDProductType";
+            this.IDProductType.HeaderText = "Mã Loại Sản Phẩm";
+            this.IDProductType.Name = "IDProductType";
+            this.IDProductType.ReadOnly = true;
             // 
-            // Address
+            // ProductTypeName
             // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Địa Chỉ";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
+            this.ProductTypeName.DataPropertyName = "ProductTypeName";
+            this.ProductTypeName.HeaderText = "Tên Loại Sản Phẩm";
+            this.ProductTypeName.Name = "ProductTypeName";
+            this.ProductTypeName.ReadOnly = true;
             // 
-            // Status
+            // tProduct
             // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Trạng Thái";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
+            this.tProduct.Controls.Add(this.groupBox1);
+            this.tProduct.Location = new System.Drawing.Point(4, 23);
+            this.tProduct.Name = "tProduct";
+            this.tProduct.Padding = new System.Windows.Forms.Padding(3);
+            this.tProduct.Size = new System.Drawing.Size(1150, 571);
+            this.tProduct.TabIndex = 1;
+            this.tProduct.Text = "Sản Phẩm";
+            this.tProduct.UseVisualStyleBackColor = true;
             // 
-            // Column3
+            // groupBox1
             // 
-            this.Column3.DataPropertyName = "CustomerType";
-            this.Column3.HeaderText = "Loại Khách Hàng";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.groupBox1.Controls.Add(this.dgvProduct);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1144, 565);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh Sách Sản Phẩm";
             // 
-            // IDBill
+            // dgvProduct
             // 
-            this.IDBill.DataPropertyName = "IDBill";
-            this.IDBill.HeaderText = "Mã Hoá Đơn";
-            this.IDBill.Name = "IDBill";
-            this.IDBill.ReadOnly = true;
+            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.IDTypeProduct,
+            this.IDProvider,
+            this.dataGridViewTextBoxColumn7,
+            this.Column1});
+            this.dgvProduct.Location = new System.Drawing.Point(3, 16);
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
+            this.dgvProduct.RowHeadersVisible = false;
+            this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProduct.Size = new System.Drawing.Size(1138, 544);
+            this.dgvProduct.TabIndex = 1;
             // 
-            // Date
+            // dataGridViewTextBoxColumn1
             // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Ngày Bán";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDProduct";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Sản Phẩm";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // IDCustomer
+            // dataGridViewTextBoxColumn2
             // 
-            this.IDCustomer.DataPropertyName = "IDCustomer";
-            this.IDCustomer.HeaderText = "Mã Khách Hàng";
-            this.IDCustomer.Name = "IDCustomer";
-            this.IDCustomer.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Sản Phẩm";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // IDNV
+            // IDTypeProduct
             // 
-            this.IDNV.DataPropertyName = "IDStaff";
-            this.IDNV.HeaderText = "Mã Nhân Viên";
-            this.IDNV.Name = "IDNV";
-            this.IDNV.ReadOnly = true;
+            this.IDTypeProduct.DataPropertyName = "IDProductType";
+            this.IDTypeProduct.HeaderText = "Mã Loại Sản Phẩm";
+            this.IDTypeProduct.Name = "IDTypeProduct";
+            this.IDTypeProduct.ReadOnly = true;
             // 
-            // TypeBill
+            // IDProvider
             // 
-            this.TypeBill.DataPropertyName = "TypeBill";
-            this.TypeBill.HeaderText = "Loại Hoá Đơn";
-            this.TypeBill.Name = "TypeBill";
-            this.TypeBill.ReadOnly = true;
+            this.IDProvider.DataPropertyName = "IDCustomer";
+            this.IDProvider.HeaderText = "Mã Nhà Cung Cấp";
+            this.IDProvider.Name = "IDProvider";
+            this.IDProvider.ReadOnly = true;
             // 
-            // TT
+            // dataGridViewTextBoxColumn7
             // 
-            this.TT.DataPropertyName = "Status";
-            this.TT.HeaderText = "Trạng Thái";
-            this.TT.Name = "TT";
-            this.TT.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Trang Thái";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // Column4
+            // Column1
             // 
-            this.Column4.DataPropertyName = "TotalPrice";
-            this.Column4.HeaderText = "Tổng Tiền";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.Column1.DataPropertyName = "Total";
+            this.Column1.HeaderText = "Số Lượng";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // IDB
+            // tHome
             // 
-            this.IDB.DataPropertyName = "IDBill";
-            this.IDB.HeaderText = "Mã Hoá Đơn";
-            this.IDB.Name = "IDB";
-            this.IDB.ReadOnly = true;
+            this.tHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tHome.Controls.Add(this.tProduct);
+            this.tHome.Controls.Add(this.tTypeProduct);
+            this.tHome.Controls.Add(this.tStatistical);
+            this.tHome.Controls.Add(this.tabPage1);
+            this.tHome.Controls.Add(this.tabPage2);
+            this.tHome.Controls.Add(this.tabPage3);
+            this.tHome.Controls.Add(this.tabPage4);
+            this.tHome.Controls.Add(this.tabPage5);
+            this.tHome.Controls.Add(this.tabPage6);
+            this.tHome.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tHome.ItemSize = new System.Drawing.Size(80, 19);
+            this.tHome.Location = new System.Drawing.Point(0, 64);
+            this.tHome.Name = "tHome";
+            this.tHome.SelectedIndex = 0;
+            this.tHome.Size = new System.Drawing.Size(1158, 578);
+            this.tHome.TabIndex = 1;
             // 
-            // IDPro
+            // tabPage5
             // 
-            this.IDPro.DataPropertyName = "IDProductDetail";
-            this.IDPro.HeaderText = "Mã Chi Tiết Sản Phẩm";
-            this.IDPro.Name = "IDPro";
-            this.IDPro.ReadOnly = true;
+            this.tabPage5.Controls.Add(this.label16);
+            this.tabPage5.Controls.Add(this.txtTotalPrice);
+            this.tabPage5.Controls.Add(this.label2);
+            this.tabPage5.Controls.Add(this.chartquy);
+            this.tabPage5.Controls.Add(this.cquy);
+            this.tabPage5.Controls.Add(this.cMonth);
+            this.tabPage5.Controls.Add(this.label1);
+            this.tabPage5.Controls.Add(this.cbYear);
+            this.tabPage5.Controls.Add(this.chartMonth);
+            this.tabPage5.Location = new System.Drawing.Point(4, 23);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1150, 524);
+            this.tabPage5.TabIndex = 9;
+            this.tabPage5.Text = "Biểu Đồ Doanh Thu";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // Number
+            // label16
             // 
-            this.Number.DataPropertyName = "Number";
-            this.Number.HeaderText = "Số Lượng";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(967, 496);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(31, 14);
+            this.label16.TabIndex = 46;
+            this.label16.Text = "VNĐ";
             // 
-            // Price
+            // txtTotalPrice
             // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Giá Bán";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
+            this.txtTotalPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtTotalPrice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtTotalPrice.BorderRadius = 10;
+            this.txtTotalPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotalPrice.DefaultText = "";
+            this.txtTotalPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTotalPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTotalPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalPrice.DisabledState.Parent = this.txtTotalPrice;
+            this.txtTotalPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotalPrice.FocusedState.Parent = this.txtTotalPrice;
+            this.txtTotalPrice.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.txtTotalPrice.ForeColor = System.Drawing.Color.Black;
+            this.txtTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotalPrice.HoverState.Parent = this.txtTotalPrice;
+            this.txtTotalPrice.Location = new System.Drawing.Point(775, 446);
+            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.PasswordChar = '\0';
+            this.txtTotalPrice.PlaceholderText = "";
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.SelectedText = "";
+            this.txtTotalPrice.ShadowDecoration.Parent = this.txtTotalPrice;
+            this.txtTotalPrice.Size = new System.Drawing.Size(230, 27);
+            this.txtTotalPrice.TabIndex = 6;
             // 
-            // Discount
+            // label2
             // 
-            this.Discount.DataPropertyName = "Discount";
-            this.Discount.HeaderText = "Giảm Giá";
-            this.Discount.Name = "Discount";
-            this.Discount.ReadOnly = true;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(645, 459);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 14);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Tổng Doanh Thu:";
             // 
-            // Column5
+            // chartquy
             // 
-            this.Column5.DataPropertyName = "TotalPrice";
-            this.Column5.HeaderText = "Tổng Tiền";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.chartquy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea9.Area3DStyle.Enable3D = true;
+            chartArea9.Area3DStyle.Inclination = 23;
+            chartArea9.Name = "ChartArea1";
+            this.chartquy.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chartquy.Legends.Add(legend9);
+            this.chartquy.Location = new System.Drawing.Point(55, 81);
+            this.chartquy.Name = "chartquy";
+            this.chartquy.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series9.IsValueShownAsLabel = true;
+            series9.LabelFormat = "#.##%";
+            series9.Legend = "Legend1";
+            series9.Name = "Quý";
+            this.chartquy.Series.Add(series9);
+            this.chartquy.Size = new System.Drawing.Size(921, 350);
+            this.chartquy.TabIndex = 4;
+            this.chartquy.Text = "chart1";
+            title9.Name = "Title1";
+            title9.Text = "Doanh Thu Theo Quý";
+            this.chartquy.Titles.Add(title9);
+            // 
+            // cquy
+            // 
+            this.cquy.AutoSize = true;
+            this.cquy.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cquy.CheckedState.BorderThickness = 0;
+            this.cquy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cquy.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.cquy.CheckedState.InnerOffset = -4;
+            this.cquy.Location = new System.Drawing.Point(416, 16);
+            this.cquy.Name = "cquy";
+            this.cquy.Size = new System.Drawing.Size(138, 18);
+            this.cquy.TabIndex = 3;
+            this.cquy.Text = "Thống Kê Theo Quý";
+            this.cquy.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cquy.UncheckedState.BorderThickness = 2;
+            this.cquy.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.cquy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.cquy.CheckedChanged += new System.EventHandler(this.cquy_CheckedChanged);
+            // 
+            // cMonth
+            // 
+            this.cMonth.AutoSize = true;
+            this.cMonth.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cMonth.CheckedState.BorderThickness = 0;
+            this.cMonth.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cMonth.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.cMonth.CheckedState.InnerOffset = -4;
+            this.cMonth.Location = new System.Drawing.Point(261, 16);
+            this.cMonth.Name = "cMonth";
+            this.cMonth.Size = new System.Drawing.Size(151, 18);
+            this.cMonth.TabIndex = 3;
+            this.cMonth.Text = "Thống Kê Theo Tháng";
+            this.cMonth.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cMonth.UncheckedState.BorderThickness = 2;
+            this.cMonth.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.cMonth.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.cMonth.CheckedChanged += new System.EventHandler(this.cMonth_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Năm:";
+            // 
+            // cbYear
+            // 
+            this.cbYear.BackColor = System.Drawing.Color.Transparent;
+            this.cbYear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbYear.BorderRadius = 5;
+            this.cbYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbYear.DropDownHeight = 100;
+            this.cbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbYear.DropDownWidth = 36;
+            this.cbYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbYear.FocusedState.Parent = this.cbYear;
+            this.cbYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbYear.HoverState.Parent = this.cbYear;
+            this.cbYear.IntegralHeight = false;
+            this.cbYear.ItemHeight = 30;
+            this.cbYear.ItemsAppearance.Parent = this.cbYear;
+            this.cbYear.Location = new System.Drawing.Point(73, 6);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.ShadowDecoration.Color = System.Drawing.Color.Silver;
+            this.cbYear.ShadowDecoration.Parent = this.cbYear;
+            this.cbYear.Size = new System.Drawing.Size(131, 36);
+            this.cbYear.TabIndex = 1;
+            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
+            // 
+            // chartMonth
+            // 
+            this.chartMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea10.Name = "ChartArea1";
+            this.chartMonth.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chartMonth.Legends.Add(legend10);
+            this.chartMonth.Location = new System.Drawing.Point(55, 81);
+            this.chartMonth.Name = "chartMonth";
+            series10.BorderColor = System.Drawing.Color.White;
+            series10.BorderWidth = 4;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Color = System.Drawing.Color.LimeGreen;
+            series10.Legend = "Legend1";
+            series10.Name = "Doanh Thu";
+            series10.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series10.YValuesPerPoint = 4;
+            this.chartMonth.Series.Add(series10);
+            this.chartMonth.Size = new System.Drawing.Size(921, 350);
+            this.chartMonth.TabIndex = 0;
+            this.chartMonth.Text = "chart1";
+            title10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title10.Name = "Title1";
+            title10.Text = "Doanh Thu Theo Tháng";
+            this.chartMonth.Titles.Add(title10);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.chartCustomer);
+            this.tabPage6.Controls.Add(this.rCustomer);
+            this.tabPage6.Controls.Add(this.rProduct);
+            this.tabPage6.Controls.Add(this.chartProduct);
+            this.tabPage6.Location = new System.Drawing.Point(4, 23);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1150, 551);
+            this.tabPage6.TabIndex = 10;
+            this.tabPage6.Text = "Top";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(54)))), ((int)(((byte)(128)))));
+            this.btnExit.BorderRadius = 3;
+            this.btnExit.BorderThickness = 1;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.FillColor = System.Drawing.SystemColors.Control;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.HoverState.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(1120, 6);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(34, 29);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 7000;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.BorderRadius = 3;
+            this.guna2ControlBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.guna2ControlBox1.BorderThickness = 1;
+            this.guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1085, 6);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
+            this.guna2ControlBox1.Size = new System.Drawing.Size(29, 29);
+            this.guna2ControlBox1.TabIndex = 12;
+            // 
+            // chartProduct
+            // 
+            this.chartProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea11.Name = "ChartArea1";
+            this.chartProduct.ChartAreas.Add(chartArea11);
+            legend11.Name = "Legend1";
+            this.chartProduct.Legends.Add(legend11);
+            this.chartProduct.Location = new System.Drawing.Point(55, 81);
+            this.chartProduct.Name = "chartProduct";
+            series11.BorderColor = System.Drawing.Color.White;
+            series11.BorderWidth = 4;
+            series11.ChartArea = "ChartArea1";
+            series11.Color = System.Drawing.Color.LimeGreen;
+            series11.Legend = "Legend1";
+            series11.Name = "Sản Phẩm";
+            series11.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series11.YValuesPerPoint = 4;
+            this.chartProduct.Series.Add(series11);
+            this.chartProduct.Size = new System.Drawing.Size(921, 374);
+            this.chartProduct.TabIndex = 1;
+            this.chartProduct.Text = "chart1";
+            title11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title11.Name = "Title1";
+            title11.Text = "Top Sản Phẩm Bán Chạy";
+            this.chartProduct.Titles.Add(title11);
+            // 
+            // rCustomer
+            // 
+            this.rCustomer.AutoSize = true;
+            this.rCustomer.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rCustomer.CheckedState.BorderThickness = 0;
+            this.rCustomer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rCustomer.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rCustomer.CheckedState.InnerOffset = -4;
+            this.rCustomer.Location = new System.Drawing.Point(338, 24);
+            this.rCustomer.Name = "rCustomer";
+            this.rCustomer.Size = new System.Drawing.Size(90, 18);
+            this.rCustomer.TabIndex = 4;
+            this.rCustomer.Text = "Khách Hàng";
+            this.rCustomer.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rCustomer.UncheckedState.BorderThickness = 2;
+            this.rCustomer.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rCustomer.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rCustomer.CheckedChanged += new System.EventHandler(this.rCustomer_CheckedChanged);
+            // 
+            // rProduct
+            // 
+            this.rProduct.AutoSize = true;
+            this.rProduct.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rProduct.CheckedState.BorderThickness = 0;
+            this.rProduct.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rProduct.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rProduct.CheckedState.InnerOffset = -4;
+            this.rProduct.Location = new System.Drawing.Point(183, 24);
+            this.rProduct.Name = "rProduct";
+            this.rProduct.Size = new System.Drawing.Size(79, 18);
+            this.rProduct.TabIndex = 5;
+            this.rProduct.Text = "Sản Phẩm";
+            this.rProduct.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rProduct.UncheckedState.BorderThickness = 2;
+            this.rProduct.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rProduct.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rProduct.CheckedChanged += new System.EventHandler(this.rProduct_CheckedChanged);
+            // 
+            // chartCustomer
+            // 
+            this.chartCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea12.Name = "ChartArea1";
+            this.chartCustomer.ChartAreas.Add(chartArea12);
+            legend12.Name = "Legend1";
+            this.chartCustomer.Legends.Add(legend12);
+            this.chartCustomer.Location = new System.Drawing.Point(55, 81);
+            this.chartCustomer.Name = "chartCustomer";
+            series12.BorderColor = System.Drawing.Color.White;
+            series12.BorderWidth = 4;
+            series12.ChartArea = "ChartArea1";
+            series12.Color = System.Drawing.Color.LimeGreen;
+            series12.Legend = "Legend1";
+            series12.Name = "Khách Hàng";
+            series12.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series12.YValuesPerPoint = 4;
+            this.chartCustomer.Series.Add(series12);
+            this.chartCustomer.Size = new System.Drawing.Size(921, 374);
+            this.chartCustomer.TabIndex = 13;
+            this.chartCustomer.Text = "chart1";
+            title12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title12.Name = "Title1";
+            title12.Text = "Top Khách Hàng Tiềm Năng";
+            this.chartCustomer.Titles.Add(title12);
+            // 
+            // btnReload
+            // 
+            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReload.BorderThickness = 1;
+            this.btnReload.CheckedState.Parent = this.btnReload;
+            this.btnReload.CustomImages.Parent = this.btnReload;
+            this.btnReload.FillColor = System.Drawing.Color.Transparent;
+            this.btnReload.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReload.ForeColor = System.Drawing.Color.White;
+            this.btnReload.HoverState.Parent = this.btnReload;
+            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
+            this.btnReload.Location = new System.Drawing.Point(1109, 48);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnReload.ShadowDecoration.Parent = this.btnReload;
+            this.btnReload.Size = new System.Drawing.Size(30, 30);
+            this.btnReload.TabIndex = 14;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // fHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1044, 603);
+            this.ClientSize = new System.Drawing.Size(1158, 654);
+            this.Controls.Add(this.btnReload);
+            this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.tHome);
             this.Controls.Add(this.menuStrip);
@@ -1260,6 +1424,7 @@ namespace demo
             this.Name = "fHomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomePages";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.fHomePages_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -1289,6 +1454,10 @@ namespace demo
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartquy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMonth)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCustomer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1316,7 +1485,6 @@ namespace demo
         private System.Windows.Forms.ToolStripMenuItem càiĐặtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mtsEditStaff;
-        private System.Windows.Forms.ToolStripMenuItem mstExit;
         private ToolStripMenuItem mtsLogOut;
         private ToolStripMenuItem thốngKêXuấtKhoToolStripMenuItem1;
         private TabPage tabPage4;
@@ -1364,9 +1532,6 @@ namespace demo
         private Timer timer1;
         private Label label16;
         private TabPage tabPage6;
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private Guna.UI2.WinForms.Guna2ResizeForm guna2ResizeForm1;
-        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private DataGridViewTextBoxColumn IDProductDetail;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -1402,5 +1567,14 @@ namespace demo
         private DataGridViewTextBoxColumn TypeBill;
         private DataGridViewTextBoxColumn TT;
         private DataGridViewTextBoxColumn Column4;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2ResizeForm guna2ResizeForm1;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartProduct;
+        private Guna.UI2.WinForms.Guna2RadioButton rCustomer;
+        private Guna.UI2.WinForms.Guna2RadioButton rProduct;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCustomer;
+        private Guna.UI2.WinForms.Guna2CircleButton btnReload;
     }
 }

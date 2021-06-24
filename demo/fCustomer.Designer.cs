@@ -40,7 +40,18 @@ namespace demo
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbProvince = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbDistrict = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPhoneNum = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbcustomertype = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbStatus = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtIDCard = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,25 +59,20 @@ namespace demo
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pButton = new System.Windows.Forms.Panel();
+            this.cbSearch = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorCustomer = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtIDCard = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRefesh = new Guna.UI2.WinForms.Guna2Button();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.cbSearch = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbStatus = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbcustomertype = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
-            this.txtPhoneNum = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbWard = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.panel1.SuspendLayout();
             this.pButton.SuspendLayout();
@@ -93,7 +99,7 @@ namespace demo
             this.dgvCustomer.RowHeadersVisible = false;
             this.dgvCustomer.RowHeadersWidth = 40;
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomer.Size = new System.Drawing.Size(856, 222);
+            this.dgvCustomer.Size = new System.Drawing.Size(1063, 222);
             this.dgvCustomer.TabIndex = 13;
             this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellClick);
             // 
@@ -148,6 +154,9 @@ namespace demo
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbProvince);
+            this.panel1.Controls.Add(this.cbWard);
+            this.panel1.Controls.Add(this.cbDistrict);
             this.panel1.Controls.Add(this.txtAddress);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtPhoneNum);
@@ -156,6 +165,9 @@ namespace demo
             this.panel1.Controls.Add(this.cbStatus);
             this.panel1.Controls.Add(this.txtIDCard);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -164,141 +176,210 @@ namespace demo
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(535, 205);
+            this.panel1.Size = new System.Drawing.Size(765, 205);
             this.panel1.TabIndex = 12;
             // 
-            // label4
+            // cbProvince
             // 
-            this.label4.Location = new System.Drawing.Point(291, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
-            this.label4.TabIndex = 45;
-            this.label4.Text = "Email:";
+            this.cbProvince.BackColor = System.Drawing.Color.Transparent;
+            this.cbProvince.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbProvince.BorderRadius = 9;
+            this.cbProvince.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbProvince.DropDownHeight = 200;
+            this.cbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProvince.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbProvince.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbProvince.FocusedState.Parent = this.cbProvince;
+            this.cbProvince.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.cbProvince.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbProvince.HoverState.Parent = this.cbProvince;
+            this.cbProvince.IntegralHeight = false;
+            this.cbProvince.ItemHeight = 25;
+            this.cbProvince.ItemsAppearance.Parent = this.cbProvince;
+            this.cbProvince.Location = new System.Drawing.Point(366, 10);
+            this.cbProvince.Name = "cbProvince";
+            this.cbProvince.ShadowDecoration.Parent = this.cbProvince;
+            this.cbProvince.Size = new System.Drawing.Size(144, 31);
+            this.cbProvince.TabIndex = 61;
+            this.cbProvince.SelectedIndexChanged += new System.EventHandler(this.cbProvince_SelectedIndexChanged);
             // 
-            // label5
+            // cbDistrict
             // 
-            this.label5.Location = new System.Drawing.Point(289, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 23);
-            this.label5.TabIndex = 47;
-            this.label5.Text = "Địa Chỉ:";
+            this.cbDistrict.BackColor = System.Drawing.Color.Transparent;
+            this.cbDistrict.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbDistrict.BorderRadius = 9;
+            this.cbDistrict.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbDistrict.DropDownHeight = 200;
+            this.cbDistrict.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDistrict.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbDistrict.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbDistrict.FocusedState.Parent = this.cbDistrict;
+            this.cbDistrict.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.cbDistrict.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbDistrict.HoverState.Parent = this.cbDistrict;
+            this.cbDistrict.IntegralHeight = false;
+            this.cbDistrict.ItemHeight = 25;
+            this.cbDistrict.ItemsAppearance.Parent = this.cbDistrict;
+            this.cbDistrict.Location = new System.Drawing.Point(367, 60);
+            this.cbDistrict.Name = "cbDistrict";
+            this.cbDistrict.ShadowDecoration.Parent = this.cbDistrict;
+            this.cbDistrict.Size = new System.Drawing.Size(144, 31);
+            this.cbDistrict.TabIndex = 61;
+            this.cbDistrict.SelectedIndexChanged += new System.EventHandler(this.cbDistrict_SelectedIndexChanged);
             // 
-            // label3
+            // txtAddress
             // 
-            this.label3.Location = new System.Drawing.Point(27, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 23);
-            this.label3.TabIndex = 46;
-            this.label3.Text = "Loại Khách Hàng:";
+            this.txtAddress.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtAddress.BorderRadius = 10;
+            this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAddress.DefaultText = "";
+            this.txtAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAddress.DisabledState.Parent = this.txtAddress;
+            this.txtAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAddress.FocusedState.Parent = this.txtAddress;
+            this.txtAddress.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.ForeColor = System.Drawing.Color.Black;
+            this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAddress.HoverState.Parent = this.txtAddress;
+            this.txtAddress.Location = new System.Drawing.Point(367, 168);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.PasswordChar = '\0';
+            this.txtAddress.PlaceholderText = "";
+            this.txtAddress.SelectedText = "";
+            this.txtAddress.ShadowDecoration.Parent = this.txtAddress;
+            this.txtAddress.Size = new System.Drawing.Size(144, 27);
+            this.txtAddress.TabIndex = 60;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
-            // label2
+            // txtEmail
             // 
-            this.label2.Location = new System.Drawing.Point(26, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Số Điện Thoại:";
+            this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtEmail.BorderRadius = 10;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.DefaultText = "";
+            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.DisabledState.Parent = this.txtEmail;
+            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.FocusedState.Parent = this.txtEmail;
+            this.txtEmail.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.HoverState.Parent = this.txtEmail;
+            this.txtEmail.Location = new System.Drawing.Point(599, 119);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.ShadowDecoration.Parent = this.txtEmail;
+            this.txtEmail.Size = new System.Drawing.Size(144, 27);
+            this.txtEmail.TabIndex = 59;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
-            // label1
+            // txtPhoneNum
             // 
-            this.label1.Location = new System.Drawing.Point(27, 168);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 43;
-            this.label1.Text = "Mã Thẻ:";
+            this.txtPhoneNum.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtPhoneNum.BorderRadius = 10;
+            this.txtPhoneNum.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhoneNum.DefaultText = "";
+            this.txtPhoneNum.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPhoneNum.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPhoneNum.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPhoneNum.DisabledState.Parent = this.txtPhoneNum;
+            this.txtPhoneNum.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPhoneNum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPhoneNum.FocusedState.Parent = this.txtPhoneNum;
+            this.txtPhoneNum.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNum.ForeColor = System.Drawing.Color.Black;
+            this.txtPhoneNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPhoneNum.HoverState.Parent = this.txtPhoneNum;
+            this.txtPhoneNum.Location = new System.Drawing.Point(126, 65);
+            this.txtPhoneNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPhoneNum.Name = "txtPhoneNum";
+            this.txtPhoneNum.PasswordChar = '\0';
+            this.txtPhoneNum.PlaceholderText = "";
+            this.txtPhoneNum.SelectedText = "";
+            this.txtPhoneNum.ShadowDecoration.Parent = this.txtPhoneNum;
+            this.txtPhoneNum.Size = new System.Drawing.Size(144, 27);
+            this.txtPhoneNum.TabIndex = 58;
+            this.txtPhoneNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNum_KeyPress);
             // 
-            // label7
+            // txtCustomerName
             // 
-            this.label7.Location = new System.Drawing.Point(291, 120);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 23);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Trạng Thái";
+            this.txtCustomerName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtCustomerName.BorderRadius = 10;
+            this.txtCustomerName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCustomerName.DefaultText = "";
+            this.txtCustomerName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCustomerName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCustomerName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomerName.DisabledState.Parent = this.txtCustomerName;
+            this.txtCustomerName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomerName.FocusedState.Parent = this.txtCustomerName;
+            this.txtCustomerName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerName.ForeColor = System.Drawing.Color.Black;
+            this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomerName.HoverState.Parent = this.txtCustomerName;
+            this.txtCustomerName.Location = new System.Drawing.Point(126, 116);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.PasswordChar = '\0';
+            this.txtCustomerName.PlaceholderText = "";
+            this.txtCustomerName.SelectedText = "";
+            this.txtCustomerName.ShadowDecoration.Parent = this.txtCustomerName;
+            this.txtCustomerName.Size = new System.Drawing.Size(144, 27);
+            this.txtCustomerName.TabIndex = 57;
+            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
             // 
-            // label9
+            // cbcustomertype
             // 
-            this.label9.Location = new System.Drawing.Point(27, 120);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 23);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Tên Khách Hàng:";
+            this.cbcustomertype.BackColor = System.Drawing.Color.Transparent;
+            this.cbcustomertype.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbcustomertype.BorderRadius = 9;
+            this.cbcustomertype.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbcustomertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbcustomertype.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbcustomertype.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbcustomertype.FocusedState.Parent = this.cbcustomertype;
+            this.cbcustomertype.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbcustomertype.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbcustomertype.HoverState.Parent = this.cbcustomertype;
+            this.cbcustomertype.ItemHeight = 30;
+            this.cbcustomertype.ItemsAppearance.Parent = this.cbcustomertype;
+            this.cbcustomertype.Location = new System.Drawing.Point(126, 7);
+            this.cbcustomertype.Name = "cbcustomertype";
+            this.cbcustomertype.ShadowDecoration.Parent = this.cbcustomertype;
+            this.cbcustomertype.Size = new System.Drawing.Size(145, 36);
+            this.cbcustomertype.TabIndex = 56;
             // 
-            // pButton
+            // cbStatus
             // 
-            this.pButton.Controls.Add(this.cbSearch);
-            this.pButton.Controls.Add(this.btnUpdate);
-            this.pButton.Controls.Add(this.btnRefesh);
-            this.pButton.Controls.Add(this.btnAdd);
-            this.pButton.Controls.Add(this.btnDelete);
-            this.pButton.Controls.Add(this.txtSearch);
-            this.pButton.Controls.Add(this.btnExit);
-            this.pButton.Location = new System.Drawing.Point(553, 12);
-            this.pButton.Name = "pButton";
-            this.pButton.Size = new System.Drawing.Size(328, 205);
-            this.pButton.TabIndex = 11;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtSearch.BorderRadius = 10;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.Parent = this.txtSearch;
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.FocusedState.Parent = this.txtSearch;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.HoverState.Parent = this.txtSearch;
-            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
-            this.txtSearch.Location = new System.Drawing.Point(36, 152);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(208, 36);
-            this.txtSearch.TabIndex = 38;
-            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(54)))), ((int)(((byte)(128)))));
-            this.btnExit.BorderRadius = 9;
-            this.btnExit.BorderThickness = 3;
-            this.btnExit.CheckedState.Parent = this.btnExit;
-            this.btnExit.CustomImages.Parent = this.btnExit;
-            this.btnExit.FillColor = System.Drawing.SystemColors.Control;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.HoverState.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
-            this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(280, 3);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(45, 37);
-            this.btnExit.TabIndex = 11;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvCustomer);
-            this.groupBox1.Location = new System.Drawing.Point(12, 223);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(869, 255);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh Sách Khách Hàng";
-            // 
-            // errorCustomer
-            // 
-            this.errorCustomer.ContainerControl = this;
+            this.cbStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cbStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbStatus.BorderRadius = 9;
+            this.cbStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbStatus.FocusedState.Parent = this.cbStatus;
+            this.cbStatus.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbStatus.HoverState.Parent = this.cbStatus;
+            this.cbStatus.ItemHeight = 25;
+            this.cbStatus.ItemsAppearance.Parent = this.cbStatus;
+            this.cbStatus.Location = new System.Drawing.Point(601, 56);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.ShadowDecoration.Parent = this.cbStatus;
+            this.cbStatus.Size = new System.Drawing.Size(142, 31);
+            this.cbStatus.TabIndex = 55;
             // 
             // txtIDCard
             // 
@@ -329,73 +410,100 @@ namespace demo
             this.txtIDCard.TextChanged += new System.EventHandler(this.txtIDCard_TextChanged);
             this.txtIDCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDCard_KeyPress);
             // 
-            // btnDelete
+            // label4
             // 
-            this.btnDelete.BorderRadius = 9;
-            this.btnDelete.CheckedState.Parent = this.btnDelete;
-            this.btnDelete.CustomImages.Parent = this.btnDelete;
-            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(154, 8);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
-            this.btnDelete.Size = new System.Drawing.Size(90, 36);
-            this.btnDelete.TabIndex = 50;
-            this.btnDelete.Text = "Xoá";
-            this.btnDelete.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(521, 123);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "Email:";
             // 
-            // btnRefesh
+            // label10
             // 
-            this.btnRefesh.BorderRadius = 9;
-            this.btnRefesh.CheckedState.Parent = this.btnRefesh;
-            this.btnRefesh.CustomImages.Parent = this.btnRefesh;
-            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
-            this.btnRefesh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRefesh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefesh.HoverState.Parent = this.btnRefesh;
-            this.btnRefesh.Location = new System.Drawing.Point(154, 50);
-            this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
-            this.btnRefesh.Size = new System.Drawing.Size(90, 36);
-            this.btnRefesh.TabIndex = 51;
-            this.btnRefesh.Text = "Nhập Lại";
-            this.btnRefesh.Click += new System.EventHandler(this.btnRefreshText_Click);
+            this.label10.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(289, 125);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 23);
+            this.label10.TabIndex = 47;
+            this.label10.Text = "Phường/Xã:";
             // 
-            // btnUpdate
+            // label6
             // 
-            this.btnUpdate.BorderRadius = 9;
-            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
-            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
-            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(12, 50);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(90, 36);
-            this.btnUpdate.TabIndex = 52;
-            this.btnUpdate.Text = "Cập Nhật";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(289, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "Quận/Huyện:";
             // 
-            // btnAdd
+            // label5
             // 
-            this.btnAdd.BorderRadius = 9;
-            this.btnAdd.CheckedState.Parent = this.btnAdd;
-            this.btnAdd.CustomImages.Parent = this.btnAdd;
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(12, 8);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(90, 36);
-            this.btnAdd.TabIndex = 53;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(287, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 23);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "TP/Tỉnh:";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(27, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 23);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Loại Khách Hàng:";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(26, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Số Điện Thoại:";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 168);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Mã Thẻ:";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(521, 70);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 23);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Trạng Thái:";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(27, 120);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(116, 23);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Tên Khách Hàng:";
+            // 
+            // pButton
+            // 
+            this.pButton.Controls.Add(this.cbSearch);
+            this.pButton.Controls.Add(this.btnUpdate);
+            this.pButton.Controls.Add(this.btnRefesh);
+            this.pButton.Controls.Add(this.btnAdd);
+            this.pButton.Controls.Add(this.btnDelete);
+            this.pButton.Controls.Add(this.txtSearch);
+            this.pButton.Controls.Add(this.btnExit);
+            this.pButton.Location = new System.Drawing.Point(783, 12);
+            this.pButton.Name = "pButton";
+            this.pButton.Size = new System.Drawing.Size(302, 205);
+            this.pButton.TabIndex = 11;
             // 
             // cbSearch
             // 
@@ -407,182 +515,191 @@ namespace demo
             this.cbSearch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbSearch.FocusedState.Parent = this.cbSearch;
-            this.cbSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbSearch.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbSearch.HoverState.Parent = this.cbSearch;
             this.cbSearch.ItemHeight = 30;
             this.cbSearch.ItemsAppearance.Parent = this.cbSearch;
-            this.cbSearch.Location = new System.Drawing.Point(36, 97);
+            this.cbSearch.Location = new System.Drawing.Point(28, 99);
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.ShadowDecoration.Parent = this.cbSearch;
             this.cbSearch.Size = new System.Drawing.Size(208, 36);
             this.cbSearch.TabIndex = 54;
             this.cbSearch.SelectedIndexChanged += new System.EventHandler(this.cbSearch_SelectedIndexChanged);
             // 
-            // cbStatus
+            // btnUpdate
             // 
-            this.cbStatus.BackColor = System.Drawing.Color.Transparent;
-            this.cbStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbStatus.BorderRadius = 9;
-            this.cbStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbStatus.FocusedState.Parent = this.cbStatus;
-            this.cbStatus.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbStatus.HoverState.Parent = this.cbStatus;
-            this.cbStatus.ItemHeight = 30;
-            this.cbStatus.ItemsAppearance.Parent = this.cbStatus;
-            this.cbStatus.Location = new System.Drawing.Point(362, 107);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.ShadowDecoration.Parent = this.cbStatus;
-            this.cbStatus.Size = new System.Drawing.Size(145, 36);
-            this.cbStatus.TabIndex = 55;
+            this.btnUpdate.BorderRadius = 9;
+            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
+            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
+            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.HoverState.Parent = this.btnUpdate;
+            this.btnUpdate.Location = new System.Drawing.Point(4, 52);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
+            this.btnUpdate.Size = new System.Drawing.Size(90, 36);
+            this.btnUpdate.TabIndex = 52;
+            this.btnUpdate.Text = "Cập Nhật";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
             // 
-            // cbcustomertype
+            // btnRefesh
             // 
-            this.cbcustomertype.BackColor = System.Drawing.Color.Transparent;
-            this.cbcustomertype.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbcustomertype.BorderRadius = 9;
-            this.cbcustomertype.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbcustomertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbcustomertype.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbcustomertype.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbcustomertype.FocusedState.Parent = this.cbcustomertype;
-            this.cbcustomertype.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbcustomertype.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbcustomertype.HoverState.Parent = this.cbcustomertype;
-            this.cbcustomertype.ItemHeight = 30;
-            this.cbcustomertype.ItemsAppearance.Parent = this.cbcustomertype;
-            this.cbcustomertype.Location = new System.Drawing.Point(126, 7);
-            this.cbcustomertype.Name = "cbcustomertype";
-            this.cbcustomertype.ShadowDecoration.Parent = this.cbcustomertype;
-            this.cbcustomertype.Size = new System.Drawing.Size(145, 36);
-            this.cbcustomertype.TabIndex = 56;
+            this.btnRefesh.BorderRadius = 9;
+            this.btnRefesh.CheckedState.Parent = this.btnRefesh;
+            this.btnRefesh.CustomImages.Parent = this.btnRefesh;
+            this.btnRefesh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
+            this.btnRefesh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRefesh.ForeColor = System.Drawing.Color.Black;
+            this.btnRefesh.HoverState.Parent = this.btnRefesh;
+            this.btnRefesh.Location = new System.Drawing.Point(146, 52);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.ShadowDecoration.Parent = this.btnRefesh;
+            this.btnRefesh.Size = new System.Drawing.Size(90, 36);
+            this.btnRefesh.TabIndex = 51;
+            this.btnRefesh.Text = "Nhập Lại";
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefreshText_Click);
             // 
-            // txtCustomerName
+            // btnAdd
             // 
-            this.txtCustomerName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtCustomerName.BorderRadius = 10;
-            this.txtCustomerName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustomerName.DefaultText = "";
-            this.txtCustomerName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCustomerName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCustomerName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerName.DisabledState.Parent = this.txtCustomerName;
-            this.txtCustomerName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerName.FocusedState.Parent = this.txtCustomerName;
-            this.txtCustomerName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.ForeColor = System.Drawing.Color.Black;
-            this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerName.HoverState.Parent = this.txtCustomerName;
-            this.txtCustomerName.Location = new System.Drawing.Point(126, 116);
-            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.PasswordChar = '\0';
-            this.txtCustomerName.PlaceholderText = "";
-            this.txtCustomerName.SelectedText = "";
-            this.txtCustomerName.ShadowDecoration.Parent = this.txtCustomerName;
-            this.txtCustomerName.Size = new System.Drawing.Size(144, 27);
-            this.txtCustomerName.TabIndex = 57;
-            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
+            this.btnAdd.BorderRadius = 9;
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.CustomImages.Parent = this.btnAdd;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAdd.ForeColor = System.Drawing.Color.Black;
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.Location = new System.Drawing.Point(4, 10);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
+            this.btnAdd.Size = new System.Drawing.Size(90, 36);
+            this.btnAdd.TabIndex = 53;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
-            // txtEmail
+            // btnDelete
             // 
-            this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtEmail.BorderRadius = 10;
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultText = "";
-            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.DisabledState.Parent = this.txtEmail;
-            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.FocusedState.Parent = this.txtEmail;
-            this.txtEmail.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.HoverState.Parent = this.txtEmail;
-            this.txtEmail.Location = new System.Drawing.Point(362, 13);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.PlaceholderText = "";
-            this.txtEmail.SelectedText = "";
-            this.txtEmail.ShadowDecoration.Parent = this.txtEmail;
-            this.txtEmail.Size = new System.Drawing.Size(144, 27);
-            this.txtEmail.TabIndex = 59;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.btnDelete.BorderRadius = 9;
+            this.btnDelete.CheckedState.Parent = this.btnDelete;
+            this.btnDelete.CustomImages.Parent = this.btnDelete;
+            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(195)))), ((int)(((byte)(228)))));
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.HoverState.Parent = this.btnDelete;
+            this.btnDelete.Location = new System.Drawing.Point(146, 10);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
+            this.btnDelete.Size = new System.Drawing.Size(90, 36);
+            this.btnDelete.TabIndex = 50;
+            this.btnDelete.Text = "Xoá";
+            this.btnDelete.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
-            // txtAddress
+            // txtSearch
             // 
-            this.txtAddress.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtAddress.BorderRadius = 10;
-            this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAddress.DefaultText = "";
-            this.txtAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAddress.DisabledState.Parent = this.txtAddress;
-            this.txtAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress.FocusedState.Parent = this.txtAddress;
-            this.txtAddress.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress.HoverState.Parent = this.txtAddress;
-            this.txtAddress.Location = new System.Drawing.Point(362, 65);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.PasswordChar = '\0';
-            this.txtAddress.PlaceholderText = "";
-            this.txtAddress.SelectedText = "";
-            this.txtAddress.ShadowDecoration.Parent = this.txtAddress;
-            this.txtAddress.Size = new System.Drawing.Size(144, 27);
-            this.txtAddress.TabIndex = 60;
-            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtSearch.BorderRadius = 10;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.Parent = this.txtSearch;
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.FocusedState.Parent = this.txtSearch;
+            this.txtSearch.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.HoverState.Parent = this.txtSearch;
+            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
+            this.txtSearch.Location = new System.Drawing.Point(28, 154);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
+            this.txtSearch.Size = new System.Drawing.Size(208, 36);
+            this.txtSearch.TabIndex = 38;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(54)))), ((int)(((byte)(128)))));
+            this.btnExit.BorderRadius = 9;
+            this.btnExit.BorderThickness = 3;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.FillColor = System.Drawing.SystemColors.Control;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.HoverState.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnExit.HoverState.FillColor = System.Drawing.Color.Red;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(252, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(45, 37);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvCustomer);
+            this.groupBox1.Location = new System.Drawing.Point(12, 223);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1082, 255);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh Sách Khách Hàng";
+            // 
+            // errorCustomer
+            // 
+            this.errorCustomer.ContainerControl = this;
             // 
             // guna2BorderlessForm1
             // 
             this.guna2BorderlessForm1.ContainerControl = this;
             // 
-            // txtPhoneNum
+            // cbWard
             // 
-            this.txtPhoneNum.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtPhoneNum.BorderRadius = 10;
-            this.txtPhoneNum.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhoneNum.DefaultText = "";
-            this.txtPhoneNum.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPhoneNum.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPhoneNum.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhoneNum.DisabledState.Parent = this.txtPhoneNum;
-            this.txtPhoneNum.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhoneNum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhoneNum.FocusedState.Parent = this.txtPhoneNum;
-            this.txtPhoneNum.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNum.ForeColor = System.Drawing.Color.Black;
-            this.txtPhoneNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhoneNum.HoverState.Parent = this.txtPhoneNum;
-            this.txtPhoneNum.Location = new System.Drawing.Point(126, 65);
-            this.txtPhoneNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPhoneNum.Name = "txtPhoneNum";
-            this.txtPhoneNum.PasswordChar = '\0';
-            this.txtPhoneNum.PlaceholderText = "";
-            this.txtPhoneNum.SelectedText = "";
-            this.txtPhoneNum.ShadowDecoration.Parent = this.txtPhoneNum;
-            this.txtPhoneNum.Size = new System.Drawing.Size(144, 27);
-            this.txtPhoneNum.TabIndex = 58;
-            this.txtPhoneNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNum_KeyPress);
+            this.cbWard.BackColor = System.Drawing.Color.Transparent;
+            this.cbWard.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbWard.BorderRadius = 9;
+            this.cbWard.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbWard.DropDownHeight = 200;
+            this.cbWard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbWard.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbWard.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbWard.FocusedState.Parent = this.cbWard;
+            this.cbWard.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.cbWard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbWard.HoverState.Parent = this.cbWard;
+            this.cbWard.IntegralHeight = false;
+            this.cbWard.ItemHeight = 25;
+            this.cbWard.ItemsAppearance.Parent = this.cbWard;
+            this.cbWard.Location = new System.Drawing.Point(367, 112);
+            this.cbWard.Name = "cbWard";
+            this.cbWard.ShadowDecoration.Parent = this.cbWard;
+            this.cbWard.Size = new System.Drawing.Size(144, 31);
+            this.cbWard.TabIndex = 61;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(287, 172);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 23);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "Địa chỉ:";
             // 
             // fCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(883, 481);
+            this.ClientSize = new System.Drawing.Size(1097, 504);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pButton);
@@ -638,5 +755,11 @@ namespace demo
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2ResizeForm guna2ResizeForm1;
         private Guna.UI2.WinForms.Guna2TextBox txtPhoneNum;
+        private Guna.UI2.WinForms.Guna2ComboBox cbDistrict;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2ComboBox cbProvince;
+        private Guna.UI2.WinForms.Guna2ComboBox cbWard;
+        private System.Windows.Forms.Label label8;
     }
 }

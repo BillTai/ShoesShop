@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,6 +25,24 @@ namespace demo
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+            Province = Local.ExcuteQuery("select * from location.province  order by location.province._name");
+            for(int i = 0;i<Province.Rows.Count;i++)
+            {
+                cbProvince.Items.Add(Province.Rows[i][1].ToString());
+            }
+            cbProvince.SelectedIndex = 0;
+            District = Local.ExcuteQuery("select * from location.District where _province_id = " + Province.Rows[0][0] + " order by location.District._name");
+            for (int i = 0; i < District.Rows.Count; i++)
+            {
+                cbDistrict.Items.Add(District.Rows[i][1].ToString());
+            }
+            cbDistrict.SelectedIndex = 0;
+            Ward = Local.ExcuteQuery("select * from location.Ward where _district_id = " + District.Rows[0][0] + " order by location.ward._name");
+            for (int i = 0; i < Ward.Rows.Count; i++)
+            {
+                cbWard.Items.Add(Ward.Rows[i][1].ToString());
+            }
+            cbWard.SelectedIndex = 0;
             ShowCustomer();
             cbStatus.Items.Add("Khách Hàng Thân Thiết");
             cbStatus.Items.Add("Khách Hàng Mới");
@@ -39,6 +58,10 @@ namespace demo
         }
         //------------------------Khai Báo Biến------------------------//
         Connect ConnectSQL = new Connect();
+        ConnectLocal Local = new ConnectLocal();
+        DataTable Province = new DataTable();
+        DataTable District = new DataTable();
+        DataTable Ward = new DataTable();
         DataTable Customer = new DataTable();
         //------------------------Hàm------------------------//
         //Kết Nối SQL
@@ -61,7 +84,7 @@ namespace demo
             {
                 if(cbSearch.SelectedIndex == i)
                 {
-                    query = "Select * from Customer where "+Customer.Columns[i].ColumnName+" like '%" + txtSearch.Text + "%'";
+                    query = "Select * from Customer where "+Customer.Columns[i].ColumnName+" like N'%" + txtSearch.Text + "%'";
                 }    
             }    
             ConnectSql(query, dgvCustomer);
@@ -70,12 +93,20 @@ namespace demo
         //Hiển Thị Vào Textbox Khi Click Vào Datagridview
         void ShowInTextBox(int vt, DataTable ds)
         {
-
+            
+                         
+                
+               
             txtPhoneNum.Text = ds.Rows[vt][0].ToString();
             txtCustomerName.Text = ds.Rows[vt][1].ToString();
             txtIDCard.Text = ds.Rows[vt][2].ToString();
+
             txtEmail.Text = ds.Rows[vt][3].ToString();
-            txtAddress.Text = ds.Rows[vt][4].ToString();
+            string[] AddressInput = ds.Rows[vt][4].ToString().Split(',');
+            txtAddress.Text = AddressInput[0];
+            cbWard.Text = AddressInput[1];
+            cbDistrict.Text = AddressInput[2];
+            cbProvince.Text = AddressInput[3];
             if (Convert.ToInt32(ds.Rows[vt][5]) == 1)
                 cbStatus.SelectedIndex = 1;
             else
@@ -117,7 +148,7 @@ namespace demo
                 errorCustomer.SetError(txtIDCard, "Nhập giá trị");
                 return 2;
             }
-            else if (string.IsNullOrEmpty(txtEmail.Text))
+            else if (string.IsNullOrEmpty(txtEmail.Text) || !isEmail(txtEmail.Text))
             {
                 errorCustomer.SetError(txtEmail, "Nhập giá trị");
                 return 3;
@@ -189,7 +220,8 @@ namespace demo
         void AddCustomer()
         {
             int SIZE = Customer.Rows.Count;
-            string query = "INSERT INTO Customer (PhoneNum , CustomerName, IDCard, Email, Address, Status, CustomerType) VALUES('" + txtPhoneNum.Text + "', N'" + txtCustomerName.Text + "', '" + txtIDCard.Text + "', '" + txtEmail.Text + "', N'" + txtAddress.Text + "', '" + cbStatus.SelectedIndex + "', N'" + cbcustomertype.SelectedItem + "')";
+            string address = ""+txtAddress.Text+"," + cbWard.Text + "," + cbDistrict.Text + "," + cbProvince.Text + "";
+            string query = "INSERT INTO Customer (PhoneNum , CustomerName, IDCard, Email, Address, Status, CustomerType) VALUES('" + txtPhoneNum.Text + "', N'" + txtCustomerName.Text + "', '" + txtIDCard.Text + "', '" + txtEmail.Text + "', N'" + address + "', '" + cbStatus.SelectedIndex + "', N'" + cbcustomertype.SelectedItem + "')";
             if (CheckAdd()==1)
             {
                 MessageBox.Show("SĐT Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -281,7 +313,8 @@ namespace demo
             }
             else
             {
-                string query = "update Customer set [PhoneNum] = '" + txtPhoneNum.Text + "', [CustomerName] = N'" + txtCustomerName.Text + "', [IDCard] = '" + txtIDCard.Text + "', [Email]= '" + txtEmail.Text + "',[Address]= N'" + txtAddress.Text + "', [Status]= '" + cbStatus.SelectedIndex + "', [CustomerType]= N'" + cbcustomertype.SelectedItem + "' where [PhoneNum] = '" + txtPhoneNum.Text + "'";
+                string address = "" + txtAddress.Text + "," + cbWard.Text + "," + cbDistrict.Text + "," + cbProvince.Text + "";
+                string query = "update Customer set [PhoneNum] = '" + txtPhoneNum.Text + "', [CustomerName] = N'" + txtCustomerName.Text + "', [IDCard] = '" + txtIDCard.Text + "', [Email]= '" + txtEmail.Text + "',[Address]= N'" + address + "', [Status]= '" + cbStatus.SelectedIndex + "', [CustomerType]= N'" + cbcustomertype.SelectedItem + "' where [PhoneNum] = '" + txtPhoneNum.Text + "'";
                 DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Khách Hàng", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Question == DialogResult.Yes)
                 {
@@ -349,10 +382,22 @@ namespace demo
                 errorCustomer.Clear();
             }
         }
+        public static bool isEmail(string inputEmail)
+        {
+            inputEmail = inputEmail ?? string.Empty;
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
+        }
         // Tắt Báo Lỗi Email
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            if (txtEmail.Text != "")
+            if (txtEmail.Text != ""|| isEmail(txtEmail.Text))
             {
                 errorCustomer.Clear();
             }
@@ -449,9 +494,7 @@ namespace demo
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            fHomePage HP = new fHomePage();
-            HP.ShowDialog();
+            
             this.Close();
         }
 
@@ -467,5 +510,33 @@ namespace demo
             }
         }
 
+        private void cbProvince_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbDistrict.Items.Clear();
+            DataTable IDProvince = new DataTable();
+            
+            IDProvince = Local.ExcuteQuery("select id from location.province where _name LIKE N'" + cbProvince.Text + "' ");
+            District = Local.ExcuteQuery("select * from location.District where _province_id = " + IDProvince.Rows[0][0] + " order by location.District._name");
+            for (int i = 0; i < District.Rows.Count; i++)
+            {
+                cbDistrict.Items.Add(District.Rows[i][1].ToString());
+            }
+            cbDistrict.SelectedIndex = 0;
+        }
+
+        private void cbDistrict_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbWard.Items.Clear();
+            DataTable IDDistrict = new DataTable();
+            IDDistrict = Local.ExcuteQuery("select id from location.District where _name LIKE N'" + cbDistrict.Text + "' ");
+
+            Ward = Local.ExcuteQuery("select * from location.Ward where _district_id = " + IDDistrict.Rows[0][0] + " order by location.Ward._name");
+            for (int i = 0; i < Ward.Rows.Count; i++)
+            {
+                cbWard.Items.Add(Ward.Rows[i][1].ToString());
+            }
+            cbWard.SelectedIndex = 0;
+
+        }
     }
 }

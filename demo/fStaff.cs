@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,7 +19,10 @@ namespace demo
         }
         Connect ConnectSQL = new Connect();
         DataTable Staff = new DataTable();
-
+        ConnectLocal Local = new ConnectLocal();
+        DataTable Province = new DataTable();
+        DataTable District = new DataTable();
+        DataTable Ward = new DataTable();
         //Kết nối query và dgv với sql
         void ConnectSql(string query, DataGridView dgv)
         {
@@ -46,6 +50,24 @@ namespace demo
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+            Province = Local.ExcuteQuery("select * from location.province  order by location.province._name");
+            for (int i = 0; i < Province.Rows.Count; i++)
+            {
+                cbProvince.Items.Add(Province.Rows[i][1].ToString());
+            }
+            cbProvince.SelectedIndex = 0;
+            District = Local.ExcuteQuery("select * from location.District where _province_id = " + Province.Rows[0][0] + " order by location.District._name");
+            for (int i = 0; i < District.Rows.Count; i++)
+            {
+                cbDistrict.Items.Add(District.Rows[i][1].ToString());
+            }
+            cbDistrict.SelectedIndex = 0;
+            Ward = Local.ExcuteQuery("select * from location.Ward where _district_id = " + District.Rows[0][0] + " order by location.ward._name");
+            for (int i = 0; i < Ward.Rows.Count; i++)
+            {
+                cbWard.Items.Add(Ward.Rows[i][1].ToString());
+            }
+            cbWard.SelectedIndex = 0;
             cbStatus.Items.Add("Gám đốc");
             cbStatus.Items.Add("Nhân viên bán hàng");
             cbStatus.Items.Add("Kế toán");
@@ -69,7 +91,11 @@ namespace demo
             txtSalary.Text = string.Format("{0:n0}", ds.Rows[vt][2]);
             txtPhoneNum.Text = ds.Rows[vt][3].ToString();
             txtEmail.Text = ds.Rows[vt][4].ToString();
-            txtAddress.Text = ds.Rows[vt][5].ToString();
+            string[] AddressInput = ds.Rows[vt][5].ToString().Split(',');
+            txtAddress.Text = AddressInput[0];
+            cbWard.Text = AddressInput[1];
+            cbDistrict.Text = AddressInput[2];
+            cbProvince.Text = AddressInput[3];
             for (int i = 0; i < 5; i++)
             {
                 if (ds.Rows[vt][6].ToString() == i.ToString())
@@ -127,7 +153,7 @@ namespace demo
                 errorStaff.SetError(txtPhoneNum, "Nhập giá trị");
                 return 2;
             }
-            else if (string.IsNullOrEmpty(txtEmail.Text))
+            else if (string.IsNullOrEmpty(txtEmail.Text)||!isEmail(txtEmail.Text))
             {
                 errorStaff.SetError(txtEmail, "Nhập giá trị");
                 return 3;
@@ -247,7 +273,8 @@ namespace demo
             try
             {
                 int SIZE = Staff.Rows.Count;
-                string query = "INSERT INTO Staff (IDStaff, StaffName, Salary, PhoneNum, Email, Address, Status) VALUES ('" + txtIDStaff.Text + "', N'" + txtStaffName.Text + "', '" + txtSalary.Text + "', '" + txtPhoneNum.Text + "', '" + txtEmail.Text + "', N'" + txtAddress.Text + "', '" + cbStatus.SelectedIndex + "')";
+                string address = "" + txtAddress.Text + "," + cbWard.Text + "," + cbDistrict.Text + "," + cbProvince.Text + "";
+                string query = "INSERT INTO Staff (IDStaff, StaffName, Salary, PhoneNum, Email, Address, Status) VALUES ('" + txtIDStaff.Text + "', N'" + txtStaffName.Text + "', '" + txtSalary.Text + "', '" + txtPhoneNum.Text + "', '" + txtEmail.Text + "', N'" + address + "', '" + cbStatus.SelectedIndex + "')";
 
                 ConnectSQL.ExcuteQuery(query);
                 ShowStaff();
@@ -337,7 +364,8 @@ namespace demo
                         MessageBox.Show("SĐT Đã Tồn Tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
                     {
-                        string query = "update Staff set [StaffName] = N'" + txtStaffName.Text + "',[Salary] = '" + txtSalary.Text + "', [PhoneNum] = '" + txtPhoneNum.Text + "', [Email] = '" + txtEmail.Text + "', [Address] = N'" + txtAddress.Text + "', [Status] = '" + cbStatus.SelectedIndex + "' where[IDStaff] = '" + txtIDStaff.Text + "'";
+                        string address = "" + txtAddress.Text + "," + cbWard.Text + "," + cbDistrict.Text + "," + cbProvince.Text + "";
+                        string query = "update Staff set [StaffName] = N'" + txtStaffName.Text + "',[Salary] = '" + txtSalary.Text + "', [PhoneNum] = '" + txtPhoneNum.Text + "', [Email] = '" + txtEmail.Text + "', [Address] = N'" + address + "', [Status] = '" + cbStatus.SelectedIndex + "' where[IDStaff] = '" + txtIDStaff.Text + "'";
                         DialogResult Question = MessageBox.Show("Bạn Có Muốn Cập Nhật Nhân Viên", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (Question == DialogResult.Yes)
                         {
@@ -379,9 +407,7 @@ namespace demo
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            fHomePage HP = new fHomePage();
-            HP.ShowDialog();
+            
             this.Close();
         }
 
@@ -513,7 +539,18 @@ namespace demo
                 }
             }
         }
-
+        public static bool isEmail(string inputEmail)
+        {
+            inputEmail = inputEmail ?? string.Empty;
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
+        }
         private void txtStaffName_TextChanged(object sender, EventArgs e)
         {
             if (txtStaffName.Text != "")
@@ -528,7 +565,7 @@ namespace demo
             {
                 errorStaff.Clear();
             }
-            if (txtEmail.Text != "")
+            if (txtEmail.Text != ""||isEmail(txtEmail.Text))
             {
                 errorStaff.Clear();
             }
@@ -547,6 +584,34 @@ namespace demo
         {
             errorStaff.Clear();
             SearchStaff();
+        }
+
+        private void cbProvince_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbDistrict.Items.Clear();
+            DataTable IDProvince = new DataTable();
+
+            IDProvince = Local.ExcuteQuery("select id from location.province where _name LIKE N'" + cbProvince.Text + "' ");
+            District = Local.ExcuteQuery("select * from location.District where _province_id = " + IDProvince.Rows[0][0] + " order by location.District._name");
+            for (int i = 0; i < District.Rows.Count; i++)
+            {
+                cbDistrict.Items.Add(District.Rows[i][1].ToString());
+            }
+            cbDistrict.SelectedIndex = 0;
+        }
+
+        private void cbDistrict_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbWard.Items.Clear();
+            DataTable IDDistrict = new DataTable();
+            IDDistrict = Local.ExcuteQuery("select id from location.District where _name LIKE N'" + cbDistrict.Text + "' ");
+
+            Ward = Local.ExcuteQuery("select * from location.Ward where _district_id = " + IDDistrict.Rows[0][0] + " order by location.Ward._name");
+            for (int i = 0; i < Ward.Rows.Count; i++)
+            {
+                cbWard.Items.Add(Ward.Rows[i][1].ToString());
+            }
+            cbWard.SelectedIndex = 0;
         }
     }
 

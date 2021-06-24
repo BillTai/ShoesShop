@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace demo
             timer1.Start();
             timer1.Interval = 2900;
             timer1.Enabled = true;
-            mdaVideo.URL = @"D:\CKC\STUDY\Lập Trình Windows\loadingvideo.mp4";
+            mdaVideo.URL = Path.GetFullPath("loading") + @"\loadingvideo.mp4";
             mdaVideo.Ctlcontrols.play();
         }
 
@@ -62,6 +63,7 @@ namespace demo
                             IDStaff = Account.Rows[i][0].ToString();
                         }
                     }
+                    this.Hide();
                     fHomePage fhp = new fHomePage();
                     fhp.ShowDialog();
                     this.Close();
@@ -69,6 +71,7 @@ namespace demo
                 else
                 {
 
+                    this.Hide();
                     fLogin flog = new fLogin();
                     flog.ShowDialog();
                     this.Close();

@@ -31,12 +31,12 @@ namespace demo
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtAccountName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtIDAccount = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.errorInfoAccount = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtIDAccount = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtAccountName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,11 +59,66 @@ namespace demo
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Enabled = false;
             this.panel2.Location = new System.Drawing.Point(12, 8);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(322, 143);
             this.panel2.TabIndex = 4;
+            // 
+            // txtAccountName
+            // 
+            this.txtAccountName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtAccountName.BorderRadius = 10;
+            this.txtAccountName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAccountName.DefaultText = "";
+            this.txtAccountName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAccountName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAccountName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAccountName.DisabledState.Parent = this.txtAccountName;
+            this.txtAccountName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAccountName.Enabled = false;
+            this.txtAccountName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAccountName.FocusedState.Parent = this.txtAccountName;
+            this.txtAccountName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountName.ForeColor = System.Drawing.Color.Black;
+            this.txtAccountName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAccountName.HoverState.Parent = this.txtAccountName;
+            this.txtAccountName.Location = new System.Drawing.Point(116, 85);
+            this.txtAccountName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAccountName.Name = "txtAccountName";
+            this.txtAccountName.PasswordChar = '\0';
+            this.txtAccountName.PlaceholderText = "";
+            this.txtAccountName.SelectedText = "";
+            this.txtAccountName.ShadowDecoration.Parent = this.txtAccountName;
+            this.txtAccountName.Size = new System.Drawing.Size(165, 25);
+            this.txtAccountName.TabIndex = 60;
+            // 
+            // txtIDAccount
+            // 
+            this.txtIDAccount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtIDAccount.BorderRadius = 10;
+            this.txtIDAccount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIDAccount.DefaultText = "";
+            this.txtIDAccount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtIDAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtIDAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIDAccount.DisabledState.Parent = this.txtIDAccount;
+            this.txtIDAccount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIDAccount.Enabled = false;
+            this.txtIDAccount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIDAccount.FocusedState.Parent = this.txtIDAccount;
+            this.txtIDAccount.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDAccount.ForeColor = System.Drawing.Color.Black;
+            this.txtIDAccount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIDAccount.HoverState.Parent = this.txtIDAccount;
+            this.txtIDAccount.Location = new System.Drawing.Point(116, 53);
+            this.txtIDAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIDAccount.Name = "txtIDAccount";
+            this.txtIDAccount.PasswordChar = '\0';
+            this.txtIDAccount.PlaceholderText = "";
+            this.txtIDAccount.SelectedText = "";
+            this.txtIDAccount.ShadowDecoration.Parent = this.txtIDAccount;
+            this.txtIDAccount.Size = new System.Drawing.Size(165, 25);
+            this.txtIDAccount.TabIndex = 59;
             // 
             // label1
             // 
@@ -95,60 +150,6 @@ namespace demo
             // errorInfoAccount
             // 
             this.errorInfoAccount.ContainerControl = this;
-            // 
-            // txtIDAccount
-            // 
-            this.txtIDAccount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtIDAccount.BorderRadius = 10;
-            this.txtIDAccount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIDAccount.DefaultText = "";
-            this.txtIDAccount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtIDAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtIDAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIDAccount.DisabledState.Parent = this.txtIDAccount;
-            this.txtIDAccount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIDAccount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDAccount.FocusedState.Parent = this.txtIDAccount;
-            this.txtIDAccount.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDAccount.ForeColor = System.Drawing.Color.Black;
-            this.txtIDAccount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDAccount.HoverState.Parent = this.txtIDAccount;
-            this.txtIDAccount.Location = new System.Drawing.Point(116, 53);
-            this.txtIDAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtIDAccount.Name = "txtIDAccount";
-            this.txtIDAccount.PasswordChar = '\0';
-            this.txtIDAccount.PlaceholderText = "";
-            this.txtIDAccount.SelectedText = "";
-            this.txtIDAccount.ShadowDecoration.Parent = this.txtIDAccount;
-            this.txtIDAccount.Size = new System.Drawing.Size(165, 25);
-            this.txtIDAccount.TabIndex = 59;
-            // 
-            // txtAccountName
-            // 
-            this.txtAccountName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtAccountName.BorderRadius = 10;
-            this.txtAccountName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAccountName.DefaultText = "";
-            this.txtAccountName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAccountName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAccountName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAccountName.DisabledState.Parent = this.txtAccountName;
-            this.txtAccountName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAccountName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAccountName.FocusedState.Parent = this.txtAccountName;
-            this.txtAccountName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccountName.ForeColor = System.Drawing.Color.Black;
-            this.txtAccountName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAccountName.HoverState.Parent = this.txtAccountName;
-            this.txtAccountName.Location = new System.Drawing.Point(116, 85);
-            this.txtAccountName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtAccountName.Name = "txtAccountName";
-            this.txtAccountName.PasswordChar = '\0';
-            this.txtAccountName.PlaceholderText = "";
-            this.txtAccountName.SelectedText = "";
-            this.txtAccountName.ShadowDecoration.Parent = this.txtAccountName;
-            this.txtAccountName.Size = new System.Drawing.Size(165, 25);
-            this.txtAccountName.TabIndex = 60;
             // 
             // label4
             // 

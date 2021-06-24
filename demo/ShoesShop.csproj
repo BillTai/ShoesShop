@@ -135,6 +135,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ConnectLocal.cs" />
     <Compile Include="fColor.cs">
       <SubType>Form</SubType>
     </Compile>
