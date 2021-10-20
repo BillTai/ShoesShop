@@ -32,50 +32,11 @@ namespace demo
             {
                 timer1.Enabled = false;
                 timer1.Stop();
-                Connect ConnectSQL = new Connect();
-                DataTable Account = new DataTable();
-                Account = ConnectSQL.ExcuteQuery("Select IDStaff, Status from Account");
-                bool CheckAccountOnline()
-                {
-                    bool Flag = false;
-                    if (Account.Rows.Count >= 1)
-                    {
-                        for (int i = 0; i < Account.Rows.Count; i++)
-                        {
-                            if (Convert.ToInt32(Account.Rows[i][1]) == 1)
-                            {
-                                Flag = true;
-                                break;
-                            }
-                        }
-
-                    }
-                    return Flag;
-                }
-
-                if (CheckAccountOnline())
-                {
-                    string IDStaff = "";
-                    for (int i = 0; i < Account.Rows.Count; i++)
-                    {
-                        if (Account.Rows[i][1].ToString() == "1")
-                        {
-                            IDStaff = Account.Rows[i][0].ToString();
-                        }
-                    }
-                    this.Hide();
-                    fHomePage fhp = new fHomePage();
-                    fhp.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-
-                    this.Hide();
-                    fLogin flog = new fLogin();
-                    flog.ShowDialog();
-                    this.Close();
-                }
+               
+                this.Hide();
+                fLogin flog = new fLogin();
+                flog.ShowDialog();
+                this.Close();
 
             }    
         }

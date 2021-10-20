@@ -299,7 +299,7 @@ namespace demo
                 workbook = excel.Workbooks.Add(Type.Missing);
 
                 worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
-                worksheet.Name = "Danh sách sản phẩm";
+                worksheet.Name = "Danh sách chi tiết sản phẩm";
 
                 // export header
                 for (int i = 0; i < dataGridView1.ColumnCount; i++)
@@ -320,7 +320,7 @@ namespace demo
                 workbook.SaveAs(fileName);
                 workbook.Close();
                 excel.Quit();
-                MessageBox.Show("Export successful.!");
+                MessageBox.Show("Xuất Thành Công.!");
             }
             catch (Exception ex)
             {

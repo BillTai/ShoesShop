@@ -25,19 +25,19 @@ namespace demo
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            Province = Local.ExcuteQuery("select * from location.province  order by location.province._name");
+            Province = ConnectSQL.ExcuteQuery("select * from location.province  order by location.province._name");
             for(int i = 0;i<Province.Rows.Count;i++)
             {
                 cbProvince.Items.Add(Province.Rows[i][1].ToString());
             }
             cbProvince.SelectedIndex = 0;
-            District = Local.ExcuteQuery("select * from location.District where _province_id = " + Province.Rows[0][0] + " order by location.District._name");
+            District = ConnectSQL.ExcuteQuery("select * from location.District where _province_id = " + Province.Rows[0][0] + " order by location.District._name");
             for (int i = 0; i < District.Rows.Count; i++)
             {
                 cbDistrict.Items.Add(District.Rows[i][1].ToString());
             }
             cbDistrict.SelectedIndex = 0;
-            Ward = Local.ExcuteQuery("select * from location.Ward where _district_id = " + District.Rows[0][0] + " order by location.ward._name");
+            Ward = ConnectSQL.ExcuteQuery("select * from location.Ward where _district_id = " + District.Rows[0][0] + " order by location.ward._name");
             for (int i = 0; i < Ward.Rows.Count; i++)
             {
                 cbWard.Items.Add(Ward.Rows[i][1].ToString());
@@ -58,7 +58,6 @@ namespace demo
         }
         //------------------------Khai Báo Biến------------------------//
         Connect ConnectSQL = new Connect();
-        ConnectLocal Local = new ConnectLocal();
         DataTable Province = new DataTable();
         DataTable District = new DataTable();
         DataTable Ward = new DataTable();
@@ -515,8 +514,8 @@ namespace demo
             cbDistrict.Items.Clear();
             DataTable IDProvince = new DataTable();
             
-            IDProvince = Local.ExcuteQuery("select id from location.province where _name LIKE N'" + cbProvince.Text + "' ");
-            District = Local.ExcuteQuery("select * from location.District where _province_id = " + IDProvince.Rows[0][0] + " order by location.District._name");
+            IDProvince = ConnectSQL.ExcuteQuery("select id from location.province where _name LIKE N'" + cbProvince.Text + "' ");
+            District = ConnectSQL.ExcuteQuery("select * from location.District where _province_id = " + IDProvince.Rows[0][0] + " order by location.District._name");
             for (int i = 0; i < District.Rows.Count; i++)
             {
                 cbDistrict.Items.Add(District.Rows[i][1].ToString());
@@ -528,9 +527,9 @@ namespace demo
         {
             cbWard.Items.Clear();
             DataTable IDDistrict = new DataTable();
-            IDDistrict = Local.ExcuteQuery("select id from location.District where _name LIKE N'" + cbDistrict.Text + "' ");
+            IDDistrict = ConnectSQL.ExcuteQuery("select id from location.District where _name LIKE N'" + cbDistrict.Text + "' ");
 
-            Ward = Local.ExcuteQuery("select * from location.Ward where _district_id = " + IDDistrict.Rows[0][0] + " order by location.Ward._name");
+            Ward = ConnectSQL.ExcuteQuery("select * from location.Ward where _district_id = " + IDDistrict.Rows[0][0] + " order by location.Ward._name");
             for (int i = 0; i < Ward.Rows.Count; i++)
             {
                 cbWard.Items.Add(Ward.Rows[i][1].ToString());

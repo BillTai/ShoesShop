@@ -129,16 +129,25 @@ namespace demo
             var result = reader.Decode(bitmap);
             if(result!=null)
             {
-                txtPassword.Invoke(new MethodInvoker(delegate ()
+                try
                 {
-                    string rs = result.ToString();
-                    int user = rs.IndexOf(' ');
-                    int pass = rs.LastIndexOf(' ');
-                    txtUserName.Text = rs.Substring(0, user);
-                    txtPassword.Text = rs.Substring(pass+1);
-                }));
+
+                    txtPassword.Invoke(new MethodInvoker(delegate ()
+                    {
+                        string rs = result.ToString();
+                        int user = rs.IndexOf(' ');
+                        int pass = rs.LastIndexOf(' ');
+                        txtUserName.Text = rs.Substring(0, user);
+                        txtPassword.Text = rs.Substring(pass + 1);
+                    }));
+                }catch
+                {
+                    MessageBox.Show("Mã không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             picBarCode.Image = bitmap;
+
+
         }
 
         private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
@@ -215,9 +224,6 @@ namespace demo
             {
                 if (CheckAccount())
                 {
-                    Account = ConnectSQL.ExcuteQuery("Update Account set Status = '1' where IDStaff = '" + txtUserName.Text + "'");
-                    txtUserName.Text = "";
-                    txtPassword.Text = "";
                     this.Hide();
                     fHomePage fHP = new fHomePage();
                     fHP.ReturnIDAccount = txtUserName.Text;

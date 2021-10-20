@@ -33,22 +33,22 @@ namespace demo
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHomePage));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.mntHome = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,8 +71,6 @@ namespace demo
             this.thốngKêXuấtKhoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýTàiKhoảnToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mtsInfoAccount = new System.Windows.Forms.ToolStripMenuItem();
-            this.càiĐặtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mtsLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
@@ -150,16 +148,16 @@ namespace demo
             this.cbYear = new Guna.UI2.WinForms.Guna2ComboBox();
             this.chartMonth = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.chartCustomer = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.rCustomer = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rProduct = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.chartProduct = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.chartProduct = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.rCustomer = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rProduct = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.chartCustomer = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnReload = new Guna.UI2.WinForms.Guna2CircleButton();
             this.menuStrip.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -188,8 +186,8 @@ namespace demo
             ((System.ComponentModel.ISupportInitialize)(this.chartquy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMonth)).BeginInit();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -205,8 +203,7 @@ namespace demo
             this.quảnLýHàngToolStripMenuItem,
             this.trợGiúpToolStripMenuItem,
             this.quảnLýTàiKhoảnToolStripMenuItem,
-            this.quảnLýTàiKhoảnToolStripMenuItem1,
-            this.càiĐặtToolStripMenuItem});
+            this.quảnLýTàiKhoảnToolStripMenuItem1});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(951, 38);
@@ -369,25 +366,9 @@ namespace demo
             // mtsInfoAccount
             // 
             this.mtsInfoAccount.Name = "mtsInfoAccount";
-            this.mtsInfoAccount.Size = new System.Drawing.Size(180, 22);
+            this.mtsInfoAccount.Size = new System.Drawing.Size(177, 22);
             this.mtsInfoAccount.Text = "Thông tin tài khoản";
             this.mtsInfoAccount.Click += new System.EventHandler(this.mtsInfoAccount_Click);
-            // 
-            // càiĐặtToolStripMenuItem
-            // 
-            this.càiĐặtToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mtsLogOut});
-            this.càiĐặtToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("càiĐặtToolStripMenuItem.Image")));
-            this.càiĐặtToolStripMenuItem.Name = "càiĐặtToolStripMenuItem";
-            this.càiĐặtToolStripMenuItem.Size = new System.Drawing.Size(72, 34);
-            this.càiĐặtToolStripMenuItem.Text = "Cài đặt";
-            // 
-            // mtsLogOut
-            // 
-            this.mtsLogOut.Name = "mtsLogOut";
-            this.mtsLogOut.Size = new System.Drawing.Size(180, 22);
-            this.mtsLogOut.Text = "Đăng Xuất";
-            this.mtsLogOut.Click += new System.EventHandler(this.mtsLogOut_Click);
             // 
             // tabPage4
             // 
@@ -395,7 +376,7 @@ namespace demo
             this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1150, 571);
+            this.tabPage4.Size = new System.Drawing.Size(1150, 551);
             this.tabPage4.TabIndex = 8;
             this.tabPage4.Text = "Nhân Viên";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -406,7 +387,7 @@ namespace demo
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1144, 565);
+            this.groupBox4.Size = new System.Drawing.Size(1144, 545);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh Sách Nhân Viên";
@@ -432,7 +413,7 @@ namespace demo
             this.dgvStaff.ReadOnly = true;
             this.dgvStaff.RowHeadersVisible = false;
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStaff.Size = new System.Drawing.Size(1138, 502);
+            this.dgvStaff.Size = new System.Drawing.Size(1138, 482);
             this.dgvStaff.TabIndex = 14;
             // 
             // IDStaff
@@ -490,7 +471,7 @@ namespace demo
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1150, 534);
+            this.tabPage3.Size = new System.Drawing.Size(1150, 551);
             this.tabPage3.TabIndex = 7;
             this.tabPage3.Text = "Chi Tiết Hoá Đơn";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -501,7 +482,7 @@ namespace demo
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(1144, 528);
+            this.groupBox7.Size = new System.Drawing.Size(1144, 545);
             this.groupBox7.TabIndex = 4;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Danh Sách Chi Tiết Hoá Đơn";
@@ -526,7 +507,7 @@ namespace demo
             this.dgvBillDetail.ReadOnly = true;
             this.dgvBillDetail.RowHeadersVisible = false;
             this.dgvBillDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBillDetail.Size = new System.Drawing.Size(1138, 506);
+            this.dgvBillDetail.Size = new System.Drawing.Size(1138, 523);
             this.dgvBillDetail.TabIndex = 3;
             // 
             // IDB
@@ -577,7 +558,7 @@ namespace demo
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1150, 571);
+            this.tabPage2.Size = new System.Drawing.Size(1150, 551);
             this.tabPage2.TabIndex = 6;
             this.tabPage2.Text = "Hoá Đơn";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -588,7 +569,7 @@ namespace demo
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(3, 3);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(1144, 565);
+            this.groupBox8.Size = new System.Drawing.Size(1144, 545);
             this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Danh Sách Hoá Đơn";
@@ -614,7 +595,7 @@ namespace demo
             this.dgvBill.ReadOnly = true;
             this.dgvBill.RowHeadersVisible = false;
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBill.Size = new System.Drawing.Size(1136, 526);
+            this.dgvBill.Size = new System.Drawing.Size(1136, 506);
             this.dgvBill.TabIndex = 3;
             // 
             // IDBill
@@ -672,7 +653,7 @@ namespace demo
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1150, 524);
+            this.tabPage1.Size = new System.Drawing.Size(1150, 551);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Khách Hàng";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -683,7 +664,7 @@ namespace demo
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1144, 518);
+            this.groupBox3.Size = new System.Drawing.Size(1144, 545);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Khách Hàng";
@@ -710,7 +691,7 @@ namespace demo
             this.dgvCustomer.RowHeadersVisible = false;
             this.dgvCustomer.RowHeadersWidth = 40;
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomer.Size = new System.Drawing.Size(1138, 499);
+            this.dgvCustomer.Size = new System.Drawing.Size(1138, 526);
             this.dgvCustomer.TabIndex = 14;
             // 
             // PhoneNum
@@ -768,7 +749,7 @@ namespace demo
             this.tStatistical.Location = new System.Drawing.Point(4, 23);
             this.tStatistical.Name = "tStatistical";
             this.tStatistical.Padding = new System.Windows.Forms.Padding(3);
-            this.tStatistical.Size = new System.Drawing.Size(1150, 524);
+            this.tStatistical.Size = new System.Drawing.Size(1150, 551);
             this.tStatistical.TabIndex = 3;
             this.tStatistical.Text = "Chi Tiết Sản Phẩm";
             this.tStatistical.UseVisualStyleBackColor = true;
@@ -779,7 +760,7 @@ namespace demo
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(3, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1144, 518);
+            this.groupBox6.Size = new System.Drawing.Size(1144, 545);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Danh Sách Chi Tiết Sản Phẩm";
@@ -805,7 +786,7 @@ namespace demo
             this.dgvProductDetail.ReadOnly = true;
             this.dgvProductDetail.RowHeadersVisible = false;
             this.dgvProductDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductDetail.Size = new System.Drawing.Size(1138, 497);
+            this.dgvProductDetail.Size = new System.Drawing.Size(1138, 524);
             this.dgvProductDetail.TabIndex = 1;
             // 
             // IDProductDetail
@@ -877,7 +858,7 @@ namespace demo
             this.tTypeProduct.Location = new System.Drawing.Point(4, 23);
             this.tTypeProduct.Name = "tTypeProduct";
             this.tTypeProduct.Padding = new System.Windows.Forms.Padding(3);
-            this.tTypeProduct.Size = new System.Drawing.Size(1150, 524);
+            this.tTypeProduct.Size = new System.Drawing.Size(1150, 551);
             this.tTypeProduct.TabIndex = 2;
             this.tTypeProduct.Text = "Loại Sản Phẩm";
             this.tTypeProduct.UseVisualStyleBackColor = true;
@@ -888,7 +869,7 @@ namespace demo
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1144, 518);
+            this.groupBox2.Size = new System.Drawing.Size(1144, 545);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Loại Sản Phẩm";
@@ -907,7 +888,7 @@ namespace demo
             this.dgvProductType.ReadOnly = true;
             this.dgvProductType.RowHeadersVisible = false;
             this.dgvProductType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductType.Size = new System.Drawing.Size(1138, 497);
+            this.dgvProductType.Size = new System.Drawing.Size(1138, 524);
             this.dgvProductType.TabIndex = 2;
             // 
             // IDProductType
@@ -930,7 +911,7 @@ namespace demo
             this.tProduct.Location = new System.Drawing.Point(4, 23);
             this.tProduct.Name = "tProduct";
             this.tProduct.Padding = new System.Windows.Forms.Padding(3);
-            this.tProduct.Size = new System.Drawing.Size(1150, 571);
+            this.tProduct.Size = new System.Drawing.Size(1150, 551);
             this.tProduct.TabIndex = 1;
             this.tProduct.Text = "Sản Phẩm";
             this.tProduct.UseVisualStyleBackColor = true;
@@ -941,7 +922,7 @@ namespace demo
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1144, 565);
+            this.groupBox1.Size = new System.Drawing.Size(1144, 545);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Sản Phẩm";
@@ -966,7 +947,7 @@ namespace demo
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.RowHeadersVisible = false;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(1138, 544);
+            this.dgvProduct.Size = new System.Drawing.Size(1138, 524);
             this.dgvProduct.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -1029,6 +1010,7 @@ namespace demo
             this.tHome.ItemSize = new System.Drawing.Size(80, 19);
             this.tHome.Location = new System.Drawing.Point(0, 64);
             this.tHome.Name = "tHome";
+            this.tHome.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tHome.SelectedIndex = 0;
             this.tHome.Size = new System.Drawing.Size(1158, 578);
             this.tHome.TabIndex = 1;
@@ -1047,16 +1029,18 @@ namespace demo
             this.tabPage5.Location = new System.Drawing.Point(4, 23);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1150, 524);
+            this.tabPage5.Size = new System.Drawing.Size(1150, 551);
             this.tabPage5.TabIndex = 9;
             this.tabPage5.Text = "Biểu Đồ Doanh Thu";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(967, 496);
+            this.label16.Location = new System.Drawing.Point(964, 452);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(31, 14);
             this.label16.TabIndex = 46;
@@ -1108,28 +1092,28 @@ namespace demo
             this.chartquy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea9.Area3DStyle.Enable3D = true;
-            chartArea9.Area3DStyle.Inclination = 23;
-            chartArea9.Name = "ChartArea1";
-            this.chartquy.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chartquy.Legends.Add(legend9);
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.Inclination = 23;
+            chartArea1.Name = "ChartArea1";
+            this.chartquy.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartquy.Legends.Add(legend1);
             this.chartquy.Location = new System.Drawing.Point(55, 81);
             this.chartquy.Name = "chartquy";
             this.chartquy.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series9.IsValueShownAsLabel = true;
-            series9.LabelFormat = "#.##%";
-            series9.Legend = "Legend1";
-            series9.Name = "Quý";
-            this.chartquy.Series.Add(series9);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsValueShownAsLabel = true;
+            series1.LabelFormat = "#.##%";
+            series1.Legend = "Legend1";
+            series1.Name = "Quý";
+            this.chartquy.Series.Add(series1);
             this.chartquy.Size = new System.Drawing.Size(921, 350);
             this.chartquy.TabIndex = 4;
             this.chartquy.Text = "chart1";
-            title9.Name = "Title1";
-            title9.Text = "Doanh Thu Theo Quý";
-            this.chartquy.Titles.Add(title9);
+            title1.Name = "Title1";
+            title1.Text = "Doanh Thu Theo Quý";
+            this.chartquy.Titles.Add(title1);
             // 
             // cquy
             // 
@@ -1210,29 +1194,29 @@ namespace demo
             this.chartMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea10.Name = "ChartArea1";
-            this.chartMonth.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.chartMonth.Legends.Add(legend10);
+            chartArea2.Name = "ChartArea1";
+            this.chartMonth.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartMonth.Legends.Add(legend2);
             this.chartMonth.Location = new System.Drawing.Point(55, 81);
             this.chartMonth.Name = "chartMonth";
-            series10.BorderColor = System.Drawing.Color.White;
-            series10.BorderWidth = 4;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series10.Color = System.Drawing.Color.LimeGreen;
-            series10.Legend = "Legend1";
-            series10.Name = "Doanh Thu";
-            series10.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series10.YValuesPerPoint = 4;
-            this.chartMonth.Series.Add(series10);
+            series2.BorderColor = System.Drawing.Color.White;
+            series2.BorderWidth = 4;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.LimeGreen;
+            series2.Legend = "Legend1";
+            series2.Name = "Doanh Thu";
+            series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series2.YValuesPerPoint = 4;
+            this.chartMonth.Series.Add(series2);
             this.chartMonth.Size = new System.Drawing.Size(921, 350);
             this.chartMonth.TabIndex = 0;
             this.chartMonth.Text = "chart1";
-            title10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title10.Name = "Title1";
-            title10.Text = "Doanh Thu Theo Tháng";
-            this.chartMonth.Titles.Add(title10);
+            title2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Title1";
+            title2.Text = "Doanh Thu Theo Tháng";
+            this.chartMonth.Titles.Add(title2);
             // 
             // tabPage6
             // 
@@ -1247,6 +1231,100 @@ namespace demo
             this.tabPage6.TabIndex = 10;
             this.tabPage6.Text = "Top";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // chartCustomer
+            // 
+            this.chartCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea3.Name = "ChartArea1";
+            this.chartCustomer.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartCustomer.Legends.Add(legend3);
+            this.chartCustomer.Location = new System.Drawing.Point(55, 81);
+            this.chartCustomer.Name = "chartCustomer";
+            series3.BorderColor = System.Drawing.Color.White;
+            series3.BorderWidth = 4;
+            series3.ChartArea = "ChartArea1";
+            series3.Color = System.Drawing.Color.LimeGreen;
+            series3.Legend = "Legend1";
+            series3.Name = "Khách Hàng";
+            series3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series3.YValuesPerPoint = 4;
+            this.chartCustomer.Series.Add(series3);
+            this.chartCustomer.Size = new System.Drawing.Size(921, 374);
+            this.chartCustomer.TabIndex = 13;
+            this.chartCustomer.Text = "chart1";
+            title3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.Name = "Title1";
+            title3.Text = "Top Khách Hàng Tiềm Năng";
+            this.chartCustomer.Titles.Add(title3);
+            // 
+            // rCustomer
+            // 
+            this.rCustomer.AutoSize = true;
+            this.rCustomer.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rCustomer.CheckedState.BorderThickness = 0;
+            this.rCustomer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rCustomer.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rCustomer.CheckedState.InnerOffset = -4;
+            this.rCustomer.Location = new System.Drawing.Point(338, 24);
+            this.rCustomer.Name = "rCustomer";
+            this.rCustomer.Size = new System.Drawing.Size(90, 18);
+            this.rCustomer.TabIndex = 4;
+            this.rCustomer.Text = "Khách Hàng";
+            this.rCustomer.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rCustomer.UncheckedState.BorderThickness = 2;
+            this.rCustomer.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rCustomer.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rCustomer.CheckedChanged += new System.EventHandler(this.rCustomer_CheckedChanged);
+            // 
+            // rProduct
+            // 
+            this.rProduct.AutoSize = true;
+            this.rProduct.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rProduct.CheckedState.BorderThickness = 0;
+            this.rProduct.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rProduct.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rProduct.CheckedState.InnerOffset = -4;
+            this.rProduct.Location = new System.Drawing.Point(183, 24);
+            this.rProduct.Name = "rProduct";
+            this.rProduct.Size = new System.Drawing.Size(79, 18);
+            this.rProduct.TabIndex = 5;
+            this.rProduct.Text = "Sản Phẩm";
+            this.rProduct.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rProduct.UncheckedState.BorderThickness = 2;
+            this.rProduct.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rProduct.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rProduct.CheckedChanged += new System.EventHandler(this.rProduct_CheckedChanged);
+            // 
+            // chartProduct
+            // 
+            this.chartProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea4.Name = "ChartArea1";
+            this.chartProduct.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartProduct.Legends.Add(legend4);
+            this.chartProduct.Location = new System.Drawing.Point(55, 81);
+            this.chartProduct.Name = "chartProduct";
+            series4.BorderColor = System.Drawing.Color.White;
+            series4.BorderWidth = 4;
+            series4.ChartArea = "ChartArea1";
+            series4.Color = System.Drawing.Color.LimeGreen;
+            series4.Legend = "Legend1";
+            series4.Name = "Sản Phẩm";
+            series4.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series4.YValuesPerPoint = 4;
+            this.chartProduct.Series.Add(series4);
+            this.chartProduct.Size = new System.Drawing.Size(921, 374);
+            this.chartProduct.TabIndex = 1;
+            this.chartProduct.Text = "chart1";
+            title4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title4.Name = "Title1";
+            title4.Text = "Top Sản Phẩm Bán Chạy";
+            this.chartProduct.Titles.Add(title4);
             // 
             // btnExit
             // 
@@ -1293,100 +1371,6 @@ namespace demo
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.Size = new System.Drawing.Size(29, 29);
             this.guna2ControlBox1.TabIndex = 12;
-            // 
-            // chartProduct
-            // 
-            this.chartProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea11.Name = "ChartArea1";
-            this.chartProduct.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.chartProduct.Legends.Add(legend11);
-            this.chartProduct.Location = new System.Drawing.Point(55, 81);
-            this.chartProduct.Name = "chartProduct";
-            series11.BorderColor = System.Drawing.Color.White;
-            series11.BorderWidth = 4;
-            series11.ChartArea = "ChartArea1";
-            series11.Color = System.Drawing.Color.LimeGreen;
-            series11.Legend = "Legend1";
-            series11.Name = "Sản Phẩm";
-            series11.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series11.YValuesPerPoint = 4;
-            this.chartProduct.Series.Add(series11);
-            this.chartProduct.Size = new System.Drawing.Size(921, 374);
-            this.chartProduct.TabIndex = 1;
-            this.chartProduct.Text = "chart1";
-            title11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title11.Name = "Title1";
-            title11.Text = "Top Sản Phẩm Bán Chạy";
-            this.chartProduct.Titles.Add(title11);
-            // 
-            // rCustomer
-            // 
-            this.rCustomer.AutoSize = true;
-            this.rCustomer.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rCustomer.CheckedState.BorderThickness = 0;
-            this.rCustomer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rCustomer.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rCustomer.CheckedState.InnerOffset = -4;
-            this.rCustomer.Location = new System.Drawing.Point(338, 24);
-            this.rCustomer.Name = "rCustomer";
-            this.rCustomer.Size = new System.Drawing.Size(90, 18);
-            this.rCustomer.TabIndex = 4;
-            this.rCustomer.Text = "Khách Hàng";
-            this.rCustomer.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rCustomer.UncheckedState.BorderThickness = 2;
-            this.rCustomer.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rCustomer.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rCustomer.CheckedChanged += new System.EventHandler(this.rCustomer_CheckedChanged);
-            // 
-            // rProduct
-            // 
-            this.rProduct.AutoSize = true;
-            this.rProduct.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rProduct.CheckedState.BorderThickness = 0;
-            this.rProduct.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rProduct.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rProduct.CheckedState.InnerOffset = -4;
-            this.rProduct.Location = new System.Drawing.Point(183, 24);
-            this.rProduct.Name = "rProduct";
-            this.rProduct.Size = new System.Drawing.Size(79, 18);
-            this.rProduct.TabIndex = 5;
-            this.rProduct.Text = "Sản Phẩm";
-            this.rProduct.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rProduct.UncheckedState.BorderThickness = 2;
-            this.rProduct.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rProduct.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rProduct.CheckedChanged += new System.EventHandler(this.rProduct_CheckedChanged);
-            // 
-            // chartCustomer
-            // 
-            this.chartCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea12.Name = "ChartArea1";
-            this.chartCustomer.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chartCustomer.Legends.Add(legend12);
-            this.chartCustomer.Location = new System.Drawing.Point(55, 81);
-            this.chartCustomer.Name = "chartCustomer";
-            series12.BorderColor = System.Drawing.Color.White;
-            series12.BorderWidth = 4;
-            series12.ChartArea = "ChartArea1";
-            series12.Color = System.Drawing.Color.LimeGreen;
-            series12.Legend = "Legend1";
-            series12.Name = "Khách Hàng";
-            series12.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series12.YValuesPerPoint = 4;
-            this.chartCustomer.Series.Add(series12);
-            this.chartCustomer.Size = new System.Drawing.Size(921, 374);
-            this.chartCustomer.TabIndex = 13;
-            this.chartCustomer.Text = "chart1";
-            title12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title12.Name = "Title1";
-            title12.Text = "Top Khách Hàng Tiềm Năng";
-            this.chartCustomer.Titles.Add(title12);
             // 
             // btnReload
             // 
@@ -1456,8 +1440,8 @@ namespace demo
             ((System.ComponentModel.ISupportInitialize)(this.chartMonth)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProduct)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1482,10 +1466,8 @@ namespace demo
         private System.Windows.Forms.ToolStripMenuItem thốngKêXuấtKhoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýTàiKhoảnToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mtsInfoAccount;
-        private System.Windows.Forms.ToolStripMenuItem càiĐặtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mtsEditStaff;
-        private ToolStripMenuItem mtsLogOut;
         private ToolStripMenuItem thốngKêXuấtKhoToolStripMenuItem1;
         private TabPage tabPage4;
         private GroupBox groupBox4;

@@ -36,6 +36,7 @@ namespace demo
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtIDColor = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtColorName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,7 +51,8 @@ namespace demo
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.errorColor = new System.Windows.Forms.ErrorProvider(this.components);
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -122,6 +124,23 @@ namespace demo
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(264, 110);
             this.panel5.TabIndex = 1;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 15;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(217, 68);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(44, 27);
+            this.guna2Button1.TabIndex = 5;
+            this.guna2Button1.Text = "...";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // txtIDColor
             // 
@@ -323,22 +342,9 @@ namespace demo
             // 
             this.errorColor.ContainerControl = this;
             // 
-            // guna2Button1
+            // guna2BorderlessForm1
             // 
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(217, 68);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(44, 27);
-            this.guna2Button1.TabIndex = 5;
-            this.guna2Button1.Text = "...";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.guna2BorderlessForm1.ContainerControl = this;
             // 
             // fColor
             // 
@@ -385,5 +391,7 @@ namespace demo
         private System.Windows.Forms.ErrorProvider errorColor;
         private Guna.UI2.WinForms.Guna2ComboBox cbSearch;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }
