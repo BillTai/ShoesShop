@@ -1,4 +1,5 @@
-﻿using Syncfusion.XlsIO;
+﻿using ClosedXML.Excel;
+using Syncfusion.XlsIO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -113,7 +114,6 @@ namespace demo
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                    //ToExcel(dgvBill, saveFileDialog1.FileName, Bill);
                 using (ExcelEngine excelEngine = new ExcelEngine())
                 {
                     dgvBill.Sort(dgvBill.Columns[0], System.ComponentModel.ListSortDirection.Ascending);
@@ -121,15 +121,33 @@ namespace demo
                     IWorkbook workbook = application.Workbooks.Create(1);
                     IWorksheet worksheet = workbook.Worksheets[0];
                     worksheet.ImportDataGridView(dgvBill, 1, 1, isImportHeader: true, isImportStyle: true);
-
                     worksheet.UsedRange.AutofitColumns();
                     workbook.SaveAs(saveFileDialog1.FileName);
                     System.Diagnostics.Process.Start(saveFileDialog1.FileName);
                 }
-
-
-
             }
+            //using (SaveFileDialog excel = new SaveFileDialog { Filter = "Excel|*.xlsx" })
+            //{
+            //    if (excel.ShowDialog() == DialogResult.OK)
+            //    {
+            //        try
+            //        {
+            //            using (XLWorkbook workbook = new XLWorkbook())
+            //            {
+
+            //                    workbook.Worksheets.Add(Bill, "Product");
+
+            //                workbook.SaveAs(excel.FileName);
+            //            }
+            //            MessageBox.Show("Xuất Thành Công.!");
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            MessageBox.Show(ex.Message);
+            //        }
+            //    }
+
+            //}
         }
         DataTable Status1 = new DataTable();
         DataTable Status2 = new DataTable();

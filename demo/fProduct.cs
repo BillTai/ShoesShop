@@ -1,4 +1,6 @@
 ﻿using BarcodeLib;
+using ClosedXML.Excel;
+using Syncfusion.XlsIO;
 using System;
 using System.Data;
 using System.Drawing;
@@ -964,18 +966,40 @@ namespace demo
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.InitialDirectory = Path.GetFullPath("Excel") + @"\";
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            //saveFileDialog1.InitialDirectory = Path.GetFullPath("Excel") + @"\";
+            //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    if (cbExcel.SelectedIndex == 0)
+            //    {
+             //      ToExcel(dgvFullProductDetail, saveFileDialog1.FileName, FullProductDetail);
+
+            //    }
+            //    else if (cbExcel.SelectedIndex == 1)
+            //    {
+
+            //        ToExcel(dgvProductDetail, saveFileDialog1.FileName, ProductDetail);
+            //    }
+            //}
+            using (SaveFileDialog excel = new SaveFileDialog { Filter = "Excel|*.xlsx" })
             {
-                if(cbExcel.SelectedIndex==0)
+                if (excel.ShowDialog() == DialogResult.OK)
                 {
-                    ToExcel(dgvFullProductDetail, saveFileDialog1.FileName, FullProductDetail);
-
-                }
-                else if (cbExcel.SelectedIndex ==1)
-                {
-
-                    ToExcel(dgvProductDetail, saveFileDialog1.FileName, ProductDetail);
+                    try
+                    {
+                        using (XLWorkbook workbook = new XLWorkbook())
+                        {
+                            if (cbExcel.SelectedIndex == 0)
+                                workbook.Worksheets.Add(FullProductDetail, "Product");
+                            else if (cbExcel.SelectedIndex == 1)
+                                workbook.Worksheets.Add(ProductDetail, "ProductDetail");
+                            workbook.SaveAs(excel.FileName);
+                        }
+                        MessageBox.Show("Xuất Thành Công.!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
 
             }
@@ -1026,6 +1050,8 @@ namespace demo
             fColor.ShowDialog();
             this.Close();
         }
+
+        
     }
 }
 

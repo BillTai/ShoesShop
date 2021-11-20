@@ -81,40 +81,6 @@ namespace demo
         {
             txtPassword.UseSystemPasswordChar = true;
         }
-        //------------------------Nút------------------------//
-        //Nút đăng nhập
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            if (CheckAccount())
-            {
-                Account = ConnectSQL.ExcuteQuery("Update Account set Status = '1' where IDStaff = '" + txtUserName.Text + "'");
-                txtUserName.Text = "";
-                txtPassword.Text = "";
-                this.Hide();
-                fHomePage fHP = new fHomePage();
-                fHP.ReturnIDAccount = txtUserName.Text;
-                fHP.ShowDialog();
-                this.Close();
-                
-            }
-            else
-            {
-
-                MessageBox.Show("Tài khoản hoặc mật khẩu sai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtUserName.Focus();
-            }
-        }    
-        //Nút đăng ký
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            error.Clear();
-            this.Hide();
-            Form fRegis = new fRegister();          
-            fRegis.ShowDialog();
-            this.Close();
-           
-        }
-
         private void btnScan_Click(object sender, EventArgs e)
         {
                 videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cbCamera.SelectedIndex].MonikerString);
@@ -195,8 +161,6 @@ namespace demo
             }    
         }
       
-
-
         private void txtPassword_TextChanged_1(object sender, EventArgs e)
         {
             pbShowPassword.Visible = true;
@@ -224,6 +188,9 @@ namespace demo
             {
                 if (CheckAccount())
                 {
+                    Account = ConnectSQL.ExcuteQuery("Update Account set Status = '1' where IDStaff = '" + txtUserName.Text + "'");
+                    txtUserName.Text = "";
+                    txtPassword.Text = "";
                     this.Hide();
                     fHomePage fHP = new fHomePage();
                     fHP.ReturnIDAccount = txtUserName.Text;
