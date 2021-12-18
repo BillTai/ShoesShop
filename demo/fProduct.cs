@@ -285,55 +285,7 @@ namespace demo
                 MessageBox.Show("Vui Lòng Kiểm Tra Lại", "Thông Báo");
             }
         }
-        private void ToExcel(DataGridView dataGridView1, string fileName, DataTable ds)
-        {
-            Microsoft.Office.Interop.Excel.Application excel;
-            Microsoft.Office.Interop.Excel.Workbook workbook;
-            Microsoft.Office.Interop.Excel.Worksheet worksheet;
-
-            try
-            {
-                
-                excel = new Microsoft.Office.Interop.Excel.Application();
-                excel.Visible = false;
-                excel.DisplayAlerts = false;
-
-                workbook = excel.Workbooks.Add(Type.Missing);
-
-                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
-                worksheet.Name = "Danh sách chi tiết sản phẩm";
-
-                // export header
-                for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                {
-                    worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
-                }
-
-                // export content
-                for (int i = 0; i < ds.Rows.Count; i++)
-                {
-                    for (int j = 0; j < ds.Columns.Count; j++)
-                    {
-                        worksheet.Cells[i + 2, j + 1] = ds.Rows[i][j].ToString();
-                    }
-                }
-
-                // save workbook
-                workbook.SaveAs(fileName);
-                workbook.Close();
-                excel.Quit();
-                MessageBox.Show("Xuất Thành Công.!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                workbook = null;
-                worksheet = null;
-            }
-        }
+        
         bool CheckID()
         {
             int SIZE = Product.Rows.Count;

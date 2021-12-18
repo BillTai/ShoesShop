@@ -200,8 +200,10 @@ namespace demo
                 }
                 else
                 {
-
+                    txtUserName.Text = "";
+                    txtPassword.Text = "";
                     MessageBox.Show("Tài khoản hoặc mật khẩu sai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    
                     txtUserName.Focus();
                 }
             }
